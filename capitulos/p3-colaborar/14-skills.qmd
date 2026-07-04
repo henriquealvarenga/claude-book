@@ -1,0 +1,47 @@
+# Skills
+
+Em outubro de 2025, a Anthropic lançou as **skills** (*Agent Skills*): uma forma de ensinar ao agente um procedimento repetível, empacotado numa pasta de arquivos que ele carrega quando a tarefa pede [@anthropic_agent_skills_2025]. A ideia respondia a uma limitação prática. O modelo sabe muita coisa em geral, mas não conhece o procedimento particular de quem o usa — a folha de estilo de uma revista, o roteiro de uma análise, as convenções de um grupo de pesquisa. A skill é o meio de registrar esse procedimento uma vez e passá-lo ao agente sempre que for preciso.
+
+O que veio depois mostra a dimensão da ideia. Em dezembro de 2025, a Anthropic publicou as skills como **padrão aberto** — uma especificação livre, que qualquer plataforma poderia adotar [@anthropic_agent_skills_open_standard_2025]. Foi a mesma jogada que a empresa fizera com o MCP (Cap. 6), e o resultado se repetiu: em questão de dias, os concorrentes adotaram o mesmo formato. A OpenAI passou a ler skills no Codex e no ChatGPT; a Google, no Gemini; a Microsoft, no editor VS Code. Um procedimento escrito para o Claude passou a valer, sem alteração, em agentes de empresas rivais — uma convergência rara no setor, e um sinal de que a skill resolvia um problema que era de todos, não só de um produto.
+
+O movimento é o mesmo que um pesquisador conhece do próprio ofício. Quem formata artigos para a mesma revista aprende, com o tempo, um procedimento fixo: a folha de estilo do periódico, a ordem das seções, o modo de numerar as tabelas. Da terceira submissão em diante, o procedimento já não precisa ser reinventado — está sabido. Uma skill é o equivalente disso para o agente: um procedimento que, uma vez registrado, se aplica como quem já fez aquilo antes.
+
+O Cap. 5 descreveu as ferramentas como o repertório de ações do agente — ler um arquivo, rodar um comando, consultar um serviço. Uma skill fica um degrau acima: não é uma ação isolada, e sim um conjunto de instruções que orienta *como* encadear as ações para dar conta de um tipo de tarefa. É um trecho de contexto que entra no harness (Cap. 5) só quando é útil, e sai quando não é.
+
+## O que é uma *skill*
+
+No fundo, uma skill é um documento em Markdown — o formato do Cap. 7. O arquivo, chamado `SKILL.md`, traz num texto legível as instruções que o agente deve seguir: o que a skill faz, quando aplicá-la, que passos observar, que armadilhas evitar. Pode vir acompanhado de outros arquivos — um modelo de documento, uma tabela de referência, um script — que a skill usa quando entra em ação.
+
+O ponto que torna o mecanismo econômico é o carregamento sob demanda. O agente não guarda todas as skills abertas o tempo todo; conhece o nome e a descrição de cada uma e, ao reconhecer que a tarefa corrente corresponde a uma delas, carrega o conteúdo completo naquele momento. É a engenharia de contexto do Cap. 5 na prática: a janela de contexto recebe as instruções da skill quando fazem falta, sem gastar espaço com o que não vem ao caso.
+
+## *Skills* nativas: documentos, dados e agendamento
+
+O Cowork já vem com um conjunto de skills prontas, sem que nada precise ser instalado. Cobrem tarefas comuns do trabalho com documentos e dados: gerar um arquivo de texto formatado, montar uma planilha, preparar uma apresentação, produzir um relatório a partir de dados. <!-- TODO: confirmar no aplicativo o conjunto exato de skills nativas e seus nomes; a lista muda entre versões --> Quando um pedido corresponde a uma delas — *"monte esta análise numa planilha"* —, o agente reconhece a correspondência e aciona a skill por conta própria.
+
+Para quem usa, o efeito é discreto: o resultado sai mais bem-acabado e mais consistente do que sairia de um pedido genérico, porque a skill carrega o formato esperado. A skill que gera um documento sabe estruturar títulos, sumário e citações; a que monta uma planilha sabe separar cabeçalho de dados. O agente deixa de improvisar a forma a cada vez.
+
+## Como uma *skill* é acionada
+
+Há dois caminhos, e a diferença entre eles importa.
+
+O primeiro é automático. Toda skill traz, além das instruções, uma descrição curta que anuncia para que serve e em que situações se aplica — e é essa descrição que o agente lê para decidir se a tarefa corrente pede aquela skill. Diante de um pedido que se encaixa, ele carrega a skill por conta própria. Não é preciso nomeá-la nem saber que ela existe: pedir o resultado basta. É o caso das skills nativas de documento e planilha. Daí a descrição ser a parte mais sensível de uma skill: uma descrição vaga faz o agente deixar de acioná-la na hora certa.
+
+O segundo é explícito, pela mão de quem usa, e serve para quando o agente não escolheria a skill sozinho ou para forçar um procedimento específico. Esse caminho passa pelos comandos de barra.
+
+## Comandos de barra
+
+Um **comando de barra** (*slash command*) é um atalho digitado no início da mensagem com uma barra: `/` seguido de um nome. O Cap. 12 já o mostrou no menu **+** da caixa de composição, entre as formas de dar contexto ao agente. Digitar `/` abre a lista dos comandos disponíveis; escolher um insere, ali mesmo, o pedido que ele guarda (@fig-comandos-de-barra).
+
+![A lista de comandos de barra, aberta ao digitar `/` na caixa de composição. Os comandos aparecem agrupados por finalidade — um grupo geral (entre eles `skill-creator`, para criar skills, e `setup-cowork`) e um grupo *Data*, com comandos de análise e visualização de dados.](/images/comandos-de-barra.png){#fig-comandos-de-barra width=70% fig-alt="Menu de comandos de barra aberto sobre a caixa de composição do Cowork: uma lista de atalhos, cada um com um ícone e um nome, dividida em um grupo geral (add-files, context, design, schedule, setup-cowork, skill-creator) e um grupo Data (analyze, build-dashboard, create-viz). O item add-files está destacado e mostra a descrição Abrir seletor de arquivos. No rodapé da caixa, uma barra digitada e o texto Digite para filtrar."}
+
+A utilidade aparece no que se repete. Um pesquisador que toda semana pede o mesmo tipo de resumo de um artigo pode guardar esse pedido — com as instruções de sempre, o formato de saída, o nível de detalhe — sob um comando curto. Da próxima vez, em lugar de reescrever o pedido inteiro, digita o atalho. O comando de barra é, nesse sentido, a forma mais simples de skill: um pedido frequente que ganhou nome. <!-- TODO: confirmar no aplicativo como se cria um comando de barra próprio e onde ficam salvos -->
+
+## Instalar e criar *skills* próprias (visão geral)
+
+Além das nativas, o Cowork aceita skills adicionais, trazidas de fora ou escritas pelo próprio usuário. As de fora chegam pelos **plugins** e pelos *marketplaces* — coleções de skills e conectores que se instalam em bloco, tratadas no Cap. 15. <!-- TODO: confirmar a relação exata entre plugins, marketplaces e skills na versão de referência -->
+
+Criar uma skill própria não exige programar. Como o `SKILL.md` é um texto em Markdown, escrever uma skill é, no essencial, redigir com clareza o procedimento a ser seguido — a mesma clareza que se exigiria de um colega a quem se explicasse a tarefa pela primeira vez. Um pesquisador pode registrar numa skill o seu padrão de fichamento, as regras de citação da sua área ou o roteiro de preparação de uma aula, e o agente passa a seguir esse padrão sempre que a skill for acionada. O tratamento detalhado de como escrever e organizar uma skill fica para a Parte IV (Cap. 24), onde o mesmo mecanismo reaparece no Claude Code.
+
+## Quando usar *skills*
+
+A regra prática é a do procedimento que se repete com forma estável. Uma tarefa feita uma única vez não justifica uma skill; um pedido escrito por extenso resolve. Mas quando o mesmo tipo de trabalho volta — o relatório mensal, o resumo padronizado, a conversão que sempre segue as mesmas regras —, embalar o procedimento numa skill troca a repetição do pedido pela repetição de um atalho, e garante que o resultado saia igual a cada vez. É a diferença entre explicar a tarefa de novo e apontar para a explicação que já ficou pronta.

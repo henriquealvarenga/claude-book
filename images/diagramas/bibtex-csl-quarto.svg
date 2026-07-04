@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="300" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+  <title>BibTeX, CSL e Quarto</title>
+  <desc>O arquivo bib com os dados e o arquivo csl com a norma alimentam o Quarto, que gera as citacoes e a bibliografia.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2A2622" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .m{font-family:'JetBrains Mono','Courier New',monospace;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .lt{fill:#F6F3EC;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="300" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Como a bibliografia é gerada</text>
+
+  <rect x="50" y="78" width="180" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="140" y="106" text-anchor="middle" class="m ink" font-size="14">.bib</text>
+  <text x="140" y="126" text-anchor="middle" class="s mut" font-size="12">dados das referências</text>
+
+  <rect x="50" y="166" width="180" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="140" y="194" text-anchor="middle" class="m ink" font-size="14">.csl</text>
+  <text x="140" y="214" text-anchor="middle" class="s mut" font-size="12">norma (ABNT/Vancouver)</text>
+
+  <rect x="300" y="120" width="120" height="70" rx="8" fill="#F4E3DA" stroke="#C15F3C" stroke-width="1"/>
+  <text x="360" y="160" text-anchor="middle" class="s ink" font-size="16" font-weight="500">Quarto</text>
+
+  <rect x="470" y="120" width="170" height="70" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="555" y="150" text-anchor="middle" class="s ink" font-size="14">Documento</text>
+  <text x="555" y="170" text-anchor="middle" class="s mut" font-size="12">citações + bibliografia</text>
+
+  <line x1="230" y1="110" x2="300" y2="145" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="230" y1="198" x2="300" y2="165" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="420" y1="155" x2="470" y2="155" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="340" y="270" text-anchor="middle" class="s mut" font-size="12">trocar a norma é trocar só o .csl — os mesmos dados, outra formatação</text>
+</svg>

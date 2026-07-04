@@ -1,0 +1,37 @@
+# O ecossistema Claude
+
+<!-- RASCUNHO. Revisar. -->
+
+Chat, Cowork e Code são três formas de usar o mesmo Claude. Saber qual escolher para cada tarefa evita esforço e frustração.
+
+## Um motor, três interfaces
+
+Por baixo dos três produtos está a mesma família de modelos (Opus, Sonnet e Haiku, vistos no capítulo anterior). O que muda de um para outro não é o "cérebro", e sim o quanto o agente pode agir e onde: no **Chat**, ele conversa e pesquisa, mas não toca em arquivos; no **Cowork**, trabalha com os arquivos de uma pasta; no **Code**, trabalha no terminal.
+
+## Chat
+
+O Chat é a interface de conversa — no navegador (`claude.ai`), no aplicativo de celular ou no de desktop. O usuário escreve, o Claude responde; é possível anexar arquivos e imagens e reunir contexto em **Projetos**, que reaproveitam instruções entre conversas. O Chat não mexe no computador: o resultado é texto. É a ferramenta para pensar, escrever, revisar e pesquisar (Parte II).
+
+## Cowork
+
+O Cowork é um aplicativo de desktop (macOS e Windows) em que o Claude trabalha com uma **pasta conectada**: lê, cria e edita arquivos, executa tarefas em etapas, conecta-se a serviços externos e agenda trabalhos que se repetem. Tudo por uma interface gráfica, sem que o usuário precise programar — o agente cuida da parte técnica, inclusive de escrever e executar código quando preciso. É para quem quer trabalhar com seus documentos e dados sem dominar programação. Exige um plano pago (Parte III).
+
+## Code
+
+O Code é o agente no **terminal** — a linha de comando, que roda em qualquer sistema e também dentro do terminal embutido de editores. Por operar ali, com acesso ao terminal do computador, ele **vai além** do Cowork: pode executar qualquer comando, instalar programas e usar o controle de versão (*git*), inclusive publicar alterações. Esse alcance maior é o que torna o Code o ambiente da automação e da pesquisa reproduzível — e, pelo mesmo motivo, exige mais atenção às permissões (Cap. 24). A Parte IV o apresenta de forma acessível a quem não programa.
+
+## Qual usar quando
+
+A escolha depende da tarefa:
+
+| Produto | Onde roda | Age nos arquivos? | Indicado para |
+|---|---|---|---|
+| **Chat** | navegador, app | não (devolve texto) | pensar, escrever, pesquisar |
+| **Cowork** | aplicativo de desktop | sim, numa pasta conectada | colaborar com arquivos, para quem não programa |
+| **Code** | terminal, editores e navegador (nuvem) | sim, no projeto | automação e reprodutibilidade |
+
+Na prática: organizar ideias ou redigir pede o Chat; trabalhar com documentos e dados sem programar, o Cowork; automatizar e tornar uma pesquisa reproduzível, o Code.
+
+## Modelos e planos
+
+Os três produtos usam a mesma família de modelos; dentro de cada interface, escolhem-se o modelo e o **esforço** — quanto o modelo raciocina antes de responder, numa escala de "mais rápido" a "mais inteligente" (Cap. 8). O acesso depende do plano: o Chat tem uma camada gratuita, enquanto Cowork e Code exigem planos pagos. Os limites de uso e a relação entre planos e custos ficam no Cap. 8.

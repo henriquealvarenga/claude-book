@@ -1,0 +1,15 @@
+# Artefatos de build do Quarto
+/.quarto/
+/_book/
+
+# Intermediários de PDF/LaTeX (gerados automaticamente)
+/index.tex
+*.aux
+*.log
+*.toc
+*.out
+
+# Sistema
+.DS_Store
+
+**/*.quarto_ipynb

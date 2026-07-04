@@ -1,0 +1,69 @@
+# Os verbos do *spinner* {#sec-spinner-verbs}
+
+Enquanto o Claude trabalha, o indicador de atividade não mostra uma fria barra de progresso: mostra uma palavra. *Sautéing…*, *Pondering…*, *Lollygagging…* São os **verbos do *spinner*** (em inglês, *spinner verbs*) — gerúndios bem-humorados que aparecem no Claude Code e no Cowork enquanto o agente pensa. O fenômeno foi apresentado no @sec-como-trabalha; aqui fica o registro lúdico.
+
+São cerca de 185 por padrão, distribuídos em categorias temáticas, e a lista **muda entre versões** — alguns verbos são aposentados, outros entram. A seleção abaixo, portanto, é uma amostra, não um catálogo oficial. Como aparecem em **inglês** na interface, acompanha uma tradução aproximada — boa parte do charme está justamente no que cada palavra evoca.
+
+::: {.callout-note}
+## É possível mudá-los
+
+Os verbos podem ser personalizados ou desativados nas configurações do Claude Code. A comunidade levou a brincadeira a sério e mantém "dicionários" inteiros catalogando cada verbo já visto.
+:::
+
+## Culinária (*Culinary*)
+
+| Em inglês | Aproximação em português |
+|---|---|
+| Baking | Assando |
+| Brewing | Coando / fermentando |
+| Caramelizing | Caramelizando |
+| Cooking | Cozinhando |
+| Fermenting | Fermentando |
+| Flambeing | Flambando |
+| Garnishing | Guarnecendo |
+| Julienning | Cortando em *julienne* |
+| Kneading | Sovando a massa |
+| Marinating | Marinando |
+| Proofing | Deixando a massa crescer |
+| Sautéing | Salteando |
+| Seasoning | Temperando |
+| Simmering | Fervendo em fogo baixo |
+| Stewing | Ensopando |
+| Whisking | Batendo |
+| Zesting | Raspando as raspas |
+
+## Cerebral (*Cerebral*)
+
+| Em inglês | Aproximação em português |
+|---|---|
+| Cerebrating | Cerebrando |
+| Cogitating | Cogitando |
+| Contemplating | Contemplando |
+| Deliberating | Deliberando |
+| Musing | Refletindo |
+| Philosophising | Filosofando |
+| Pondering | Ponderando |
+| Ruminating | Ruminando |
+
+## Lúdico (*Whimsical*)
+
+| Em inglês | Aproximação em português |
+|---|---|
+| Booping | Cutucando |
+| Canoodling | Paparicando |
+| Dilly-dallying | Enrolando |
+| Flibbertigibbeting | Tagarelando à toa |
+| Lollygagging | Vadiando |
+| Razzle-dazzling | Deslumbrando |
+| Shenaniganing | Aprontando |
+| Tomfoolering | Fazendo palhaçada |
+| Topsy-turvying | Virando de cabeça para baixo |
+| Whatchamacalliting | Fazendo a-coisa-como-é-mesmo-o-nome |
+
+::: {.callout-tip}
+## Por que isso existe
+
+A escolha é deliberada: trocar o "carregando…" por um gesto lúdico dá personalidade à espera e lembra, com leveza, que do outro lado há um sistema trabalhando — não um oráculo infalível. É um detalhe pequeno que diz muito sobre o tom com que essas ferramentas foram desenhadas.
+:::
+
+Fontes e listas completas mantidas pela comunidade: @spinner_verbs_dictionary; @centricle_spinner_words.

@@ -1,0 +1,350 @@
+GUIA DE ESCRITA — REFERÊNCIA COMPLETA
+Versão estendida do material da skill `writing-style` (.claude/skills/writing-style/SKILL.md).
+A skill é o documento de trabalho (carregada ao redigir prosa); este arquivo é a
+referência completa das fontes. A "Lista viva" de correções do autor fica SÓ na skill.
+Complementa a lista de vícios do CLAUDE.md (não substitui).
+
+Fontes:
+  [HA] Estilo do autor — destilado de três textos de Henrique Alvarenga
+       (capítulos de "Condenação de Inocentes", estudo de caso Robert Lowell,
+       artigo sobre ensino de estatística com R/RStudio).
+  [Z]  William Zinsser, "On Writing Well" (6ª ed.) — princípios e métodos.
+  [F]  Gary Friedman, "Be Kind to Your Reader" (Am J Epidemiol, 1990).
+  [W]  G. Friedman, "Please Read the Following Paper and Write This Way" (2005).
+  [B]  Bates College, "How to Write a Paper in Scientific Journal Style".
+  [P]  Steven Pinker, "The Sense of Style" (2014).
+  [JW] Joseph Williams, "Style: Toward Clarity and Grace".
+  [G]  Othon Moacyr Garcia, "Comunicação em Prosa Moderna" (1967).
+  [C]  Roy Peter Clark, "Writing Tools: 50 Essential Strategies" (2006).
+  [PR] Gary Provost, "100 Ways to Improve Your Writing" (1985).
+
+Ordem de trabalho: ESCREVER com as seções 1 e 5; REESCREVER com as seções 2–4
+e 6–8; CONFERIR com o checklist único (seção 9).
+
+====================================================================
+1. O ESTILO DO AUTOR [HA] — o que imitar
+====================================================================
+
+O MOVIMENTO CENTRAL: ANCORAR NO CONCRETO
+O autor quase nunca afirma em abstrato. Cada ideia chega ao leitor por um
+destes caminhos, em ordem de preferência:
+
+(a) CASO CONCRETO com nome, data e número. Não "estudos mostram que o
+    reconhecimento falha"; e sim quem fez o estudo, quando, com quantas
+    pessoas, e o resultado exato.
+    Ex.: "Em 1974, Robert Buckhout convenceu uma cadeia de televisão de Nova
+    York a transmitir um assalto fictício de 12 segundos. Foram recebidas
+    cerca de 2.100 chamadas. Apenas 14,1% dos telespectadores identificaram
+    corretamente o assaltante."
+
+(b) ARCO HISTÓRICO. Para apresentar um campo, uma ferramenta ou um conceito,
+    contar a história dele: quem começou, o que veio depois, onde estamos.
+    Nomes e datas fazem o esqueleto da seção. Recurso favorito do autor —
+    usar sem medo, inclusive para tecnologia (a história de um formato, de
+    um programa, de uma prática acadêmica).
+    Ex.: "Umas das primeiras referências do seu uso foi em 1849, quando o
+    psiquiatra dinamarquês Frederik Lange relatou seus efeitos em 35
+    pacientes. Mas o uso do lítio permaneceu esquecido até meados do século
+    XX, quando foi redescoberto por John Cade. [...] Os Estados Unidos foram
+    o 50º país a admitir o lítio no mercado."
+
+(c) EXEMPLO COTIDIANO EM PRIMEIRA PESSOA para conceito abstrato — didático
+    sem infantilizar.
+    Ex.: "Quando me lembro da senha do banco, geralmente confio nessa
+    lembrança. Quando me lembro do nome de um amigo, confio nessa lembrança."
+
+RECURSOS DE ÊNFASE (no lugar de adjetivos)
+A ênfase vem da construção da frase, nunca de intensificador. Três recursos,
+com parcimônia — no máximo um de cada por seção:
+- "OU SEJA," traduzindo o dado em impacto. Depois do número técnico, a conta
+  na escala humana. Ex.: "Vinte por cento de 75.000 indiciados representam
+  15.000 falsas identificações anualmente."
+- ANÁFORA deliberada — repetição do mesmo início para martelar um ponto.
+  Ex.: "A sociedade perde em força de trabalho [...]; a sociedade perde
+  segurança [...]; a sociedade perde recursos financeiros [...]."
+- FECHO EM DUAS PARTES, com dois-pontos. A primeira arma; a segunda dispara.
+  Ex.: "Seu perigo é justamente esse: não tem real valor, mas é a informação
+  mais levada em conta pelos jurados."
+
+PERGUNTA RETÓRICA
+Rara — uma por capítulo, talvez — e sempre como virada do argumento, não
+como enfeite. Ex.: "Afinal de contas, por que iria mentir?"
+
+CONECTIVOS E TRANSIÇÃO
+- Preferidos: "Entretanto", "Mas" (abrindo frase), "Além disso", "Assim",
+  "Portanto".
+- Sinalizar a virada de sentido cedo: um "Mas" no começo da frase vale mais
+  que uma oração concessiva longa ("Apesar de todos os riscos apontados, ele
+  decidiu ir" → "Mas ele decidiu ir"). [Z]
+- Transição entre seções por lógica, não por promessa: "Assim, tendo visto a
+  influência dessa prova, é necessário avaliar sua confiabilidade" — liga o
+  que foi dito ao que é preciso dizer, sem anunciar programa.
+- Ironia seca ocasional, sem exclamação. Ex.: "Ironicamente, um inocente
+  tende a ter uma pena maior do que se fosse realmente o culpado."
+
+PROIBIÇÕES (decisões do autor, 2026)
+Escolhas deliberadas de revisão do próprio autor — valem mesmo quando os
+textos-fonte antigos as violam:
+- SEM SUPERLATIVOS NEM INTENSIFICADORES. Cortar: "extremamente", "de suma
+  importância", "gigantesco", "imenso", "sobremaneira", "sem sombra de
+  dúvida", "totalmente", "altamente". Se a importância é real, demonstrá-la
+  com o caso ou o número; se não sobrevive sem o advérbio, a frase está fraca.
+  Não: "Identificar corretamente o criminoso é, sem sombra de dúvida, uma
+       etapa extremamente importante."
+  Sim: "Identificar errado é uma catástrofe: inicia-se uma persecução penal
+       contra um inocente e o real criminoso se mantém impune."
+- SEM ANÚNCIO DO QUE VEM. Nada de "Analisaremos com maiores detalhes…",
+  "veremos a seguir…", "as próximas seções tratam de…".
+- SEM ADJETIVO ORNAMENTAL. Cortar: "pilar fundamental", "recurso
+  inestimável", "exemplo fascinante", "perspectiva única", "caso rico em
+  detalhes e nuances", "habilidade incomparável". O substantivo trabalha
+  sozinho.
+
+====================================================================
+2. OS QUATRO PRINCÍPIOS DE BASE
+====================================================================
+
+CLAREZA = PENSAMENTO CLARO [Z]
+- Escrever claro é pensar claro; um não existe sem o outro. Texto confuso
+  quase sempre denuncia raciocínio confuso, não falta de jeito com palavras.
+- Antes de cada frase: "O que estou tentando dizer?" Depois: "Eu disse?".
+- O leitor tem atenção de poucos segundos e abandona fácil. Se ele se perde,
+  a culpa é quase sempre do autor, não do leitor.
+
+SIMPLICIDADE [Z]
+- A tralha é a doença da escrita. Reduzir cada frase aos seus componentes mais
+  limpos. Cortar toda palavra que não cumpre função.
+- Desconfiar do impulso de inflar para "soar sério". Frase pomposa esconde
+  insegurança, não competência. ("vai chover" > "anuncia-se precipitação".)
+
+MENOS PALAVRAS [F][W][Z]
+- Excesso de palavras cansa e afasta o leitor — efeito oposto ao pretendido.
+- A maioria dos primeiros rascunhos encolhe 50% sem perder informação nem voz.
+- Texto curto é mais lido; texto longo entedia. Escrever para ser lido, não
+  para ser arquivado.
+
+SER VOCÊ MESMO / NATURALIDADE [Z]
+- Estilo não é enfeite que se acrescenta; é a pessoa por trás da escrita.
+  Tentar "ter estilo" é como pôr peruca: o leitor percebe a impostura.
+- Primeiro pregar bem os pregos (frases sólidas). Ornamento vem muito depois,
+  e só para quem domina o ofício.
+- Relaxar e dizer o que se quer dizer. Não escrever nada que você não diria
+  com naturalidade numa conversa.
+
+====================================================================
+3. REGRAS CONCRETAS (Zinsser, "Bits & Pieces") — as mais úteis
+====================================================================
+
+VERBOS
+- Usar verbos ATIVOS; fugir da voz passiva quando houver saída confortável.
+  "Joe o viu" (forte) > "Ele foi visto por Joe" (fraco e ambíguo).
+- Verbos ativos dão movimento e clareza; passivos arrastam.
+- Escolher verbos PRECISOS. Não "o presidente deixou o cargo" — renunciou?
+  aposentou-se? foi demitido?
+- Preferir a palavra curta (anglo-saxã, no caso do inglês) à longa de origem
+  latina. Em PT-BR: preferir o termo simples ao empolado.
+
+ADVÉRBIOS
+- A maioria é desnecessária. Não usar advérbio que repete o sentido já contido
+  no verbo: "gritou alto", "sorriu feliz", "cerrou os dentes com força".
+- Se precisa de advérbio para salvar o verbo, troque o verbo.
+
+ADJETIVOS
+- A maioria é desnecessária quando o conceito já está no substantivo:
+  "neve branca", "penhasco íngreme". Usar adjetivo só quando ele faz trabalho
+  ("céu cinza e nuvens negras → decidiu voltar ao porto": aí o adjetivo motiva).
+- Adjetivo de enfeite é vaidade do autor e peso para o leitor.
+
+QUALIFICADORES TÍMIDOS
+- Podar: "um pouco", "meio", "tipo", "bastante", "muito", "num certo sentido",
+  "de certa forma". Diluem o estilo e a autoridade.
+- Não "fiquei meio confuso e um pouco cansado" → "fiquei confuso. Cansado."
+- "muito" raramente ajuda. "espetacular", "incrível" não se medem.
+- Cada qualificador tímido rói um pouco da confiança do leitor. Ser firme.
+- Sobre incerteza real [P]: não sinalizar dúvida em cada passagem; declarar a
+  ressalva uma vez, no lugar certo, e seguir escrevendo com firmeza.
+
+EXAGERO / OVERSTATEMENT
+- Não inflar ("a sala parecia que tinha explodido uma bomba atômica"). O humor
+  some quando o autor força. Deixar o exagero leve, quase imperceptível.
+
+CREDIBILIDADE
+- Uma única afirmação falsa contamina tudo o que vier depois. Risco alto demais
+  — não vale. (No livro: nunca afirmar fato não verificado; vide CLAUDE.md.)
+
+SUBSTANTIVOS-CONCEITO (frases sem gente e sem verbo de ação)
+- Evitar frases construídas sobre substantivos abstratos ligados por "é/são":
+  "A reação comum é o riso incrédulo." → "As pessoas riem, sem acreditar."
+- Pôr pessoas fazendo coisas; usar verbos de ação. Frase sem gente, fria.
+- Versão [JW]: fazer dos PERSONAGENS os sujeitos das frases e das AÇÕES os
+  verbos. Desenterrar o verbo da nominalização: "fazer a instalação de" →
+  "instalar"; "realizar a análise" → "analisar".
+
+EMPILHAMENTO DE SUBSTANTIVOS ("creeping nounism")
+- Não encadear 3–4 substantivos onde um verbo resolve: "situação de
+  probabilidade de tempestade" → "pode haver tempestade".
+
+PARÁGRAFOS CURTOS
+- A escrita é visual: parágrafo curto areja e convida; bloco longo intimida.
+- Mas não exagerar no picotado: sequência de parágrafos minúsculos atrapalha
+  o fluxo do raciocínio. Pensar em unidades de parágrafo, não de frase.
+
+====================================================================
+4. PONTUAÇÃO (Zinsser) — adaptado
+====================================================================
+- PONTO: quase ninguém o usa cedo o bastante. Se a frase atolou, é porque
+  tenta dizer duas coisas; quebrar em duas ou três. A frase curta predomina
+  nos bons autores e tem impacto — fica no ouvido do leitor.
+- EXCLAMAÇÃO: não usar para "avisar" que algo é fofo/engraçado/irônico. Deixar
+  a ordem das palavras dar a ênfase. Humor vem do understatement.
+- PONTO E VÍRGULA: tem ar oitocentista; desacelera o ritmo. Usar com parcimônia;
+  preferir ponto e travessão.
+- TRAVESSÃO: ótima ferramenta. (a) amplia/justifica a 2ª parte da frase;
+  (b) em par, isola um aparte. Não ter medo dele.
+- DOIS-PONTOS: anúncio limpo de uma lista ou continuação (e o fecho em duas
+  partes do estilo do autor, seção 1).
+
+====================================================================
+5. O LEITOR E O FLUXO [P][JW][G][C][PR]
+====================================================================
+
+A MALDIÇÃO DO CONHECIMENTO [P]
+A melhor explicação para prosa ruim: o autor esquece que o leitor não sabe o
+que ele sabe. Neste livro o risco dobra — o leitor é academicamente
+sofisticado, mas nunca abriu um terminal. Remédios:
+- Explicitar o passo que parece óbvio. O que "nem precisa dizer" é exatamente
+  o que o leigo não sabe (que é preciso apertar Enter; que o arquivo tem de
+  ser salvo antes; onde fica o botão).
+- Definir o termo na primeira aparição — já é regra do livro; aqui está o
+  porquê.
+- Escrever é apontar (estilo clássico): o autor viu algo que o leitor ainda
+  não notou e orienta o olhar dele — conversa entre iguais, não palestra.
+  Casa com o exemplo cotidiano em primeira pessoa da seção 1.
+- Reler o rascunho depois de um tempo, quando o texto já esfriou e você
+  consegue lê-lo como um estranho.
+
+FLUXO DE INFORMAÇÃO [JW]
+- DADO → NOVO. Começar a frase com o que o leitor já conhece; terminar com a
+  informação nova. É isso que cria a sensação de fluir — cada frase recebe o
+  bastão da anterior.
+- POSIÇÃO DE ÊNFASE. O fim da frase é onde a ênfase cai naturalmente. Guardar
+  para o final a palavra que importa; não deixar a frase morrer em detalhe
+  burocrático. (O fecho com dois-pontos da seção 1 é este princípio em forma
+  pura. Casa com a ordem enfática de [C]: o melhor por último.)
+- CADEIA DE TÓPICOS. Dentro do parágrafo, os sujeitos das frases devem formar
+  uma linha coerente — se cada frase tem um sujeito de assunto diferente, o
+  parágrafo perdeu o fio.
+
+O PARÁGRAFO [G]
+- TÓPICO FRASAL. A primeira frase do parágrafo carrega sua afirmação central;
+  o resto desenvolve — com o caso, o dado ou o exemplo. Teste objetivo: quem
+  lê só as primeiras frases de cada parágrafo deve conseguir seguir o
+  argumento do capítulo inteiro.
+- PARALELISMO SINTÁTICO. Ideias semelhantes em formas semelhantes; quebra de
+  paralelismo é rangido. A anáfora da seção 1 é o paralelismo levado à ênfase.
+- Lema de Garcia: "aprenda a escrever, aprendendo a pensar" — parágrafo
+  desorganizado é raciocínio desorganizado (ecoa CLAREZA, seção 2).
+
+RITMO [PR][C]
+- VARIAR O COMPRIMENTO DAS FRASES — "escrever música" [PR]. Frases curtas em
+  sequência entediam; longas em sequência sufocam. A curta é o golpe; a média
+  carrega; a longa, usada quando o leitor está descansado, acumula e cresce
+  até entregar o peso no final.
+- NÃO TEMER A FRASE LONGA [C] quando ela é um inventário ou um crescendo bem
+  construído — o autor as usa. Frase longa ruim é a que diz duas coisas;
+  frase longa boa é a que empilha uma coisa só.
+- ESTABELECER UM PADRÃO, DEPOIS QUEBRÁ-LO [C]. A repetição prepara o ouvido;
+  a quebra entrega a ênfase. (É o mecanismo por trás da anáfora: dois ou três
+  inícios iguais, e a frase seguinte diferente fecha a conta.)
+
+MOEDAS DE OURO [C]
+- Não gastar todo o material bom na abertura. Espalhar recompensas ao longo
+  da seção — um caso vívido, uma ironia, um número que surpreende — para o
+  leitor ser pago a cada página, não só na primeira. Numa seção longa de
+  instruções, uma moeda no meio segura o leitor até o fim.
+
+====================================================================
+6. O COMEÇO E O FIM (Zinsser, "The Lead and the Ending")
+====================================================================
+- A frase mais importante é a PRIMEIRA. Sua única função: levar à segunda.
+  Se não puxar o leitor adiante, o texto está morto.
+- O começo deve fisgar (frescor, surpresa, paradoxo, pergunta, fato curioso)
+  e logo dizer ao leitor por que vale ler — sem se alongar na justificativa.
+- Cada parágrafo amplia o anterior; cuidar da ÚLTIMA frase de cada parágrafo —
+  é a mola para o próximo.
+- O FIM importa quase tanto quanto o começo. Não resumir o que já foi dito
+  ("Em suma, vale notar que…") — o leitor sente o ranger e desiste.
+- Bom fim: quando terminou de dizer, pare. Procurar a saída mais próxima.
+  Um fecho que surpreende e ao mesmo tempo parece exato é o ideal; às vezes
+  fechar o círculo, ecoando uma nota do começo.
+
+====================================================================
+7. REESCRITA — onde o jogo se ganha (Zinsser; +Clark)
+====================================================================
+- Reescrever é a essência. Pouquíssima frase sai certa de primeira.
+- Reescrever ≠ escrever outra versão; é remodelar e apertar o material bruto:
+  garantir que o leitor siga sem tropeço do início ao fim.
+- A cada frase, pôr-se no lugar do leitor: ele sabe quem fala? em que tempo?
+  percebeu a mudança de assunto/tom da frase anterior?
+- O CONSERTO MAIS RÁPIDO: muitas vezes a frase problemática se resolve
+  ELIMINANDO-A. Antes de remendar, perguntar: "preciso disto?". Quase nunca.
+- CORTAR GRANDE, DEPOIS PEQUENO [C]: primeiro seções e parágrafos que não
+  trabalham; só então palavras.
+- Truque dos colchetes [Z, cap. Clutter]: pôr entre colchetes toda palavra que
+  não trabalha (preposição colada ao verbo, advérbio redundante, adjetivo
+  óbvio, qualificador tímido, frase que repete a anterior). Reler sem o que
+  está entre colchetes; se a frase funciona, cortar.
+
+====================================================================
+8. DO ARTIGO CIENTÍFICO (Bates) — o que se aplica à prosa do livro
+====================================================================
+- Voz ATIVA sempre que possível; passado nas descrições de procedimento.
+- Não gastar uma frase por ação isolada — juntar ações relacionadas numa frase.
+  Ruim: "A placa foi posta na bancada. A tampa foi erguida. A alça foi…"
+  Bom: "Cada placa foi semeada com a cultura e incubada a 37 °C por 24 h."
+- Identificadores claros, não genéricos: "Tubo 1, Tubo 2" não dizem nada fora
+  de contexto; nomear o que cada um é.
+- Sempre dar a UNIDADE ao relatar números.
+- Reservar "significativo(a)" para significância estatística; não como sinônimo
+  de "importante/grande".
+- Títulos de seção: curtos, descritivos, SEM dois-pontos no fim. (Casa com a
+  regra do CLAUDE.md: títulos ≤5 palavras, nominais.)
+
+====================================================================
+9. CHECKLIST ÚNICO (passar a cada parágrafo)
+====================================================================
+Estilo [HA]:
+[ ] A afirmação central está ancorada em caso, história ou exemplo concreto?
+[ ] A seção expositiva ganharia um arco histórico?
+[ ] Sobrou intensificador, superlativo, anúncio ou adjetivo ornamental?
+[ ] "Ou seja", anáfora e fecho com dois-pontos: no máximo um de cada por seção?
+
+Leitor e fluxo [P][JW][G][C][PR]:
+[ ] Algum passo "óbvio" ficou implícito? Termo técnico definido na 1ª aparição?
+[ ] As frases começam no conhecido e terminam no novo? A palavra forte está no fim?
+[ ] O parágrafo abre com o tópico frasal? Lendo só as 1ªs frases, o argumento segue?
+[ ] O ritmo varia — curta, média, longa? Há uma moeda de ouro na seção?
+
+Ofício [Z][F][W][B]:
+[ ] Cada palavra cumpre função? (cortar tralha; -50% é meta realista)
+[ ] Verbos ativos e precisos? Nominalização a desenterrar? Passiva evitável?
+[ ] Advérbio/adjetivo repetindo o que já está no verbo/substantivo?
+[ ] Qualificador tímido a podar? ("meio", "um pouco", "de certa forma")
+[ ] A frase atolou? Quebrar em duas. Pôr o ponto mais cedo.
+[ ] Frase só com substantivos abstratos e "é/são"? Pôr gente + verbo de ação.
+[ ] Abertura de frase = afirmação direta, não moldura ("A virtude que… é uma só").
+[ ] Mudança de tom sinalizada cedo? ("mas", "porém", "Entretanto")
+[ ] A 1ª frase puxa para a 2ª? O fim para no ponto certo, sem resumo?
+[ ] Soa como conversa sóbria, ou tem pompa/efeito? Ler EM VOZ ALTA.
+[ ] Alguma afirmação não verificada? (regra de exatidão do livro)
+
+====================================================================
+10. LEMBRETE TRANSVERSAL
+====================================================================
+- "Escrevo inteiramente de ouvido; leio tudo em voz alta antes de soltar." [Z]
+  → Ler em voz alta revela o ritmo emperrado e a frase de efeito.
+- Coletar sempre MAIS material do que se vai usar; a força do texto vem do
+  excedente do qual se escolhe o pouco que serve. [Z]
+- Frase curta, isolada, tem impacto enorme. Fica no ouvido. [Z]
+- Correções do autor em trechos redigidos: registrar o par antes/depois na
+  "Lista viva" da skill `writing-style` (não aqui).

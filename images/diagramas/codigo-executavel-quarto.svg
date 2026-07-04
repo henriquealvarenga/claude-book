@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="300" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+  <title>Código executável no Quarto</title>
+  <desc>A esquerda, uma celula de codigo com a linguagem entre chaves; a direita, o resultado que entra no documento renderizado.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#8A8175" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .m{font-family:'JetBrains Mono','Courier New',monospace;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="300" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Código que executa: a célula e o resultado</text>
+
+  <text x="40" y="84" class="s mut" font-size="12">Célula de código (Quarto)</text>
+  <rect x="40" y="92" width="290" height="158" rx="10" fill="#2A2622"/>
+  <text x="58" y="126" class="m" fill="#F2ECE3" font-size="14">```<tspan fill="#C15F3C" font-weight="500">{python}</tspan></text>
+  <text x="58" y="154" class="m" fill="#F2ECE3" font-size="14">notas = [7, 8, 6, 9]</text>
+  <text x="58" y="182" class="m" fill="#F2ECE3" font-size="14">sum(notas) / len(notas)</text>
+  <text x="58" y="210" class="m" fill="#F2ECE3" font-size="14">```</text>
+
+  <text x="350" y="84" class="s mut" font-size="12">Resultado no documento</text>
+  <rect x="350" y="92" width="290" height="158" rx="10" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="495" y="186" text-anchor="middle" class="s ink" font-size="40" font-weight="500">7.5</text>
+
+  <line x1="330" y1="171" x2="350" y2="171" stroke="#8A8175" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="340" y="278" text-anchor="middle" class="s mut" font-size="12">as chaves mandam executar; a saída — número, tabela ou gráfico — entra no lugar</text>
+</svg>

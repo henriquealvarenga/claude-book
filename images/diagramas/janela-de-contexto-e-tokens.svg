@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="270" viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg">
+  <title>A janela de contexto e os tokens</title>
+  <desc>Barra dividida em instrucoes, arquivos, conversa e espaco livre, com um limite ao final.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="270" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">A janela de contexto: a memória de trabalho do agente</text>
+
+  <rect x="60" y="92" width="90"  height="60" fill="#E7D8CC" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="150" y="92" width="150" height="60" fill="#EAC9B7" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="300" y="92" width="180" height="60" fill="#DBB096" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="480" y="92" width="140" height="60" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+
+  <text x="105" y="172" text-anchor="middle" class="s mut" font-size="12">Instruções</text>
+  <text x="225" y="172" text-anchor="middle" class="s mut" font-size="12">Arquivos</text>
+  <text x="390" y="172" text-anchor="middle" class="s mut" font-size="12">Conversa</text>
+  <text x="550" y="172" text-anchor="middle" class="s mut" font-size="12">Espaço livre</text>
+
+  <line x1="620" y1="82" x2="620" y2="162" stroke="#C15F3C" stroke-width="1.5"/>
+  <text x="620" y="74" text-anchor="middle" class="s ink" font-size="12" font-weight="500">limite</text>
+
+  <text x="340" y="226" text-anchor="middle" class="s ink" font-size="13">Tudo o que o agente "enxerga" cabe nessa janela — medida em <tspan font-style="italic">tokens</tspan>.</text>
+  <text x="340" y="248" text-anchor="middle" class="s mut" font-size="12">o token é a unidade de contexto e também de custo</text>
+</svg>

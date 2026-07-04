@@ -1,0 +1,15 @@
+# Boas práticas
+
+<!-- TODO: redigir. -->
+
+## A postura de verificação: nunca confiar cegamente
+
+## Identificar e checar alucinações
+
+## Avaliar fontes e citações
+
+## Quando o agente erra: depuração e correção
+
+## Padrões e antipadrões de uso
+
+## Construindo um fluxo de trabalho confiável

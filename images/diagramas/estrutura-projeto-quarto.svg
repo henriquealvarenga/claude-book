@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="420" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+  <title>Estrutura de um projeto Quarto</title>
+  <desc>Arvore de pastas e arquivos do projeto: configuracao, capitulos, apendices, imagens, referencias e estilos.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .m{font-family:'JetBrains Mono','Courier New',monospace;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="420" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">A estrutura de um projeto Quarto</text>
+
+  <rect x="70" y="64" width="540" height="320" rx="10" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="70" y="64" width="540" height="28" fill="#ECE4D8"/>
+  <circle cx="88" cy="78" r="4" fill="#C7B8A8"/>
+  <circle cx="104" cy="78" r="4" fill="#C7B8A8"/>
+  <circle cx="120" cy="78" r="4" fill="#C7B8A8"/>
+
+  <text x="96"  y="120" class="m ink" font-size="14">Claude_Project/</text>
+  <text x="120" y="142" class="m ink" font-size="14">_quarto.yml</text>
+  <text x="120" y="164" class="m ink" font-size="14">index.qmd</text>
+  <text x="120" y="186" class="m ink" font-size="14">capitulos/</text>
+  <text x="120" y="208" class="m ink" font-size="14">apendices/</text>
+  <text x="120" y="230" class="m ink" font-size="14">images/</text>
+  <text x="144" y="252" class="m mut" font-size="14">diagramas/</text>
+  <text x="144" y="274" class="m mut" font-size="14">capa-favicon/</text>
+  <text x="120" y="296" class="m ink" font-size="14">references/csl_styles/</text>
+  <text x="120" y="318" class="m ink" font-size="14">referencias.bib</text>
+  <text x="120" y="340" class="m ink" font-size="14">styles.scss</text>
+  <text x="120" y="362" class="m ink" font-size="14">CLAUDE.md</text>
+
+  <text x="340" y="408" text-anchor="middle" class="s mut" font-size="12">um arquivo .qmd por capítulo; tudo em texto, versionável</text>
+</svg>

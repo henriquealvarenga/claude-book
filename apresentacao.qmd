@@ -1,0 +1,35 @@
+# Apresentação {.unnumbered}
+
+Durante décadas, o computador foi uma ferramenta que esperava ordens precisas: um comando exato, um clique no lugar certo, um formato previsto de antemão. A inteligência artificial generativa começou a mudar essa relação ao permitir que conversássemos com a máquina em linguagem natural. O passo seguinte vai além: a IA deixou de apenas *responder* e passou a *agir*. Ela lê arquivos, executa tarefas em várias etapas, conecta-se a outras ferramentas e leva um trabalho até o fim, sob a supervisão do usuário. Deixou de ser um interlocutor para se tornar um colaborador.
+
+Este livro trata de trabalhar com esse colaborador no contexto que mais nos interessa: o do trabalho intelectual e acadêmico. Seu foco são três formas de usar o Claude, o assistente da Anthropic — o **Chat**, o **Cowork** e o **Code** —, percorridas em ordem crescente de autonomia: da conversa que organiza ideias, à colaboração que manipula documentos, até a automação que torna uma pesquisa inteira reproduzível.
+
+## A quem se destina este livro
+
+Este é um livro para **professores e estudantes universitários de todas as áreas** — medicina, direito, história, biologia, ciências sociais, letras, engenharias. Parte-se do princípio de que o leitor é academicamente sofisticado, mas **não** tem experiência com programação ou com a linha de comando. Nenhum conhecimento técnico prévio é pressuposto: cada conceito é apresentado antes de ser usado, e os exemplos vêm do cotidiano da pesquisa, do ensino e da escrita.
+
+Mesmo quem nunca abriu um terminal pode acompanhar. Boa parte do livro procura mostrar que ferramentas como o Claude Code não são exclusivas de quem programa.
+
+## Conteúdo e limites
+
+O livro ensina a usar um agente de IA como apoio no trabalho acadêmico: a pedir, acompanhar e revisar o que ele faz ao ajudar numa revisão de literatura, ao organizar e citar referências, na escrita e na revisão de textos, na análise de dados ou na preparação de documentos, apresentações e rotinas repetitivas. Não ensina a fazer essas tarefas — a metodologia, o julgamento e a redação continuam sendo de quem pesquisa; o livro mostra como o agente pode ajudar. Dá atenção especial a dois pontos que o público acadêmico não pode negligenciar: a **verificação** — porque a IA pode errar e até inventar informações — e a **integridade**, porque usar essas ferramentas com responsabilidade é parte do ofício.
+
+## Como o livro está organizado
+
+São cinco partes, em ordem crescente de autonomia. A **Parte I** estabelece os fundamentos: o que é um agente de IA, uma breve história da Anthropic e do Claude, e os conceitos que sustentam todo o resto — contexto, ferramentas, o protocolo MCP, o Markdown e as configurações. A **Parte II** trata do **Chat**, voltado a pensar, escrever e pesquisar. A **Parte III**, a mais extensa, dedica-se ao **Cowork**: a colaboração com os próprios arquivos, sem que o usuário precise programar. A **Parte IV** apresenta o **Code** de forma acessível a quem não programa: como instrumento de automação e de pesquisa reproduzível. A **Parte V** trata da prática responsável — boas práticas, verificação, ética e o futuro do trabalho intelectual com agentes.
+
+## Como ler este livro
+
+Recomenda-se ler com o Claude aberto ao lado, reproduzindo os exemplos à medida que aparecem. A fluência com essas ferramentas vem do uso, não da leitura passiva. Para acompanhar a maior parte do conteúdo basta uma conta no Claude; os capítulos de Code indicam, no momento certo, o que precisa ser instalado.
+
+## Convenções
+
+Os termos da interface são apresentados em **português**, como aparecem na tela, com o equivalente em inglês entre parênteses na primeira menção; um quadro completo de equivalências está no Apêndice C. Alguns termos sem tradução consagrada — *token*, *prompt*, *skill*, *MCP* — permanecem em inglês. Trechos de código e nomes de arquivo aparecem em `fonte monoespaçada`. Ao longo do texto, caixas destacadas assinalam observações práticas, alertas e sugestões de aprofundamento.
+
+::: {.callout-note}
+## Sobre a atualidade do conteúdo
+
+O Claude e seus produtos evoluem com rapidez: nomes de menus, modelos disponíveis e funcionalidades mudam de uma versão para outra. Este livro tem como referência o estado das ferramentas em meados de 2026.
+<!-- TODO: verificar e fixar a data/edição de referência -->
+Se uma tela ou um comando aqui descrito não corresponder exatamente ao que o usuário vê, o conceito por trás dele tende a permanecer válido — e é nele que vale a pena se apoiar.
+:::

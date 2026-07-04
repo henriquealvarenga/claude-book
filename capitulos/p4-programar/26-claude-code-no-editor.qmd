@@ -1,0 +1,15 @@
+# Claude Code no IDE
+
+<!-- TODO: redigir. -->
+
+## O Claude Code é nativo de terminal
+
+## Positron: o IDE de ciência de dados (e o Quarto)
+
+## Cursor: o editor com IA
+
+## Antigravity: a abordagem *agent-first*
+
+## Comparação: *terminal-first* × *agent-first*
+
+## A escolha do ambiente

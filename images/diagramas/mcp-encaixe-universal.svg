@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="440" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg">
+  <title>MCP como encaixe universal entre o Claude e suas ferramentas</title>
+  <desc>O Claude ao centro, ligado por linhas a oito conectores ao redor; cada ligacao passa por uma porta MCP.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .lt{fill:#F6F3EC;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="440" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">MCP: um encaixe padrão entre o Claude e suas ferramentas</text>
+
+  <!-- linhas (atrás) -->
+  <line x1="106" y1="99"  x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="106" y1="189" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="106" y1="279" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="106" y1="369" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="574" y1="99"  x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="574" y1="189" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="574" y1="279" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+  <line x1="574" y1="369" x2="340" y2="234" stroke="#C7B8A8" stroke-width="1"/>
+
+  <!-- portas MCP (pequenos quadrados nos meios das linhas) -->
+  <rect x="219" y="162" width="8" height="8" fill="#C15F3C"/>
+  <rect x="219" y="207" width="8" height="8" fill="#C15F3C"/>
+  <rect x="219" y="252" width="8" height="8" fill="#C15F3C"/>
+  <rect x="219" y="297" width="8" height="8" fill="#C15F3C"/>
+  <rect x="453" y="162" width="8" height="8" fill="#C15F3C"/>
+  <rect x="453" y="207" width="8" height="8" fill="#C15F3C"/>
+  <rect x="453" y="252" width="8" height="8" fill="#C15F3C"/>
+  <rect x="453" y="297" width="8" height="8" fill="#C15F3C"/>
+
+  <!-- conectores à esquerda -->
+  <rect x="36" y="78"  width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="106" y="104" text-anchor="middle" class="s ink" font-size="13">Gmail</text>
+  <rect x="36" y="168" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="106" y="194" text-anchor="middle" class="s ink" font-size="13">Google Drive</text>
+  <rect x="36" y="258" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="106" y="284" text-anchor="middle" class="s ink" font-size="13">Zotero</text>
+  <rect x="36" y="348" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="106" y="374" text-anchor="middle" class="s ink" font-size="13">Arquivos locais</text>
+
+  <!-- conectores à direita -->
+  <rect x="504" y="78"  width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="574" y="104" text-anchor="middle" class="s ink" font-size="13">Agenda</text>
+  <rect x="504" y="168" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="574" y="194" text-anchor="middle" class="s ink" font-size="13">PubMed</text>
+  <rect x="504" y="258" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="574" y="284" text-anchor="middle" class="s ink" font-size="13">GitHub</text>
+  <rect x="504" y="348" width="140" height="42" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="574" y="374" text-anchor="middle" class="s ink" font-size="13">Web</text>
+
+  <!-- centro -->
+  <circle cx="340" cy="234" r="56" fill="#C15F3C"/>
+  <text x="340" y="240" text-anchor="middle" class="s lt" font-size="18" font-weight="500">Claude</text>
+
+  <text x="340" y="422" text-anchor="middle" class="s mut" font-size="12">cada conector conversa com o Claude pelo mesmo protocolo (MCP)</text>
+</svg>

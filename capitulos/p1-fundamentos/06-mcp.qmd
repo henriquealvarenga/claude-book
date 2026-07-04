@@ -1,0 +1,35 @@
+# MCP
+
+<!-- RASCUNHO. Revisar. -->
+
+O agente age por **ferramentas** (Cap. 4). Algumas já são dele; outras vêm de fora, por um padrão chamado **MCP** — o que liga o Claude ao que está fora do computador: e-mail, agenda, bases de artigos. Vale no Cowork e no Code.
+
+## Ferramentas nativas e MCP
+
+O agente usa dois tipos de ferramenta. O primeiro já vem de fábrica: são as **ferramentas nativas**, que não dependem de MCP nenhum — ler e gravar arquivos, rodar comandos no terminal, buscar na web. No **Cowork**, mexer nos arquivos da pasta conectada é nativo; no **Code**, o terminal completo é nativo. Ao editar um documento ou rodar um comando no computador, o agente **não** usa MCP: usa uma ferramenta que já é dele.
+
+O segundo tipo é o que **não** vem de fábrica: ligar o agente a serviços e dados de fora — o Gmail, o PUBMED, o GitHub. É aí que entra o **MCP**. As ferramentas nativas são as mãos do agente; o MCP são as tomadas em que ele pluga aparelhos externos.
+
+Não é preciso conectar MCP algum para o agente trabalhar com os arquivos, escrever código ou consultar a web — isso ele já faz sozinho. O MCP só **amplia o alcance**.
+
+## Um padrão aberto
+
+**MCP** quer dizer *Model Context Protocol* — protocolo de contexto do modelo. É um **padrão** (uma convenção técnica, como as que existem para tomadas) que permite ao Claude conectar-se a ferramentas e dados externos. Foi a **Anthropic** quem o criou e o tornou público, em 2024 [@anthropic_mcp_2024]; em 2025, a empresa doou o protocolo a uma fundação independente, para que deixasse de depender de uma só companhia [@anthropic_mcp_foundation_2025]. E não ficou restrito ao Claude: ao longo de 2025, **OpenAI**, **Google** e **Microsoft** também passaram a dar suporte ao MCP em seus próprios produtos [@openai_mcp_2025; @google_mcp_2025; @microsoft_mcp_2025]. A analogia mais simples é a do **USB-C**: antes, cada aparelho pedia um cabo diferente; o USB-C virou um encaixe universal, em que um só formato serve para tudo. O MCP é esse encaixe universal para a IA (@fig-mcp).
+
+![Com o MCP, cada serviço externo se conecta ao Claude pelo mesmo encaixe padrão.](/images/diagramas/mcp-encaixe-universal.svg){#fig-mcp width=85% fig-alt="O Claude ao centro, ligado por linhas a vários conectores ao redor, cada ligação passando por uma porta MCP."}
+
+## Servidor, cliente e ferramentas
+
+A mecânica tem dois lados. Um **servidor MCP** é o "lado da ferramenta" — um programa que sabe falar com o Gmail, com o PUBMED ou com os arquivos locais, e que oferece capacidades: "sei buscar artigos", "sei enviar e-mail", "sei ler esta pasta". O **Claude é o cliente**, que se conecta a esses servidores e passa a poder usar o que eles oferecem. Na prática, o MCP entrega ao Claude **ferramentas** (ações: buscar, ler, escrever, enviar) e **dados** (conteúdo a consultar). Cada **"Conector"** do Cowork é, por baixo, um MCP.
+
+## Catálogo e ecossistema
+
+Por ser um padrão **aberto**, qualquer um pode criar um servidor MCP — e há um catálogo crescente, de repositórios de código a bases científicas. É por isso que o Claude passa a fazer coisas novas sem que o programa mude: basta conectar mais um MCP. Para o trabalho acadêmico, os mais úteis costumam ser os de busca de artigos, e-mail, agenda e armazenamento na nuvem.
+
+## MCP no Cowork e no Code
+
+O conceito é o mesmo nos dois produtos; muda só a forma. No **Cowork**, o usuário conecta um MCP pelo menu de **Conectores**, de modo gráfico (Cap. 15). No **Code**, adiciona um servidor MCP à configuração do projeto (Cap. 25). Em ambos, o resultado é igual: dar ao agente acesso a uma ferramenta de fora.
+
+## Conectar é conceder acesso
+
+Ligar um MCP é **dar ao Claude acesso** àquela ferramenta e aos dados dela. Por isso a decisão fica com o usuário: o que conectar e o que o agente pode fazer com isso. É aqui que o MCP encontra os modos de permissão (Cap. 8) e os cuidados com privacidade (Cap. 29).

@@ -1,0 +1,31 @@
+# Personalização
+
+Personalizar o Claude significa definir as condições do trabalho — o propósito, os critérios de qualidade, o contexto, os limites do que conta como uma boa resposta. Quem faz isso deixa de apenas pedir e passa a estabelecer os termos, tornando explícito o que ficaria subentendido. A cada conversa nova, porém, o agente recomeça sem lembrar da anterior (Cap. 4) — então essas condições precisam ficar guardadas. Perfil, instruções, projetos e memória as mantêm entre sessões e as trazem sozinhas para a conversa.
+
+## Perfil
+
+O perfil diz ao Claude quem fala com ele. Nas configurações, o usuário informa o nome, como quer ser chamado e uma descrição do trabalho. Com isso, as respostas saem mais ajustadas — um historiador e um bioquímico recebem exemplos e vocabulário diferentes para a mesma pergunta.
+
+## Instruções personalizadas
+
+As instruções personalizadas são preferências que valem em toda conversa, sem precisar reescrevê-las. Servem para dizer como devem ser as respostas: "cite as fontes", "prefiro explicações com analogias", "responda em português, com os termos técnicos em inglês entre parênteses". Valem no Chat e no Cowork (@fig-config).
+
+![A tela de Configurações: o perfil e as instruções para o Claude, que valem no Chat e no Cowork.](/images/claude-configuracoes-geral-perfil-instrucoes.png){#fig-config width=85% fig-alt="Tela de Configurações, aba Geral: campos de Perfil (nome completo, como o Claude deve chamar o usuário, área de trabalho); a caixa 'Instruções para o Claude', com a nota de que valem nas conversas e no Cowork; e Preferências (aparência e fonte do chat)."}
+
+Há ainda uma versão em arquivo dessas instruções, o **`CLAUDE.md`**: um texto que fica na pasta do projeto e que o agente lê no início de cada sessão. Vale no Cowork e no Code, e dá a cada projeto as suas próprias regras (Cap. 23).
+
+## Projetos
+
+Um projeto reúne, num só lugar, as instruções e os arquivos de uma frente de trabalho recorrente. O contexto é montado uma vez, não a cada conversa, e tudo o que acontece dentro do projeto já parte dali. Para uma disciplina lecionada todo semestre, ou um artigo em andamento, isso evita recomeçar do zero a cada sessão.
+
+Projetos existem no Chat e no Cowork. Em ambos guardam as instruções e os arquivos que se repetem, para que cada nova conversa ou tarefa comece com esse contexto (Cap. 13).
+
+## Memória
+
+Além do que o usuário configura, o agente guarda o que aprende sozinho. No Cowork, ele mantém uma memória do projeto — anota convenções, decisões e preferências que percebe ao trabalhar — e a grava num arquivo (`memory.md`) que pode ser aberto, editado ou apagado. Essa memória fica restrita ao projeto: o que ele aprende num não passa para outro.
+
+A diferença em relação às instruções é quem escreve. O usuário escreve as instruções; o agente preenche a memória. Reveja-a de tempos em tempos, para corrigir o que ele tiver entendido errado.
+
+## Configurações
+
+Tudo isso fica na tela de **Configurações**, dividida em abas. O perfil, as instruções e as preferências estão em **Geral**; as abas de conta, privacidade e cobrança pertencem ao Setup (Cap. 8). As **preferências** ajustam a aparência — tema claro ou escuro, fonte do texto, animações. São cosméticas: mudam como o Claude se mostra, não como ele trabalha.

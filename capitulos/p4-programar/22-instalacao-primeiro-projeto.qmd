@@ -1,0 +1,15 @@
+# Instalação
+
+<!-- TODO: redigir. Remissão ao Apêndice A. -->
+
+## Requisitos e instalação
+
+## O primeiro contato: iniciar uma sessão
+
+## O loop interativo no terminal
+
+## Abrir um projeto e dar a primeira tarefa
+
+## Aprovar ações e revisar mudanças
+
+## Encerrar, retomar e o histórico de sessões

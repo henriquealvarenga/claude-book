@@ -1,0 +1,47 @@
+# A Anthropic e o Claude
+
+<!-- RASCUNHO. Verificar todas as datas e fatos antes de publicar. -->
+
+Quem faz o Claude, de onde vem o nome e como ele é treinado explicam muito do seu comportamento. A @fig-linha-do-tempo situa os marcos desta história.
+
+![Marcos da Anthropic e do Claude, de 2021 a 2026.](/images/diagramas/linha-do-tempo-anthropic-claude.svg){#fig-linha-do-tempo width=85% fig-alt="Linha do tempo com cinco marcos: 2021, fundação da Anthropic; 2023, lançamento do Claude; 2024, família Claude 3 e MCP; 2025, Claude Code; 2026, Cowork e Opus 4.8."}
+
+## A fundação da Anthropic
+
+A Anthropic foi fundada em 2021 por Dario e Daniela Amodei, ao lado de outros pesquisadores vindos da OpenAI. É uma empresa de benefício público (*public-benefit corporation*), forma jurídica que a obriga a equilibrar o lucro com uma missão declarada — no caso, desenvolver inteligência artificial de modo seguro.
+
+## Por que "Claude"
+
+A interpretação mais citada é a de uma homenagem a **Claude Shannon** (1916–2001), o matemático fundador da teoria da informação [@wikipedia_claude_lm; @bostonglobe_shannon_2026]. A Anthropic nunca confirmou oficialmente uma origem única e definitiva.
+
+![Claude Shannon (1916–2001), o "pai da teoria da informação", que dá nome ao assistente da Anthropic. Foto: Tekniska museet, via Wikimedia Commons, licença CC BY 2.0.](/images/claude-shannon-retrato.jpg){#fig-claude-shannon width=55% fig-alt="Retrato em preto e branco de Claude Shannon, homem de terno, por volta da década de 1950."}
+
+## Modelos de linguagem
+
+O Claude é um **modelo de linguagem de grande escala** (*large language model*, *LLM*): um sistema treinado com enormes quantidades de texto, que aprendeu a prever qual é a continuação provável de uma sequência de palavras. É essa capacidade que lhe permite escrever, resumir, traduzir, classificar e responder [@brown2020language].
+
+Uma consequência importante decorre disso: por padrão, o modelo **não consulta uma base de dados** nem "procura" a resposta — ele a *gera* a partir de padrões aprendidos. Por isso pode ser fluente e, ao mesmo tempo, estar errado, inclusive inventando fatos com convicção. Daí a necessidade de verificar o que ele produz (Cap. 28).
+
+## Como se mede um modelo
+
+Dizer que um modelo é "mais capaz" que outro exige uma régua. Essa régua são os **testes de avaliação** (*benchmarks*): coleções padronizadas de perguntas com resposta conhecida, em que se mede a fração que o modelo acerta. O mais citado é o MMLU, um conjunto de milhares de questões de múltipla escolha espalhadas por cinquenta e sete disciplinas — de matemática e medicina a direito e história —, criado para medir a amplitude do conhecimento de um modelo [@hendrycks2021mmlu]. Quando um laboratório anuncia que sua nova versão "atinge tantos por cento no MMLU", é a esse tipo de prova que se refere.
+
+Convém, porém, ler esses números com a mesma cautela metodológica que se aplica a qualquer medida. Um benchmark mede o que ele mede, e não necessariamente o que interessa a uma tarefa concreta: ir bem num teste de múltipla escolha não garante bom desempenho em resumir um artigo ou depurar um script. Testes muito usados acabam, com o tempo, refletidos nos dados de treino, o que infla as notas sem que a capacidade real acompanhe. E uma diferença de poucos pontos entre dois modelos raramente se traduz em diferença perceptível no uso diário. Os benchmarks situam um modelo na paisagem; não substituem testá-lo no próprio trabalho.
+
+## IA Constitucional
+
+Para moldar o comportamento do Claude, a Anthropic usa um método próprio, apresentado em 2022, chamado **IA Constitucional** (*Constitutional AI*) [@bai2022constitutional]: em vez de depender só de avaliações humanas caso a caso, o treinamento é guiado por um documento de princípios — uma "constituição" — que descreve os valores esperados do modelo. A versão atual desse documento não apenas lista regras: explica as *razões* por trás delas, para que o Claude generalize em situações novas em vez de segui-las de forma rígida [@anthropic_constitution_2026].
+
+## Opus, Sonnet e Haiku
+
+Desde a terceira geração (2024), o Claude vem em uma família de modelos de tamanhos diferentes: **Opus**, o mais capaz, porém mais lento e caro; **Sonnet**, o equilíbrio entre qualidade e custo; e **Haiku**, o mais rápido e barato. A escolha depende da tarefa (Cap. 3).
+
+Os nomes vêm de formas de escrita — *opus*, soneto, haicai —, o que combina com um assistente voltado a texto. As versões avançam com o tempo (em 2026, por exemplo, a linha Opus já ia na versão 4.x), então o número importa menos que a posição do modelo na escala capacidade × custo × velocidade.
+
+## Chat, Code e Cowork
+
+O Claude estreou em março de 2023 como assistente de conversa [@anthropic_introducing_claude_2023], acompanhado de uma interface de programação (*API*) para desenvolvedores. Em fevereiro de 2025 veio o **Claude Code**, que trouxe o agente para o terminal [@anthropic_claude_code_2025]. E em janeiro de 2026 chegou o **Cowork**, que leva as mesmas capacidades a quem não programa, numa interface gráfica [@anthropic_cowork_preview_2026] — com disponibilidade geral em abril de 2026 [@anthropic_release_notes_2026; @anthropic_cowork_ga_2026].
+
+Tudo isso é muito recente. O Claude Code, de fevereiro de 2025, foi um dos primeiros agentes de terminal entre os grandes laboratórios de IA; nos meses seguintes vieram concorrentes diretos — o Codex CLI, da OpenAI, em abril de 2025 [@openai_codex_cli_2025], e o Gemini CLI, do Google, em junho de 2025 [@google_gemini_cli_2025]. E a área muda depressa: o Gemini CLI, com menos de um ano de uso, foi descontinuado em junho de 2026 e substituído pelo Antigravity CLI [@google_antigravity_cli_2026]. Em poucos anos surgiu — e já se renovou — uma categoria inteira de ferramentas.
+
+Em junho de 2026, uma diretiva de controle de exportação do governo dos Estados Unidos levou a Anthropic a suspender o acesso a dois modelos recém-lançados, o Fable 5 e o Mythos 5 [@anthropic_fable_mythos_2026]. A restrição caiu no fim daquele mês, e o Fable 5 voltou ao ar em 1º de julho de 2026, com salvaguardas reforçadas [@anthropic_redeploying_fable_2026]. Esse caso é retomado na Parte V.

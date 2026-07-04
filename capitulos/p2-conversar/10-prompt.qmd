@@ -1,0 +1,77 @@
+# Chat e Prompt
+
+## O Chat
+
+Até 2022, a inteligência artificial trabalhava nos bastidores — em buscas, tradutores, filtros de spam. Foi no fim daquele ano que os grandes modelos de linguagem (*large language models*, LLMs) chegaram à maioria das pessoas. O primeiro deles, o ChatGPT da OpenAI, foi lançado em 30 de novembro de 2022 [@openai2022chatgpt]. A Anthropic apresentou o Claude em março de 2023, com acesso amplo a partir de julho daquele ano [@anthropic_introducing_claude_2023]; o Bard, do Google — mais tarde renomeado Gemini —, apareceu nos mesmos meses [@google2023bard]. Ali começou outra fase da relação entre pessoas e máquinas: passou a ser possível conversar com uma inteligência artificial em linguagem natural. O canal dessa conversa é o *prompt* — a pergunta, o pedido, a instrução dirigida ao modelo.
+
+A palavra vem do latim *promptus*, "pronto, à mão". No teatro de língua inglesa, o *prompter* é quem fica escondido na lateral do palco e diz baixinho ao ator as primeiras palavras da fala esquecida — o profissional que no teatro brasileiro se chama ponto. A informática adotou o termo antes da IA: o *command prompt* é o sinal que o terminal exibe para avisar que espera um comando. Nos dois usos, a mesma ideia — uma deixa que provoca o que vem em seguida.
+
+Os primeiros modelos de linguagem não conversavam; completavam texto. O pesquisador fornecia um trecho inicial — "A capital da França é" — e o modelo o continuava: "Paris". Esse trecho-semente recebeu o nome de *prompt* [@liu2023pretrain]. Modelos posteriores aprenderam a seguir instruções e a dialogar [@ouyang2022training], e a interação passou a parecer conversa comum. Mas o nome ficou: tudo o que se escreve ao Claude continua sendo um prompt.
+
+No início, quase todo mundo escrevia como quem pergunta a um conhecido, sem pensar na forma. Mas, desde o GPT-3, de 2020, quem trabalhava com esses modelos já sabia que a forma desse prompt mudava a qualidade da resposta [@brown2020language] — e ajustá-la de propósito ganhou nome, engenharia de prompt (*prompt engineering*).
+
+## Anatomia de um bom prompt
+
+Um bom prompt costuma ter cinco partes (@fig-anatomia). Nem todo pedido precisa das cinco, mas vale conhecer cada uma.
+
+- **Papel** — quem o Claude deve ser ao responder: "você é um revisor de metodologia", "responda como um historiador do período colonial". Não o torna mais inteligente, mas ajusta o vocabulário, a profundidade e o foco da resposta.
+- **Tarefa** — o que se quer, dito com precisão. "Resuma" é vago; "resuma em cinco pontos, destacando as hipóteses do autor" orienta.
+- **Exemplos** — um modelo do resultado esperado. Mostrar uma resposta no formato certo vale mais que descrevê-la.
+- **Formato** — como entregar: um parágrafo, uma tabela, uma lista, uma citação formatada.
+- **Restrições** — os limites: a extensão, o que evitar, que fontes usar, em que língua responder.
+
+![Os componentes de um bom prompt.](/images/diagramas/anatomia-de-um-bom-prompt.svg){#fig-anatomia width=85% fig-alt="Cinco linhas empilhadas, cada uma com um componente: papel, tarefa, exemplos, formato e restrições."}
+
+A tarefa carrega a maior parte do peso, e só funciona com o contexto certo.
+
+## Contexto e especificidade
+
+O Claude não sabe o que está na tela nem na cabeça de quem escreve. Ele tem o prompt e os arquivos anexados. Forneça o material: o texto a analisar, a pergunta que o orienta, a área e suas convenções, o público a que o resultado se destina.
+
+Compare dois pedidos sobre o mesmo artigo. "Analise este texto" devolve algo genérico, que serviria a qualquer texto. "Neste artigo em anexo, identifique a tese central e os três argumentos que a sustentam; aponte onde o autor reconhece objeções" devolve o que interessa. Os dois são pedidos válidos; só o segundo orienta a resposta.
+
+Contexto responde "o que há"; especificidade responde "o que quero". O Claude implementa melhor do que decide: a escolha do método cabe ao usuário, a execução ao Claude. Um jurista que queira comparar duas decisões deve dizer quais critérios comparar — não esperar que o Claude eleja os critérios por ele.
+
+::: {.callout-tip}
+## Na prática
+No Chat, anexe o material em vez de descrevê-lo. Cole o trecho, suba o PDF, junte a planilha. O Claude lê o arquivo e extrai dali a estrutura — economiza a descrição manual e elimina o "esqueci de mencionar". O Cap. 11 trata em detalhe da leitura de documentos.
+:::
+
+## Exemplos e formato
+
+Com uma referência clara do que se quer, mostre um exemplo. Descrever "quero um resumo conciso e crítico" rende menos que colar um resumo considerado bom e pedir "no mesmo estilo". Dar um ou poucos exemplos é o que se chama *few-shot* [@brown2020language]: orienta com uma precisão difícil de obter só com descrição.
+
+O formato também se pede. Diga a forma da saída — uma tabela com colunas definidas, uma lista numerada, um parágrafo corrido. "Liste os estudos numa tabela com autor, ano e principal achado, uma linha por estudo" produz algo pronto para usar; "fale sobre os estudos" produz texto ainda por reorganizar.
+
+## Raciocínio passo a passo
+
+Para tarefas com cálculo, comparação ou várias etapas, peça que o Claude desenvolva o raciocínio antes de concluir: "pense passo a passo; liste suas suposições, depois desenvolva, e só então conclua". Dar espaço ao trabalho intermediário reduz erros — a conclusão se apoia no que foi exposto, em vez de saltar direto ao resultado. A técnica tem nome na literatura, *chain-of-thought* [@wei2022chain], e funciona mesmo com uma instrução simples como "vamos pensar passo a passo" [@kojima2022large].
+
+Sem saber ao certo o que pedir, deixe o Claude apontar a lacuna: "antes de responder, diga que informações faltariam para uma resposta de qualidade". A pergunta de volta costuma revelar o que ficaria de fora.
+
+## Iteração e refinamento
+
+A primeira resposta raramente é a final. No Chat, a conversa continua: o usuário corrige, acrescenta, redireciona, e cada resposta parte do que já foi dito. Refinar não é sinal de prompt malfeito — é o método.
+
+Corrija com precisão. "Está errado, refaça" convida a mudanças aleatórias; "o terceiro parágrafo repete o argumento do segundo — reescreva sem a repetição" dá ao Claude o que consertar. E um problema por vez: com três defeitos apontados juntos, ele tenta resolver tudo de uma vez e costuma piorar dois enquanto conserta um. Ajuste o primeiro, confira, siga para o próximo.
+
+## Erros comuns
+
+Os tropeços mais frequentes de quem começa:
+
+- **Pedir sem contexto.** Sem o material e a pergunta, o Claude inventa as premissas — quase sempre erradas.
+- **Empilhar pedidos.** Várias tarefas num só prompt entregam tudo de uma vez, mas, se algo sai errado no caminho, fica difícil isolar onde. Prefira um pedido por vez.
+- **Aceitar sem ler.** A resposta veio formatada e convincente; isso não a torna correta. Quem não confere não sabe responder, depois, de onde saiu cada afirmação.
+- **Iterar no vago.** "Algo está errado" obriga o Claude a adivinhar o que mudar. Diga o quê, em que direção, com que resultado esperado.
+
+::: {.callout-warning}
+## Atenção
+O Claude redige com fluência mesmo quando erra, e pode afirmar que verificou algo sem ter verificado. A conferência final cabe ao usuário: os números batem? a fonte existe? o argumento se sustenta? O Cap. 11 e a Parte V tratam da verificação e da responsabilidade. Além disso, o que se cola na conversa é enviado ao servidor — cuidado com dados sensíveis (Cap. 29).
+:::
+
+::: {.callout-note}
+## Para aprofundar
+A formulação de prompts virou objeto de estudo próprio. Para um panorama das técnicas, ver o survey de @schulhoff2025promptreport; para um tratamento revisado por pares, a revisão de @liu2023pretrain.
+:::
+
+Esses princípios não mudam quando o Claude passa a agir, no Cowork e no Code; só ganham peso, porque ali ele executa o que se pede.

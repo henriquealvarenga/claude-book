@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <title>Favicon — Do Chat ao Cowork e Code</title>
+  <desc>Degrau de tres blocos terracota sobre fundo grafite.</desc>
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#26211D"/>
+  <rect x="106" y="272" width="64" height="64" fill="#C15F3C"/>
+  <rect x="182" y="244" width="92" height="92" fill="#C15F3C"/>
+  <rect x="286" y="216" width="120" height="120" fill="#C15F3C"/>
+</svg>

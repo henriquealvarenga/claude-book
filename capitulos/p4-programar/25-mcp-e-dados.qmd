@@ -1,0 +1,30 @@
+# Conectando ferramentas e dados
+
+<!-- TODO: redigir. Remissão ao Cap. 6. -->
+
+## MCP no Code
+
+## Adicionar um servidor MCP a um projeto
+
+Nem toda ferramenta tem um conector pronto. Em meados de 2026, o catálogo da Anthropic não trazia nenhum servidor para o Google Forms <!-- TODO: verificar disponibilidade/data -->. Sem o conector de prateleira, resta o caminho que o Cap. 6 chamou de servidor próprio: um pequeno programa que fica entre o agente e a interface (API) do serviço, traduz os pedidos e devolve as respostas. Escrever esse programa é trabalho de quem programa — e é o que se delega ao Code.
+
+Conectar o Code ao Google Forms para criar e editar formulários tem duas frentes. A primeira é a credencial do Google, que só o usuário obtém: ela depende da conta, da autorização, dos cliques no navegador. A segunda é o servidor, que o agente escreve, instala e registra. O usuário não programou nada; o Claude gravou cerca de cem linhas de código num arquivo, rodou esse arquivo e o conectou ao Code. O código existe, está no disco e roda — apenas não passou pelas mãos de quem pediu.
+
+No lado do Google, o trabalho é de cadastro, não de programação. O usuário cria um "projeto" no Google Cloud — uma caixa de organização dentro do site, sem arquivo algum no computador —, ativa a API do Forms, preenche a tela de consentimento e gera uma credencial OAuth (o protocolo que autoriza um programa a agir em nome de uma conta) do tipo "aplicativo para computador". O Google entrega um arquivo com identificador e segredo; o agente o usa, uma única vez, para abrir a janela em que se concede a permissão. Dessa autorização nasce um *refresh token*, a chave duradoura que o servidor guarda para falar com o Google daí em diante.
+
+O lado do Code é mais curto. O agente escreve o servidor — no exemplo, um arquivo em Node.js com algumas ferramentas: criar um formulário, acrescentar perguntas, ligar o modo quiz com nota, apagar e reordenar perguntas, ler as respostas. Depois registra o servidor com um comando, `claude mcp add`, e reinicia o Code para carregá-lo. O pedido passa a ser em linguagem natural: "crie um questionário de avaliação com cinco perguntas e marque as respostas certas". O agente chama as ferramentas e devolve o link.
+
+Dois limites do exemplo valem registro. O aplicativo OAuth nasce em modo de teste: só os e-mails cadastrados como usuários de teste conseguem autorizar — o bastante para uso pessoal, sem passar pela verificação do Google. E, segundo a documentação da API, formulários criados por programa a partir de 30/06/2026 nascem não publicados: o link permite editá-los, mas é preciso publicá-los para receber respostas <!-- TODO: verificar -->.
+
+::: {.callout-warning}
+## Credenciais são segredos
+O arquivo de credenciais e o *refresh token* dão acesso à conta na medida das permissões concedidas. Ficam no computador do usuário, não num repositório: devem ficar fora do controle de versão — uma linha no `.gitignore` basta — e não ser compartilhados. Conectar uma ferramenta é conceder acesso a ela.
+:::
+
+## Trabalhar com dados: planilhas, CSV e bases
+
+## Análise e visualização
+
+## Conectores úteis para pesquisa
+
+## Segurança ao conectar no Code

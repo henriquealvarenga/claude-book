@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="210" viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg">
+  <title>Fluxo de citacao</title>
+  <desc>Cinco etapas: encontrar, extrair metadados, gerar arquivo bib, formatar na norma e verificar.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#2A2622" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .lt{fill:#F6F3EC;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="210" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Da busca à referência verificada</text>
+
+  <rect x="42"  y="78" width="108" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="96" y="115" text-anchor="middle" class="s ink" font-size="13">Encontrar</text>
+  <rect x="162" y="78" width="108" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="216" y="108" text-anchor="middle" class="s ink" font-size="13">Extrair</text>
+  <text x="216" y="124" text-anchor="middle" class="s ink" font-size="13">metadados</text>
+  <rect x="282" y="78" width="108" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="336" y="115" text-anchor="middle" class="s ink" font-size="13">Gerar .bib</text>
+  <rect x="402" y="78" width="108" height="64" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="456" y="108" text-anchor="middle" class="s ink" font-size="13">Formatar</text>
+  <text x="456" y="124" text-anchor="middle" class="s ink" font-size="13">(ABNT)</text>
+  <rect x="522" y="78" width="108" height="64" rx="8" fill="#F4E3DA" stroke="#C15F3C" stroke-width="1"/>
+  <text x="576" y="115" text-anchor="middle" class="s ink" font-size="13" font-weight="500">Verificar</text>
+
+  <line x1="150" y1="110" x2="162" y2="110" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="270" y1="110" x2="282" y2="110" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="390" y1="110" x2="402" y2="110" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="510" y1="110" x2="522" y2="110" stroke="#2A2622" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="340" y="186" text-anchor="middle" class="s mut" font-size="12">nada entra na bibliografia sem verificação (o DOI resolve? o periódico existe?)</text>
+</svg>

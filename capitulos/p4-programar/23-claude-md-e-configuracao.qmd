@@ -1,0 +1,15 @@
+# CLAUDE.md
+
+<!-- TODO: redigir. -->
+
+## O arquivo `CLAUDE.md`: a memória do projeto
+
+## O que escrever nele
+
+## Configurações (*settings*) e preferências
+
+## Memória entre sessões
+
+## Regras e instruções por projeto
+
+## Versionamento: noções de *git* para preservar o contexto

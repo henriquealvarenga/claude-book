@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+  <title>Anatomia de um bom prompt</title>
+  <desc>Cinco componentes de um bom prompt: papel e contexto, tarefa, exemplos, formato e restricoes.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="360" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Anatomia de um bom prompt</text>
+
+  <rect x="40" y="70" width="600" height="44" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="52" y="77" width="140" height="30" rx="6" fill="#F4E3DA" stroke="#C15F3C" stroke-width="0.8"/>
+  <text x="122" y="97" text-anchor="middle" class="s ink" font-size="13">Papel / contexto</text>
+  <text x="210" y="97" class="s ink" font-size="13">quem o Claude deve ser e o que já sabe</text>
+
+  <rect x="40" y="122" width="600" height="44" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="52" y="129" width="140" height="30" rx="6" fill="#F4E3DA" stroke="#C15F3C" stroke-width="0.8"/>
+  <text x="122" y="149" text-anchor="middle" class="s ink" font-size="13">Tarefa</text>
+  <text x="210" y="149" class="s ink" font-size="13">o que você quer, de forma específica</text>
+
+  <rect x="40" y="174" width="600" height="44" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="52" y="181" width="140" height="30" rx="6" fill="#F4E3DA" stroke="#C15F3C" stroke-width="0.8"/>
+  <text x="122" y="201" text-anchor="middle" class="s ink" font-size="13">Exemplos</text>
+  <text x="210" y="201" class="s ink" font-size="13">modelos do que é uma boa resposta</text>
+
+  <rect x="40" y="226" width="600" height="44" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="52" y="233" width="140" height="30" rx="6" fill="#F4E3DA" stroke="#C15F3C" stroke-width="0.8"/>
+  <text x="122" y="253" text-anchor="middle" class="s ink" font-size="13">Formato</text>
+  <text x="210" y="253" class="s ink" font-size="13">como a resposta deve ser estruturada</text>
+
+  <rect x="40" y="278" width="600" height="44" rx="8" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <rect x="52" y="285" width="140" height="30" rx="6" fill="#F4E3DA" stroke="#C15F3C" stroke-width="0.8"/>
+  <text x="122" y="305" text-anchor="middle" class="s ink" font-size="13">Restrições</text>
+  <text x="210" y="305" class="s ink" font-size="13">tamanho, tom e o que evitar</text>
+
+  <text x="340" y="346" text-anchor="middle" class="s mut" font-size="12">nem todo prompt precisa de todos — mas pensar neles ajuda</text>
+</svg>

@@ -1,0 +1,15 @@
+# Artefatos e páginas vivas
+
+<!-- TODO: redigir. -->
+
+## O que é um artefato
+
+## Tipos: documentos e páginas HTML interativas
+
+## Criar e editar um artefato
+
+## Páginas vivas: dados que se atualizam
+
+## Compartilhar e reabrir
+
+## Casos de uso acadêmicos

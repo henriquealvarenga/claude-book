@@ -1,0 +1,7 @@
+# Do Chat ao Cowork e Code {.unnumbered}
+
+Um livro sobre colaboração, automação e desenvolvimento com agentes de IA, escrito para professores e estudantes universitários de todas as áreas — sem exigir experiência com programação ou terminal.
+
+O Prefácio apresenta o propósito, o público e a organização do livro.
+
+<!-- TODO: autor — página de abertura (home do livro em HTML). Ajustar o texto ou substituir por outra apresentação; a capa definida no _quarto.yml aparece aqui automaticamente. -->

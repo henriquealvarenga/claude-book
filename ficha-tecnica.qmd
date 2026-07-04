@@ -1,0 +1,44 @@
+# Ficha técnica {.unnumbered}
+
+<!--
+PÁGINA DE DIREITOS (abertura) — preencher os campos entre colchetes. Vem logo após a página inicial, antes dos Agradecimentos, como o verso da folha de rosto num livro impresso.
+-->
+
+## Dados da obra
+
+**Título:** Do Chat ao Cowork e Code — colaboração, automação e desenvolvimento com agentes de IA
+
+**Autor:** Henrique Alvarenga
+
+**Edição:** [1ª edição] · **Ano:** [2026] · **Local:** [cidade, país]
+
+**ISBN:** [a definir] <!-- TODO: providenciar ISBN e ficha catalográfica (CIP) -->
+
+[Espaço reservado para a ficha catalográfica.]
+
+## Licença
+
+[Definir os termos de uso e reprodução da obra — por exemplo, uma licença Creative Commons ou todos os direitos reservados.]
+<!-- TODO: decidir a licença -->
+
+## Tipografia
+
+[Fontes empregadas no miolo e nos títulos.]
+<!-- TODO: definir a tipografia (decisão em aberto) -->
+
+## Produção
+
+Este livro foi escrito e diagramado em [Quarto](https://quarto.org), com saída em HTML e PDF. As referências bibliográficas são geridas em BibTeX, com formatação pelos estilos ABNT e Vancouver.
+
+Parte do trabalho de escrita, organização e revisão foi conduzida em colaboração com o próprio Claude — uma escolha coerente com o tema da obra e detalhada no Capítulo 25.
+
+## Créditos de imagens
+
+As capturas de tela reproduzem a interface do Claude e de produtos relacionados, e destinam-se exclusivamente a fins educacionais. Diagramas e ilustrações originais são de autoria do projeto.
+
+Retrato de Claude Shannon (@fig-claude-shannon): foto do **Tekniska museet**, obtida via Wikimedia Commons e licenciada sob [Creative Commons Attribution 2.0 Generic (CC BY 2.0)](https://creativecommons.org/licenses/by/2.0/); imagem redimensionada para uso no livro.
+<!-- TODO: revisar créditos individuais de imagens, se necessário -->
+
+## Aviso de isenção
+
+Esta é uma obra **independente**, sem vínculo, patrocínio ou endosso da Anthropic. "Claude", "Anthropic" e demais marcas, nomes de produtos e logotipos citados pertencem aos seus respectivos titulares e são mencionados apenas para fins de identificação e ensino. As informações refletem o entendimento do autor na data de referência e podem não corresponder a versões posteriores dos produtos.

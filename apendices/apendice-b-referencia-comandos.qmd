@@ -1,0 +1,3 @@
+# Referência rápida de comandos e atalhos
+
+<!-- TODO -->

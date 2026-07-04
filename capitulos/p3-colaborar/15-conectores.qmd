@@ -1,0 +1,49 @@
+# Conectores e Plugins
+
+O agente ganha alcance de duas formas, com conectores e plugins. Um **Conector** liga o Claude a um serviço externo — o e-mail, a agenda, uma base científica. Um **plugin** reúne vários desses recursos num único pacote, para instalar de uma vez. 
+
+## Conectores
+
+Um conector do Claude é uma integração que liga o Claude a serviços e aplicativos externos, para que ele acesse os dados desses sistemas ou execute ações neles durante a própria conversa. Tecnicamente, os conectores funcionam via MCP (*Model Context Protocol*), o padrão aberto do Cap. 6 que define como o Claude se comunica com ferramentas de fora.
+
+Na prática, um conector dá ao Claude acesso a ferramentas específicas de um serviço. Um conector do Google Drive permite buscar e ler documentos; um do Gmail, pesquisar e organizar e-mails; um do Google Calendar, consultar e criar eventos. O serviço se conecta uma vez, com uma autorização por login, e a partir daí o Claude passa a usar aquelas capacidades quando forem úteis para o pedido em curso.
+
+### Conectar o primeiro serviço
+
+Os conectores ficam no menu **+** da caixa de composição, ao lado das outras formas de dar contexto ao agente (Cap. 12). Ali, a opção **Conectores** abre a lista dos serviços disponíveis, cada um com um interruptor que o liga ou desliga, e os atalhos para adicionar um novo ou gerenciar os já ligados (@fig-conectores). Escolher um serviço pela primeira vez abre a tela de autorização do próprio serviço — a mesma página de login do Google, da Microsoft, do provedor de e-mail —, onde se concede o acesso e se volta ao Cowork. <!-- TODO: confirmar no aplicativo o fluxo exato da tela de autorização (login/OAuth) ao conectar um serviço pela primeira vez --> A autorização se faz uma vez; a partir daí, o serviço fica disponível para as tarefas, e o agente o aciona quando precisa.
+
+![O menu de conectores, aberto a partir do botão **+**. Cada serviço ligado — entre eles o Gmail, o Google Calendar, o Google Drive e o PUBMED — aparece com um interruptor que o ativa ou desativa.](/images/conectores.png){#fig-conectores width=75% fig-alt="Menu aberto sobre a caixa de composição do Claude, com a opção Conectores selecionada. Um submenu lista serviços conectados, cada um com nome, ícone e um interruptor ligado: Consensus, Gmail, Google Calendar, Google Drive, Mermaid Chart e PUBMED. No topo do submenu, as opções Adicionar conector e Gerenciar conectores; no rodapé, Acesso a ferramentas."}
+
+### Conectores para acadêmicos
+
+- **Bases científicas.** Conectores dedicados a bases como o PUBMED, o Consensus e o Clinical Trials devolvem metadados estruturados: autor, ano, periódico, identificador.
+
+- **E-mail e agenda.** Com o e-mail conectado, um pedido como *"resuma as mensagens do orientador desta semana"* ou *"encontre o anexo com a versão revisada do projeto"* passa a ser tarefa. Com a agenda, o agente lê e organiza compromissos.
+
+- **Documentos na nuvem** (*drive*). O material que não está no disco local, mas numa pasta compartilhada da nuvem, fica ao alcance das mesmas tarefas de leitura, organização e escrita.
+
+## Plugins
+
+Conectores chegam um a um, mas também em conjunto. Um **plugin** é um pacote que reúne vários recursos — conectores, *skills*, comandos de barra — para instalar de uma vez, em vez de configurar cada um à parte. A relação com o conector é de contenção: o conector dá acesso a um serviço; o plugin pode embutir esse acesso junto de outros recursos, num só bloco instalável. Onde o conector responde a "como o Claude fala com este serviço", o plugin responde a "como reunir um conjunto de capacidades — conectores entre elas — para instalar de uma vez".
+
+### Marketplaces: a loja de onde vêm os plugins
+
+Os plugins não se instalam soltos: vêm de um **marketplace**, uma coleção de pacotes de onde se escolhe o que instalar. A própria documentação usa a imagem de uma loja de aplicativos — adicionar o marketplace dá acesso ao catálogo; instalar cada plugin é uma escolha à parte [@anthropic_plugins_marketplace_2026]. A Anthropic mantém um marketplace oficial, disponível por padrão, e também é possível registrar marketplaces de terceiros.
+
+Para o trabalho acadêmico, o que interessa é que já existem pacotes prontos para papéis inteiros — coleções de skills e conectores voltadas a tarefas de conhecimento, que se instalam direto no Cowork sem montar nada [@anthropic_plugins_marketplace_2026]. Um grupo de pesquisa aproveita isso para padronizar o ambiente: em vez de cada integrante ligar à mão os mesmos conectores e escrever as mesmas skills, o grupo reúne tudo num plugin, e cada pessoa o instala de uma vez.
+
+### Antes de instalar, confira a origem
+
+Um plugin não é texto inerte: pode trazer conectores que acessam serviços e skills que orientam o comportamento do agente. Instalar um plugin é, portanto, conceder-lhe o alcance dos seus componentes. Vale a cautela que a própria Anthropic registra: o conteúdo de plugins de terceiros não é verificado por ela, e convém conferir a origem de um pacote antes de instalá-lo, como se faz com qualquer aplicativo de fora [@anthropic_plugins_marketplace_2026]. Um plugin do marketplace oficial parte de uma curadoria; um vindo de um marketplace qualquer, não — e a diferença importa quando o pacote pede acesso a e-mail, arquivos ou bases de dados.
+
+Montar um plugin próprio, com o detalhe de como os componentes se organizam, é tarefa de quem programa, no ambiente do Claude Code (Parte IV). Para o leitor desta parte, o que conta é usá-los: escolher de um marketplace de confiança e instalar.
+
+## Segurança e privacidade ao conectar
+
+::: {.callout-warning}
+## O conector amplia a superfície de ataque
+
+Conectar o agente a serviços externos é o que o torna útil — e também o que o expõe. Um agente que lê conteúdo de fora (uma página, um documento, um e-mail) e que pode enviar informação para fora reúne duas das três condições da chamada *tríade letal*; some a isso o acesso a dados sensíveis e o caminho de um ataque de **injeção de prompt** fica completo. O risco e as posturas para conviver com ele são tratados no Cap. 30.
+:::
+
+Fora esse risco específico, vale a regra geral do Cap. 6: conectar é conceder acesso. Cada serviço ligado amplia o que o agente enxerga e pode fazer, e cada conexão é uma decisão a tomar com o mesmo cuidado de quem autoriza um aplicativo a ler a própria caixa de entrada. O tratamento dos dados nesses serviços — o que sai do computador, para onde vai, o que fica retido — é assunto do Cap. 29.

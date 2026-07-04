@@ -1,0 +1,80 @@
+# A virada agêntica
+
+<!-- RASCUNHO adaptado de Vibe_Coding_Project (NÃO VERIFICADO). Revisar. -->
+
+Existe um salto entre o modo como a maioria usa inteligência artificial hoje — o **chatbot** — e o que vamos usar neste livro: o **agente**. Esse salto separa a IA de hoje da de poucos anos atrás.
+
+## Agente e chatbot
+
+Um chatbot funciona assim: digita-se uma mensagem, o modelo lê e devolve texto. Para *fazer* algo com essa resposta — executar o cálculo, salvar o arquivo, formatar a tabela —, quem age é o usuário. O chatbot responde, mas não executa: não enxerga o computador nem altera nada no sistema. O texto só vira ação quando alguém o executa.
+
+Disso resulta o **fluxo de cópia-e-cola**: perguntar, copiar a resposta, colar no programa, ver um erro, voltar ao chat, colar de novo. Funciona, mas cobra atenção a cada passo — e cada cópia é uma chance de erro.
+
+Um **agente de IA** (*AI agent*) é um modelo de linguagem com três capacidades a mais: **ferramentas** para agir no mundo (ler e escrever arquivos, rodar comandos, consultar uma base, abrir uma página); **autonomia para iterar**, encadeando ações e observando cada resultado sem esperar o usuário entre os passos; e um **loop de execução** — raciocinar, agir, observar — que se repete até a tarefa ficar pronta ou até pedir confirmação. Um agente é, portanto, um modelo com permissão para agir, autonomia para iterar e a incumbência de entregar a tarefa concluída — não só uma resposta.
+
+## Componentes do agente
+
+Suponha o pedido: *"calcule a média final da turma na planilha `notas/turma-2026.csv`."*
+
+Um chatbot devolve um trecho de código para o usuário copiar, executar e depurar por conta própria. Um agente faz diferente: lê o arquivo e descobre que há, digamos, 87 alunos e que dois não têm nota na segunda prova; **grava** um script no projeto, aponta os casos pendentes e o executa; lê o resultado e responde — "média final de 7,4; dois alunos sem a segunda nota, excluídos do cálculo" —, dizendo onde salvou o script e o resultado e perguntando se quer também a distribuição por faixa.
+
+A diferença está em *onde o código vai parar*. Em vez de entregar um trecho para copiar, o agente grava o código no próprio projeto — num script ou num documento Quarto — e o executa ali mesmo, deixando os arquivos organizados e versionáveis. Os três componentes agem juntos: as *ferramentas* executam cada ação, a *autonomia* encadeia os passos, e o *loop* segue até a entrega.
+
+## Responder ou executar
+
+![O assistente que responde encerra numa ida e volta; o colaborador que age trabalha em várias etapas, com autonomia.](/images/diagramas/chatbot-vs-agente.svg){#fig-chatbot-agente width=90% fig-alt="Diagrama comparando o fluxo de um chatbot, com pergunta e resposta, ao fluxo de um agente, com objetivo, ação iterada e entrega."}
+
+| Etapa | Chatbot | Agente |
+|---|---|---|
+| Pedir | "Gere o código da análise." | "Faça a análise dos meus dados." |
+| Conhecer os dados | Não pode — supõe os nomes das variáveis. | Lê o arquivo, identifica colunas, tipos e faltantes. |
+| Executar | O usuário copia, cola e roda. | Ele roda. |
+| Tratar um erro | O usuário devolve o erro ao chat e espera. | Ele lê o erro, corrige e roda de novo. |
+| Resultado final | Saída na tela, ainda por salvar e formatar. | Arquivos gravados e organizados no projeto. |
+| Risco de transcrição | Alto. | Baixo (não há cópia-e-cola). |
+
+Mais do que velocidade, muda a unidade de trabalho: da *mensagem* para a *tarefa*.
+
+## O que muda na prática
+
+Para quem pesquisa ou ensina, em qualquer área, essa mudança traz consequências práticas.
+
+Primeira: **testar uma ideia volta a custar quase o mesmo que tê-la**. Quando cada teste exigia pedir o código, preparar o ambiente, rodar e depurar, explorar alternativas era caro. Com um agente, basta dizer "separe os resultados por grupo" para ver o resultado em segundos — e por isso se explora mais.
+
+Segunda: **a qualidade do pedido pesa mais**. No chatbot, um pedido ruim gera uma resposta ruim, que se descarta. No agente, um pedido ruim gera arquivos ruins no projeto antes de qualquer revisão (Cap. 10).
+
+Terceira: **documentar o uso fica mais necessário**. A interação deixa de ser uma troca única e vira, às vezes, dezenas de ações numa sessão. Registrar o que foi feito é parte do método (Cap. 29).
+
+Quarta: **cuidado com a reprodutibilidade**. Com o mesmo pedido, o agente pode resolver de um jeito hoje e de outro amanhã — outro nome de variável, outra ordem de passos. Então o que precisa ser reproduzível não é a conversa, e sim o que ela gerou: o código e os arquivos. Salvos e versionados, qualquer um roda de novo e chega aos mesmos números (Cap. 27).
+
+::: {.callout-note}
+## Por que a mesma pergunta dá respostas diferentes
+
+Essa variação não é um defeito nem sinal de que o agente "mudou de ideia". Diferente de uma fórmula de planilha, que devolve sempre o mesmo resultado para a mesma entrada, o modelo tem uma margem deliberada de variação: para o mesmo pedido, pode produzir mais de uma resposta válida. Alguns produtos expõem um controle desse comportamento, às vezes chamado de **temperatura**: no valor baixo, as respostas ficam mais previsíveis e repetitivas; no alto, mais variadas. É a mesma propriedade que torna o modelo útil para redigir de várias formas e que o impede de ser inteiramente reproduzível. Para o trabalho de pesquisa, a lição é a que o texto já adianta: não se busca reproduzir a conversa, e sim os artefatos que ela deixou.
+:::
+
+:::: {.callout-tip}
+## *Vibe coding*
+
+Esse modo de trabalhar — descrever em linguagem natural, deixar o agente executar, revisar e iterar — ficou conhecido como *vibe coding*, termo popularizado em 2025 [@karpathy2025vibe; @willison2025vibe]. Não é "programar sem saber programar": é operar num nível de abstração mais alto, em que as habilidades que contam passam a ser saber pedir e saber avaliar.
+::::
+
+## Capacidades e limites
+
+Embora o agente atue, a responsabilidade continua do usuário. No Claude, o quanto o agente faz antes de perguntar depende do **modo de permissão** escolhido (Cap. 8): no modo padrão, ele mostra cada mudança de arquivo e pede autorização, e um comando destrutivo exige confirmação; nos modos mais autônomos, esses pedidos diminuem — por escolha do usuário. Ferramentas concorrentes, como Codex e Antigravity, adotam controles semelhantes.
+
+::: {.callout-warning}
+## Aprovar por reflexo é o oposto de controlar
+
+Clicar em "aprovar" sem olhar anula a proteção. Olhar antes de aprovar, mesmo que custe alguns segundos, é o que separa o agente colaborador do agente sem rédea.
+:::
+
+Os limites são reais. Agentes **alucinam** — e agora alucinam agindo: inventam um recurso e tentam usá-lo. **Em tarefas longas, o agente perde o fio**: pedidos curtos e bem delimitados rendem mais; divida o que for grande em partes verificáveis. A **janela de contexto é finita** (Cap. 4). E o **julgamento metodológico não se delega** — se a abordagem é adequada ao problema, se uma fonte é confiável.
+
+::: {.callout-warning}
+## A sobre-confiança é o erro mais caro
+
+Tratar a saída como verdade só porque vem bem escrita é a armadilha mais comum. Texto fluente não garante código correto, e código que roda não garante análise correta. Revisar é o preço da delegação.
+:::
+
+Há ainda o cuidado com os dados: o agente lê tudo a que recebe acesso. Material sensível exige decisões deliberadas (Cap. 29).

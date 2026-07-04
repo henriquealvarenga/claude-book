@@ -1,0 +1,15 @@
+# Comandos, skills e permissões
+
+<!-- TODO: redigir. -->
+
+## Comandos de barra no Code
+
+## *Skills* no Code
+
+## O modelo de permissões e os modos
+
+## *Sandbox*: o que o agente pode e não pode fazer
+
+## Aprovações, negações e segurança
+
+## Boas práticas de permissão para não-desenvolvedores

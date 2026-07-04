@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="240" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg">
+  <title>Linha do tempo da Anthropic e do Claude</title>
+  <desc>Marcos de 2021 a 2026: fundacao, lancamento do Claude, familia Claude 3 e MCP, Claude Code e Cowork.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .clay{fill:#C15F3C;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="240" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Da fundação aos produtos atuais</text>
+
+  <line x1="80" y1="130" x2="608" y2="130" stroke="#8A8175" stroke-width="1"/>
+  <circle cx="100" cy="130" r="6" class="clay"/>
+  <circle cx="222" cy="130" r="6" class="clay"/>
+  <circle cx="344" cy="130" r="6" class="clay"/>
+  <circle cx="466" cy="130" r="6" class="clay"/>
+  <circle cx="588" cy="130" r="6" class="clay"/>
+
+  <text x="100" y="92" text-anchor="middle" class="s ink" font-size="15" font-weight="500">2021</text>
+  <text x="100" y="110" text-anchor="middle" class="s mut" font-size="12">Anthropic fundada</text>
+  <text x="344" y="92" text-anchor="middle" class="s ink" font-size="15" font-weight="500">2024</text>
+  <text x="344" y="110" text-anchor="middle" class="s mut" font-size="12">Família Claude 3; MCP</text>
+  <text x="588" y="92" text-anchor="middle" class="s ink" font-size="15" font-weight="500">2026</text>
+  <text x="588" y="110" text-anchor="middle" class="s mut" font-size="12">Cowork; Opus 4.8</text>
+
+  <text x="222" y="166" text-anchor="middle" class="s ink" font-size="15" font-weight="500">2023</text>
+  <text x="222" y="184" text-anchor="middle" class="s mut" font-size="12">Lançamento do Claude</text>
+  <text x="466" y="166" text-anchor="middle" class="s ink" font-size="15" font-weight="500">2025</text>
+  <text x="466" y="184" text-anchor="middle" class="s mut" font-size="12">Claude Code</text>
+</svg>

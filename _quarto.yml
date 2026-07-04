@@ -1,0 +1,97 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Do Chat ao Cowork e Code"
+  subtitle: "Colaboração, automação e desenvolvimento com agentes de IA"
+  author: "Henrique Alvarenga"
+  date: today
+  favicon: images/capa-favicon/favicon.svg
+  cover-image: images/capa-favicon/capa-do-chat-ao-cowork-e-code.png
+  search: true
+  reader-mode: true
+  sidebar:
+    collapse-level: 1
+  page-footer:
+    center: "Do Chat ao Cowork e Code"
+  chapters:
+    - index.qmd
+    - ficha-tecnica.qmd
+    - agradecimentos.qmd
+    - prefacio.qmd
+    - apresentacao.qmd
+    - part: "Parte I — Fundamentos"
+      chapters:
+        - capitulos/p1-fundamentos/01-virada-agentica.qmd
+        - capitulos/p1-fundamentos/02-anthropic-e-claude.qmd
+        - capitulos/p1-fundamentos/03-ecossistema-claude.qmd
+        - capitulos/p1-fundamentos/04-como-um-agente-trabalha.qmd
+        - capitulos/p1-fundamentos/05-o-harness.qmd
+        - capitulos/p1-fundamentos/06-mcp.qmd
+        - capitulos/p1-fundamentos/07-markdown.qmd
+        - capitulos/p1-fundamentos/08-setup.qmd
+        - capitulos/p1-fundamentos/09-personalizacao.qmd
+    - part: "Parte II — Conversar (Claude Chat)"
+      chapters:
+        - capitulos/p2-conversar/10-prompt.qmd
+        - capitulos/p2-conversar/11-chat-na-pratica.qmd
+    - part: "Parte III — Colaborar (Claude Cowork)"
+      chapters:
+        - capitulos/p3-colaborar/12-cowork.qmd
+        - capitulos/p3-colaborar/13-tarefas-e-pastas.qmd
+        - capitulos/p3-colaborar/14-skills.qmd
+        - capitulos/p3-colaborar/15-conectores.qmd
+        - capitulos/p3-colaborar/16-documentos-academicos.qmd
+        - capitulos/p3-colaborar/17-referencias-e-citacoes.qmd
+        - capitulos/p3-colaborar/18-artefatos.qmd
+        - capitulos/p3-colaborar/19-programado-e-despacho.qmd
+        - capitulos/p3-colaborar/20-estudos-de-caso.qmd
+    - part: "Parte IV — Programar (Claude Code)"
+      chapters:
+        - capitulos/p4-programar/21-por-que-o-terminal.qmd
+        - capitulos/p4-programar/22-instalacao-primeiro-projeto.qmd
+        - capitulos/p4-programar/23-claude-md-e-configuracao.qmd
+        - capitulos/p4-programar/24-comandos-skills-permissoes.qmd
+        - capitulos/p4-programar/25-mcp-e-dados.qmd
+        - capitulos/p4-programar/26-claude-code-no-editor.qmd
+        - capitulos/p4-programar/27-pesquisa-reproduzivel.qmd
+    - part: "Parte V — Prática responsável"
+      chapters:
+        - capitulos/p5-pratica-responsavel/28-boas-praticas.qmd
+        - capitulos/p5-pratica-responsavel/29-etica-privacidade-custos.qmd
+        - capitulos/p5-pratica-responsavel/30-injecao-de-prompt.qmd
+        - capitulos/p5-pratica-responsavel/31-futuro.qmd
+  appendices:
+    - apendices/apendice-a-instalacao.qmd
+    - apendices/apendice-b-referencia-comandos.qmd
+    - apendices/apendice-c-glossario.qmd
+    - apendices/apendice-d-recursos.qmd
+    - apendices/apendice-e-markdown.qmd
+    - apendices/apendice-f-verbos-do-spinner.qmd
+
+bibliography: references/references.bib
+csl: references/csl_styles/nature.csl
+lang: pt-BR
+reference-section-title: "Referências"
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.scss
+    toc: true
+    toc-title: "Neste capítulo"
+    number-sections: true
+    fig-cap-location: bottom
+  # PDF desativado por enquanto (exige TeX: rode 'quarto install tinytex').
+  # Para reativar, descomente o bloco abaixo.
+  # pdf:
+  #   documentclass: scrbook
+  #   papersize: a4
+  #   pdf-engine: xelatex
+  #   toc: true
+  #   toc-title: "Sumário"
+  #   number-sections: true
+  #   fig-cap-location: bottom
+  #   # mainfont: ...   # TODO: definir tipografia (exige fontes .otf/.ttf instaladas)

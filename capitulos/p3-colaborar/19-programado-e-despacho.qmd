@@ -1,0 +1,15 @@
+# Programado e Despacho
+
+<!-- TODO: redigir. -->
+
+## Tarefas que se repetem: o Programado
+
+## Configurar uma tarefa agendada
+
+## O Despacho: subagentes em segundo plano
+
+## O indicador de atividade
+
+## Monitorar e gerenciar tarefas em andamento
+
+## Casos de uso: monitoramento, lembretes e *digests*

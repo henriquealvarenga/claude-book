@@ -1,0 +1,15 @@
+# Pesquisa reproduzível
+
+<!-- TODO: redigir. Remissão ao Cap. 17. -->
+
+## O que é reprodutibilidade e por que importa
+
+## O fluxo: do dado bruto ao relatório final
+
+## Quarto: documentos que combinam texto, código e dados
+
+## BibTeX + CSL + Quarto na prática
+
+## Controle de versão e colaboração
+
+## Estudo de caso: como este livro foi feito

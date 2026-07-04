@@ -1,0 +1,100 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// Paleta da identidade (a mesma da capa e do favicon)
+// Trocar aqui muda o tema inteiro.
+// =====================================================================
+$clay:   #C15F3C;   // terracota — acento
+$ink:    #2A2622;   // grafite — texto
+$paper:  #FBFAF7;   // papel — fundo
+$muted:  #8A8175;   // apagado — texto secundário
+$line:   #E6DED2;   // linhas/divisores
+
+// --- Cores base do tema ---
+$primary:          $clay;
+$body-color:       $ink;
+$body-bg:          $paper;
+$link-color:       $clay;
+$link-hover-color: darken($clay, 12%);
+
+// --- Tipografia (EM ABERTO) ---
+// As fontes ainda não estão decididas. As variáveis abaixo usam pilhas
+// neutras do sistema; para adotar as fontes locais (pasta fonts/),
+// descomente o bloco @font-face em "scss:rules" e troque os nomes aqui.
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-monospace:  "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+$headings-font-family:   "Playfair Display", Georgia, "Times New Roman", serif;
+$headings-font-weight:   600;
+
+// --- Código ---
+$code-color: darken($clay, 6%);
+$code-bg:    #F3EFE7;
+
+// --- TOC ---
+$toc-color: $muted;
+
+
+/*-- scss:rules --*/
+
+// ---------------------------------------------------------------------
+// Fontes locais (DESCOMENTAR quando a tipografia for decidida).
+// Os arquivos já estão em fonts/.
+// ---------------------------------------------------------------------
+/*
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Medium.woff2")  format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Bold.woff2")    format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("fonts/PlayfairDisplay-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Playfair Display"; src: url("fonts/PlayfairDisplay-Bold.woff2")    format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+*/
+
+// Leitura confortável
+body { line-height: 1.65; }
+
+// Links discretos, sublinhado fino
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+// Títulos de capítulo: filete terracota sob o h1
+h1.title,
+.content h1 {
+  border-bottom: 2px solid $clay;
+  padding-bottom: 0.3rem;
+}
+
+// Citações em bloco
+blockquote {
+  border-left: 3px solid $clay;
+  color: $muted;
+  font-style: italic;
+}
+
+// Blocos de código
+pre.sourceCode,
+div.sourceCode {
+  border: 1px solid $line;
+  border-radius: 8px;
+}
+
+// Callouts: acento terracota no título
+.callout.callout-style-default > .callout-header {
+  background-color: rgba($clay, 0.08);
+}
+
+// Figuras: legenda discreta e centralizada
+figure img { border-radius: 6px; }
+figcaption {
+  color: $muted;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+// Sumário lateral
+#TOC, .sidebar nav[role="doc-toc"] { font-size: 0.9rem; }
+
+// Cabeçalho de parte
+.quarto-part-title, h1.quarto-part { color: $clay; }

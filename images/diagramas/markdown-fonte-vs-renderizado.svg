@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="680" height="300" viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+  <title>Markdown: fonte e resultado</title>
+  <desc>A esquerda o texto em Markdown; a direita o mesmo conteudo renderizado com titulo, enfase, lista, link e citacao.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#8A8175" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .m{font-family:'JetBrains Mono','Courier New',monospace;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="680" height="300" fill="#F6F3EC"/>
+  <text x="40" y="40" class="s ink" font-size="16" font-weight="500">Markdown: o mesmo texto, fonte e resultado</text>
+
+  <rect x="40" y="66" width="290" height="210" rx="10" fill="#2A2622"/>
+  <text x="56" y="90" class="s" fill="#9A8E80" font-size="12">Markdown (fonte)</text>
+  <text x="56" y="120" class="m" fill="#F2ECE3" font-size="14"># Título</text>
+  <text x="56" y="150" class="m" fill="#F2ECE3" font-size="14">**negrito** *itálico*</text>
+  <text x="56" y="180" class="m" fill="#F2ECE3" font-size="14">- item de lista</text>
+  <text x="56" y="210" class="m" fill="#F2ECE3" font-size="14">[link](https://…)</text>
+  <text x="56" y="240" class="m" fill="#F2ECE3" font-size="14">&gt; citação</text>
+
+  <rect x="350" y="66" width="290" height="210" rx="10" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="366" y="90" class="s mut" font-size="12">Resultado</text>
+  <text x="366" y="124" class="s ink" font-size="22" font-weight="500">Título</text>
+  <text x="366" y="154" class="s" font-size="14"><tspan class="ink" font-weight="500">negrito</tspan> <tspan class="ink" font-style="italic">itálico</tspan></text>
+  <text x="366" y="184" class="s ink" font-size="14">• item de lista</text>
+  <text x="366" y="214" class="s" fill="#C15F3C" font-size="14" text-decoration="underline">link</text>
+  <rect x="366" y="228" width="4" height="24" fill="#C15F3C"/>
+  <text x="382" y="246" class="s mut" font-size="14" font-style="italic">citação</text>
+
+  <line x1="330" y1="171" x2="350" y2="171" stroke="#8A8175" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="340" y="292" text-anchor="middle" class="s mut" font-size="12">escrito uma vez, vira HTML, PDF ou Word</text>
+</svg>

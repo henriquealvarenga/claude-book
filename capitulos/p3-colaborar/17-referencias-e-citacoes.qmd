@@ -1,0 +1,15 @@
+# Referências e citações
+
+<!-- TODO: redigir. Conversa com os diagramas de fluxo de citação e BibTeX+CSL+Quarto. -->
+
+## Anatomia de um arquivo `.bib`: BibTeX na prática
+
+## Tipos de registro e a chave de citação
+
+## Gerar e limpar a bibliografia a partir das bases (PUBMED, Scholar, jurídicas, arquivos)
+
+## Normas ABNT e Vancouver via CSL
+
+## Importar de gerenciadores de referência (Zotero/Mendeley)
+
+## Checklist anti-alucinação

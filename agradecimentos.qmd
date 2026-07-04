@@ -1,0 +1,14 @@
+# Agradecimentos {.unnumbered}
+
+Meu primeiro agradecimento é à professora Hellen Bergo. Foi ela quem me incentivou a escrever este manual, e o seu entusiasmo constante fez toda a diferença para que ele saísse do papel.
+
+Agradeço, ainda, à minha esposa e aos meus filhos, pela paciência nos momentos de ausência e pelo incentivo que me sustentou até o fim deste projeto.
+
+Agradeço, por fim, ao grupo Afya, cujo incentivo e apoio tornaram possível a publicação deste trabalho.
+
+[**Revisores técnicos e colegas de área** — quem leu, criticou e ajudou a manter o rigor. Citar nomes.]
+
+[**Estudantes** — turmas e pessoas que testaram exemplos, capítulos ou a abordagem em sala.]
+
+
+Espero que este manual seja um companheiro útil a quem o consultar no dia a dia.
