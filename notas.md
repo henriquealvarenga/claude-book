@@ -24,8 +24,8 @@
 - **Idioma/terminologia:** PT-BR como termo principal (como na interface), com
   o inglês entre parênteses na 1ª menção; glossário no Apêndice C. Ficam em
   inglês: *token*, *prompt*, *skill*, *MCP*, *commit*.
-- **Formato de saída:** HTML + PDF. Citação em BibTeX + CSL (ABNT padrão,
-  Vancouver alternativo).
+- **Formato de saída:** HTML + PDF. Citação em BibTeX + CSL (**Nature padrão**;
+  Vancouver e ABNT alternativos — ver §8, "CSL").
 - **Tipografia:** **em aberto** (fontes Playfair/Inter/JetBrains presentes na
   pasta, mas não confirmadas).
 
@@ -379,9 +379,9 @@ remissão nova usa `Cap. -@sec-x`.
 
 **Reorganização (esta sessão):** capítulos movidos para subpastas por parte
 (`capitulos/pN-.../`), figuras com caminho a partir da raiz (`/images/...`).
-**Caps. 8 e 9 trocados de ordem e renumerados:** **7 — Setup** (arquivo
-`07-setup.qmd`) e **8 — Personalização**. Setup vem antes da
-personalização.
+**Setup e Personalização trocados de ordem:** Setup vem antes da
+personalização. (Numeração atual, após a reestruturação de jul/2026: **8 —
+Setup**, `08-setup.qmd`, e **9 — Personalização**, `09-personalizacao.qmd`.)
 
 **Próximo passo (atualizado 03/07/2026):** **Cap. 13 REDIGIDO** (estrutura em
 §12) e passado pela verificação em 3 lentes — estilo, exatidão, leitor — com
@@ -402,10 +402,11 @@ dos Caps. 1/3; typo "do usuário(autor)" no Cap. 11, linha 11 (falta espaço).
 **Imperativos: RESOLVIDO** — permitidos (ver §12 e CLAUDE.md).
 
 **Cap. 10 (Prompt) — redigido nesta sessão:** Parte II mantida em **2
-capítulos** (Chat enxuto). Títulos encurtados: **9 — Prompt** (era "Conversas
-que funcionam (prompting)") e **10 — O Chat na prática** (era "O Chat no
-trabalho intelectual"); arquivos renomeados para `09-prompt.qmd` e
-`10-chat-na-pratica.qmd`. **Título atual: "Chat e Prompt"** (decisão do autor).
+capítulos** (Chat enxuto). Títulos encurtados: **Prompt** (era "Conversas
+que funcionam (prompting)") e **O Chat na prática** (era "O Chat no
+trabalho intelectual"); numeração atual: **10 — Chat e Prompt**
+(`10-prompt.qmd`) e **11 — O Chat na prática** (`11-chat-na-pratica.qmd`).
+**Título atual: "Chat e Prompt"** (decisão do autor).
 Roteiro: **O Chat** (abertura histórica: datas do ChatGPT 30/11/2022, Claude
 mar/2023 c/ acesso amplo jul/2023, Bard→Gemini 2023; chat = como os LLMs
 chegaram ao público; def. de *prompt*; origem da engenharia de prompt no GPT-3

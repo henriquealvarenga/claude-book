@@ -107,6 +107,12 @@ Cada parte sobe um degrau nessa escala.
   "Tema: explicação" com dois-pontos e não listar todos os itens no título.
 - Figuras ficam em `images/`, com nomes descritivos (ex.:
   `cowork-tela-inicial-home.png`), referenciadas com legenda e rótulo.
+- **Referências cruzadas**: todo título de capítulo/apêndice leva um ID
+  `{#sec-...}` — slug curto, em inglês (ex.: `sec-harness`, `sec-glossary`).
+  A remissão no texto mantém "Cap."/"Capítulo"/"Apêndice" e usa a forma sem
+  prefixo no número: `(Cap. -@sec-mcp)` renderiza "(Cap. 6)". Não usar
+  `@sec-x` puro, que renderizaria "Capítulo 6" por extenso. Menções a
+  "Parte I–V" ficam manuais (partes não recebem ID no Quarto).
 - **Citações**: bibliografia em BibTeX (`references/references.bib`); citar com `[@chave]`.
   Estilo padrão **Nature** (`references/csl_styles/nature.csl`), por poluir
   menos o visual; Vancouver e ABNT disponíveis como alternativas. O `_quarto.yml` usa
