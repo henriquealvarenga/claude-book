@@ -1,6 +1,6 @@
-# Como um agente trabalha {#sec-como-trabalha}
+# Como um agente trabalha {#sec-how-agents-work}
 
-Um agente é um modelo de linguagem com permissão para agir: além de responder, ele usa ferramentas, encadeia ações e entrega a tarefa concluída (Cap. 1). E faz isso trabalhando em ciclos.
+Um agente é um modelo de linguagem com permissão para agir: além de responder, ele usa ferramentas, encadeia ações e entrega a tarefa concluída (Cap. -@sec-agentic-turn). E faz isso trabalhando em ciclos.
 
 ## O ciclo do agente
 
@@ -13,43 +13,43 @@ A cada volta do ciclo, o agente faz três coisas: **raciocina** (lê o contexto 
 ::: {.callout-note}
 ## Curiosidade: os verbos do *spinner*
 
-Enquanto roda esse ciclo, o indicador de atividade mostra gerúndios bem-humorados — *Sautéing…*, *Pondering…*, *Lollygagging…* —, os chamados *spinner verbs*. São quase duzentos, em categorias temáticas, e dá para personalizá-los ou desligá-los. A lista completa está no Apêndice F [@spinner_verbs_dictionary; @centricle_spinner_words].
+Enquanto roda esse ciclo, o indicador de atividade mostra gerúndios bem-humorados — *Sautéing…*, *Pondering…*, *Lollygagging…* —, os chamados *spinner verbs*. São quase duzentos, em categorias temáticas, e dá para personalizá-los ou desligá-los. A lista completa está no Apêndice -@sec-spinner-verbs [@spinner_verbs_dictionary; @centricle_spinner_words].
 :::
 
 ## Pensar antes de responder
 
-Na etapa de raciocinar, o agente pode receber mais ou menos folga para pensar antes de agir. É o que regula o seletor de **esforço** apresentado na instalação (Cap. 8): numa ponta, respostas mais rápidas; na outra, respostas mais consideradas. O que esse seletor controla é quanto o modelo *pensa* antes de produzir a resposta final — um recurso que a Anthropic chama de **pensamento estendido** (*extended thinking*) [@anthropic_extended_thinking_2025].
+Na etapa de raciocinar, o agente pode receber mais ou menos folga para pensar antes de agir. É o que regula o seletor de **esforço** apresentado na instalação (Cap. -@sec-setup): numa ponta, respostas mais rápidas; na outra, respostas mais consideradas. O que esse seletor controla é quanto o modelo *pensa* antes de produzir a resposta final — um recurso que a Anthropic chama de **pensamento estendido** (*extended thinking*) [@anthropic_extended_thinking_2025].
 
 A ideia por trás é simples de enunciar e vale a pena entender, porque contraria uma intuição comum. Não é que um modelo mais capaz esteja sendo acionado quando se pede mais esforço; é o *mesmo* modelo, ao qual se concede mais passos de raciocínio antes de fechar a resposta — o equivalente a deixar alguém rascunhar num papel antes de responder, em vez de exigir a primeira coisa que lhe vier à cabeça. Em problemas que exigem várias etapas — uma dedução, um cálculo encadeado, um plano com dependências —, esse rascunho interno melhora a qualidade da resposta. O ganho, porém, não é ilimitado: dobrar o raciocínio não dobra o acerto, e para tarefas simples o esforço extra só custa tempo e consumo sem melhorar o resultado. Daí a recomendação prática de reservar o esforço alto para o que de fato é difícil.
 
 ## A janela de contexto
 
-Tudo o que o agente "enxerga" de uma vez — as instruções recebidas, os arquivos abertos, a conversa até ali — precisa caber num espaço limitado, a **janela de contexto** (*context window*): a memória de trabalho do modelo (@fig-contexto). Quando ela enche, o conteúdo mais antigo pode ser resumido ou deixado de lado. E cada conversa nova começa com a janela vazia: o que se disse na anterior não vem junto — a menos que seja trazido de volta, como mostra o Cap. 9.
+Tudo o que o agente "enxerga" de uma vez — as instruções recebidas, os arquivos abertos, a conversa até ali — precisa caber num espaço limitado, a **janela de contexto** (*context window*): a memória de trabalho do modelo (@fig-contexto). Quando ela enche, o conteúdo mais antigo pode ser resumido ou deixado de lado. E cada conversa nova começa com a janela vazia: o que se disse na anterior não vem junto — a menos que seja trazido de volta, como mostra o Cap. -@sec-customization.
 
 ![A janela de contexto reúne instruções, arquivos e conversa; tudo medido em tokens, até um limite.](/images/diagramas/janela-de-contexto-e-tokens.svg){#fig-contexto width=85% fig-alt="Barra dividida em instruções, arquivos, conversa e espaço livre, com um limite ao final."}
 
-Disso vem uma lição prática: uma janela grande não é o mesmo que uma janela bem usada. Quanto mais entulhada de coisas irrelevantes, mais o agente se perde. Organizar o que entra — em Projetos (Cap. 9) ou num arquivo de contexto como o `CLAUDE.md` (Cap. 23) — costuma render mais do que despejar tudo de uma vez.
+Disso vem uma lição prática: uma janela grande não é o mesmo que uma janela bem usada. Quanto mais entulhada de coisas irrelevantes, mais o agente se perde. Organizar o que entra — em Projetos (Cap. -@sec-customization) ou num arquivo de contexto como o `CLAUDE.md` (Cap. -@sec-claude-md) — costuma render mais do que despejar tudo de uma vez.
 
 ## Tokens
 
-O conteúdo da janela é medido em ***tokens***: pedaços de texto, em geral menores que uma palavra. A janela tem um limite em tokens, e o consumo — quanto se "gasta" — também é contado assim. Não é preciso contá-los à mão; basta saber que é essa a unidade por trás tanto dos limites quanto dos custos (Cap. 8).
+O conteúdo da janela é medido em ***tokens***: pedaços de texto, em geral menores que uma palavra. A janela tem um limite em tokens, e o consumo — quanto se "gasta" — também é contado assim. Não é preciso contá-los à mão; basta saber que é essa a unidade por trás tanto dos limites quanto dos custos (Cap. -@sec-setup).
 
 ## Ferramentas
 
-Se o raciocínio é o "pensar", as **ferramentas** são o "fazer". Uma ferramenta é uma ação que o agente pode acionar: ler ou escrever um arquivo, rodar um comando, buscar na web, consultar um serviço externo (via MCP, Cap. 6). A cada passo do ciclo, o agente escolhe qual ferramenta usar — e é isso que o separa de um chatbot, que só devolve texto.
+Se o raciocínio é o "pensar", as **ferramentas** são o "fazer". Uma ferramenta é uma ação que o agente pode acionar: ler ou escrever um arquivo, rodar um comando, buscar na web, consultar um serviço externo (via MCP, Cap. -@sec-mcp). A cada passo do ciclo, o agente escolhe qual ferramenta usar — e é isso que o separa de um chatbot, que só devolve texto.
 
 ## Limitações
 
-As falhas do agente não são raras. Ele **alucina**: inventa fatos, nomes ou referências com aparência convincente. Tem um **corte de conhecimento**: foi treinado até certa data e não sabe, sozinho, o que veio depois — a menos que busque. E carrega **vieses**: reflete padrões dos dados com que foi treinado. Nenhuma dessas falhas se resolve com confiança; resolve-se com verificação (Cap. 28).
+As falhas do agente não são raras. Ele **alucina**: inventa fatos, nomes ou referências com aparência convincente. Tem um **corte de conhecimento**: foi treinado até certa data e não sabe, sozinho, o que veio depois — a menos que busque. E carrega **vieses**: reflete padrões dos dados com que foi treinado. Nenhuma dessas falhas se resolve com confiança; resolve-se com verificação (Cap. -@sec-best-practices).
 
 ::: {.callout-note}
 ## Por que a alucinação não é um defeito a ser consertado
 
 É tentador tratar a alucinação como um bug que uma versão futura vai eliminar. Não é bem assim. A mesma máquina que produz uma frase verdadeira e uma frase inventada é uma só: o modelo gera a continuação mais plausível para o texto recebido, e plausibilidade não é o mesmo que verdade. A fluência e o erro saem do mesmo processo — por isso um dado falso pode vir tão bem escrito quanto um verdadeiro.
 
-Pesquisadores têm argumentado que a alucinação é, nesse sentido, um resultado estatístico esperado, não uma anomalia: um sistema treinado para produzir texto provável, e avaliado de modos que premiam o palpite confiante em vez da admissão de incerteza, tenderá a chutar com segurança quando não sabe [@kalai2025hallucinate]. A consequência prática não muda: como o erro é estrutural, a defesa também é — verificar o que o agente afirma, sobretudo fatos, nomes e citações (Cap. 28).
+Pesquisadores têm argumentado que a alucinação é, nesse sentido, um resultado estatístico esperado, não uma anomalia: um sistema treinado para produzir texto provável, e avaliado de modos que premiam o palpite confiante em vez da admissão de incerteza, tenderá a chutar com segurança quando não sabe [@kalai2025hallucinate]. A consequência prática não muda: como o erro é estrutural, a defesa também é — verificar o que o agente afirma, sobretudo fatos, nomes e citações (Cap. -@sec-best-practices).
 :::
 
 ## Supervisão humana
 
-Por tudo isso, a responsabilidade continua com o usuário: revisar o que sai e aprovar o que o agente faz — e os **modos de permissão** (Cap. 8) existem justamente para controlar quanto ele pode agir sem perguntar. O agente é um colaborador competente, não um oráculo.
+Por tudo isso, a responsabilidade continua com o usuário: revisar o que sai e aprovar o que o agente faz — e os **modos de permissão** (Cap. -@sec-setup) existem justamente para controlar quanto ele pode agir sem perguntar. O agente é um colaborador competente, não um oráculo.

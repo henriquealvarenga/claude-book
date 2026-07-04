@@ -1,4 +1,4 @@
-# Chat e Prompt
+# Chat e Prompt {#sec-prompt}
 
 ## O Chat
 
@@ -34,7 +34,7 @@ Contexto responde "o que há"; especificidade responde "o que quero". O Claude i
 
 ::: {.callout-tip}
 ## Na prática
-No Chat, anexe o material em vez de descrevê-lo. Cole o trecho, suba o PDF, junte a planilha. O Claude lê o arquivo e extrai dali a estrutura — economiza a descrição manual e elimina o "esqueci de mencionar". O Cap. 11 trata em detalhe da leitura de documentos.
+No Chat, anexe o material em vez de descrevê-lo. Cole o trecho, suba o PDF, junte a planilha. O Claude lê o arquivo e extrai dali a estrutura — economiza a descrição manual e elimina o "esqueci de mencionar". O Cap. -@sec-chat-practice trata em detalhe da leitura de documentos.
 :::
 
 ## Exemplos e formato
@@ -66,7 +66,7 @@ Os tropeços mais frequentes de quem começa:
 
 ::: {.callout-warning}
 ## Atenção
-O Claude redige com fluência mesmo quando erra, e pode afirmar que verificou algo sem ter verificado. A conferência final cabe ao usuário: os números batem? a fonte existe? o argumento se sustenta? O Cap. 11 e a Parte V tratam da verificação e da responsabilidade. Além disso, o que se cola na conversa é enviado ao servidor — cuidado com dados sensíveis (Cap. 29).
+O Claude redige com fluência mesmo quando erra, e pode afirmar que verificou algo sem ter verificado. A conferência final cabe ao usuário: os números batem? a fonte existe? o argumento se sustenta? O Cap. -@sec-chat-practice e a Parte V tratam da verificação e da responsabilidade. Além disso, o que se cola na conversa é enviado ao servidor — cuidado com dados sensíveis (Cap. -@sec-ethics).
 :::
 
 ::: {.callout-note}

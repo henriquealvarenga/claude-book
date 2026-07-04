@@ -1,4 +1,4 @@
-# Instalação
+# Instalação {#sec-install}
 
 <!-- TODO: redigir. Remissão ao Apêndice A. -->
 

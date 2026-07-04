@@ -1,8 +1,8 @@
-# MCP
+# MCP {#sec-mcp}
 
 <!-- RASCUNHO. Revisar. -->
 
-O agente age por **ferramentas** (Cap. 4). Algumas já são dele; outras vêm de fora, por um padrão chamado **MCP** — o que liga o Claude ao que está fora do computador: e-mail, agenda, bases de artigos. Vale no Cowork e no Code.
+O agente age por **ferramentas** (Cap. -@sec-how-agents-work). Algumas já são dele; outras vêm de fora, por um padrão chamado **MCP** — o que liga o Claude ao que está fora do computador: e-mail, agenda, bases de artigos. Vale no Cowork e no Code.
 
 ## Ferramentas nativas e MCP
 
@@ -28,8 +28,8 @@ Por ser um padrão **aberto**, qualquer um pode criar um servidor MCP — e há 
 
 ## MCP no Cowork e no Code
 
-O conceito é o mesmo nos dois produtos; muda só a forma. No **Cowork**, o usuário conecta um MCP pelo menu de **Conectores**, de modo gráfico (Cap. 15). No **Code**, adiciona um servidor MCP à configuração do projeto (Cap. 25). Em ambos, o resultado é igual: dar ao agente acesso a uma ferramenta de fora.
+O conceito é o mesmo nos dois produtos; muda só a forma. No **Cowork**, o usuário conecta um MCP pelo menu de **Conectores**, de modo gráfico (Cap. -@sec-connectors). No **Code**, adiciona um servidor MCP à configuração do projeto (Cap. -@sec-mcp-data). Em ambos, o resultado é igual: dar ao agente acesso a uma ferramenta de fora.
 
 ## Conectar é conceder acesso
 
-Ligar um MCP é **dar ao Claude acesso** àquela ferramenta e aos dados dela. Por isso a decisão fica com o usuário: o que conectar e o que o agente pode fazer com isso. É aqui que o MCP encontra os modos de permissão (Cap. 8) e os cuidados com privacidade (Cap. 29).
+Ligar um MCP é **dar ao Claude acesso** àquela ferramenta e aos dados dela. Por isso a decisão fica com o usuário: o que conectar e o que o agente pode fazer com isso. É aqui que o MCP encontra os modos de permissão (Cap. -@sec-setup) e os cuidados com privacidade (Cap. -@sec-ethics).

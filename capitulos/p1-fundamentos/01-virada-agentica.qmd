@@ -1,4 +1,4 @@
-# A virada agêntica
+# A virada agêntica {#sec-agentic-turn}
 
 <!-- RASCUNHO adaptado de Vibe_Coding_Project (NÃO VERIFICADO). Revisar. -->
 
@@ -41,11 +41,11 @@ Para quem pesquisa ou ensina, em qualquer área, essa mudança traz consequênci
 
 Primeira: **testar uma ideia volta a custar quase o mesmo que tê-la**. Quando cada teste exigia pedir o código, preparar o ambiente, rodar e depurar, explorar alternativas era caro. Com um agente, basta dizer "separe os resultados por grupo" para ver o resultado em segundos — e por isso se explora mais.
 
-Segunda: **a qualidade do pedido pesa mais**. No chatbot, um pedido ruim gera uma resposta ruim, que se descarta. No agente, um pedido ruim gera arquivos ruins no projeto antes de qualquer revisão (Cap. 10).
+Segunda: **a qualidade do pedido pesa mais**. No chatbot, um pedido ruim gera uma resposta ruim, que se descarta. No agente, um pedido ruim gera arquivos ruins no projeto antes de qualquer revisão (Cap. -@sec-prompt).
 
-Terceira: **documentar o uso fica mais necessário**. A interação deixa de ser uma troca única e vira, às vezes, dezenas de ações numa sessão. Registrar o que foi feito é parte do método (Cap. 29).
+Terceira: **documentar o uso fica mais necessário**. A interação deixa de ser uma troca única e vira, às vezes, dezenas de ações numa sessão. Registrar o que foi feito é parte do método (Cap. -@sec-ethics).
 
-Quarta: **cuidado com a reprodutibilidade**. Com o mesmo pedido, o agente pode resolver de um jeito hoje e de outro amanhã — outro nome de variável, outra ordem de passos. Então o que precisa ser reproduzível não é a conversa, e sim o que ela gerou: o código e os arquivos. Salvos e versionados, qualquer um roda de novo e chega aos mesmos números (Cap. 27).
+Quarta: **cuidado com a reprodutibilidade**. Com o mesmo pedido, o agente pode resolver de um jeito hoje e de outro amanhã — outro nome de variável, outra ordem de passos. Então o que precisa ser reproduzível não é a conversa, e sim o que ela gerou: o código e os arquivos. Salvos e versionados, qualquer um roda de novo e chega aos mesmos números (Cap. -@sec-reproducible).
 
 ::: {.callout-note}
 ## Por que a mesma pergunta dá respostas diferentes
@@ -61,7 +61,7 @@ Esse modo de trabalhar — descrever em linguagem natural, deixar o agente execu
 
 ## Capacidades e limites
 
-Embora o agente atue, a responsabilidade continua do usuário. No Claude, o quanto o agente faz antes de perguntar depende do **modo de permissão** escolhido (Cap. 8): no modo padrão, ele mostra cada mudança de arquivo e pede autorização, e um comando destrutivo exige confirmação; nos modos mais autônomos, esses pedidos diminuem — por escolha do usuário. Ferramentas concorrentes, como Codex e Antigravity, adotam controles semelhantes.
+Embora o agente atue, a responsabilidade continua do usuário. No Claude, o quanto o agente faz antes de perguntar depende do **modo de permissão** escolhido (Cap. -@sec-setup): no modo padrão, ele mostra cada mudança de arquivo e pede autorização, e um comando destrutivo exige confirmação; nos modos mais autônomos, esses pedidos diminuem — por escolha do usuário. Ferramentas concorrentes, como Codex e Antigravity, adotam controles semelhantes.
 
 ::: {.callout-warning}
 ## Aprovar por reflexo é o oposto de controlar
@@ -69,7 +69,7 @@ Embora o agente atue, a responsabilidade continua do usuário. No Claude, o quan
 Clicar em "aprovar" sem olhar anula a proteção. Olhar antes de aprovar, mesmo que custe alguns segundos, é o que separa o agente colaborador do agente sem rédea.
 :::
 
-Os limites são reais. Agentes **alucinam** — e agora alucinam agindo: inventam um recurso e tentam usá-lo. **Em tarefas longas, o agente perde o fio**: pedidos curtos e bem delimitados rendem mais; divida o que for grande em partes verificáveis. A **janela de contexto é finita** (Cap. 4). E o **julgamento metodológico não se delega** — se a abordagem é adequada ao problema, se uma fonte é confiável.
+Os limites são reais. Agentes **alucinam** — e agora alucinam agindo: inventam um recurso e tentam usá-lo. **Em tarefas longas, o agente perde o fio**: pedidos curtos e bem delimitados rendem mais; divida o que for grande em partes verificáveis. A **janela de contexto é finita** (Cap. -@sec-how-agents-work). E o **julgamento metodológico não se delega** — se a abordagem é adequada ao problema, se uma fonte é confiável.
 
 ::: {.callout-warning}
 ## A sobre-confiança é o erro mais caro
@@ -77,4 +77,4 @@ Os limites são reais. Agentes **alucinam** — e agora alucinam agindo: inventa
 Tratar a saída como verdade só porque vem bem escrita é a armadilha mais comum. Texto fluente não garante código correto, e código que roda não garante análise correta. Revisar é o preço da delegação.
 :::
 
-Há ainda o cuidado com os dados: o agente lê tudo a que recebe acesso. Material sensível exige decisões deliberadas (Cap. 29).
+Há ainda o cuidado com os dados: o agente lê tudo a que recebe acesso. Material sensível exige decisões deliberadas (Cap. -@sec-ethics).

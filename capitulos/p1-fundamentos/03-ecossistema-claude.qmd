@@ -1,4 +1,4 @@
-# O ecossistema Claude
+# O ecossistema Claude {#sec-ecosystem}
 
 <!-- RASCUNHO. Revisar. -->
 
@@ -18,7 +18,7 @@ O Cowork é um aplicativo de desktop (macOS e Windows) em que o Claude trabalha 
 
 ## Code
 
-O Code é o agente no **terminal** — a linha de comando, que roda em qualquer sistema e também dentro do terminal embutido de editores. Por operar ali, com acesso ao terminal do computador, ele **vai além** do Cowork: pode executar qualquer comando, instalar programas e usar o controle de versão (*git*), inclusive publicar alterações. Esse alcance maior é o que torna o Code o ambiente da automação e da pesquisa reproduzível — e, pelo mesmo motivo, exige mais atenção às permissões (Cap. 24). A Parte IV o apresenta de forma acessível a quem não programa.
+O Code é o agente no **terminal** — a linha de comando, que roda em qualquer sistema e também dentro do terminal embutido de editores. Por operar ali, com acesso ao terminal do computador, ele **vai além** do Cowork: pode executar qualquer comando, instalar programas e usar o controle de versão (*git*), inclusive publicar alterações. Esse alcance maior é o que torna o Code o ambiente da automação e da pesquisa reproduzível — e, pelo mesmo motivo, exige mais atenção às permissões (Cap. -@sec-commands-permissions). A Parte IV o apresenta de forma acessível a quem não programa.
 
 ## Qual usar quando
 
@@ -34,4 +34,4 @@ Na prática: organizar ideias ou redigir pede o Chat; trabalhar com documentos e
 
 ## Modelos e planos
 
-Os três produtos usam a mesma família de modelos; dentro de cada interface, escolhem-se o modelo e o **esforço** — quanto o modelo raciocina antes de responder, numa escala de "mais rápido" a "mais inteligente" (Cap. 8). O acesso depende do plano: o Chat tem uma camada gratuita, enquanto Cowork e Code exigem planos pagos. Os limites de uso e a relação entre planos e custos ficam no Cap. 8.
+Os três produtos usam a mesma família de modelos; dentro de cada interface, escolhem-se o modelo e o **esforço** — quanto o modelo raciocina antes de responder, numa escala de "mais rápido" a "mais inteligente" (Cap. -@sec-setup). O acesso depende do plano: o Chat tem uma camada gratuita, enquanto Cowork e Code exigem planos pagos. Os limites de uso e a relação entre planos e custos ficam no Cap. -@sec-setup.

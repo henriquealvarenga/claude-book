@@ -1,4 +1,4 @@
-# Comandos, skills e permissões
+# Comandos, skills e permissões {#sec-commands-permissions}
 
 <!-- TODO: redigir. -->
 

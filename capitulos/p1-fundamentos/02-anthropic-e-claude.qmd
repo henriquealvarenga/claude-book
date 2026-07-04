@@ -1,4 +1,4 @@
-# A Anthropic e o Claude
+# A Anthropic e o Claude {#sec-anthropic-claude}
 
 <!-- RASCUNHO. Verificar todas as datas e fatos antes de publicar. -->
 
@@ -20,7 +20,7 @@ A interpretação mais citada é a de uma homenagem a **Claude Shannon** (1916�
 
 O Claude é um **modelo de linguagem de grande escala** (*large language model*, *LLM*): um sistema treinado com enormes quantidades de texto, que aprendeu a prever qual é a continuação provável de uma sequência de palavras. É essa capacidade que lhe permite escrever, resumir, traduzir, classificar e responder [@brown2020language].
 
-Uma consequência importante decorre disso: por padrão, o modelo **não consulta uma base de dados** nem "procura" a resposta — ele a *gera* a partir de padrões aprendidos. Por isso pode ser fluente e, ao mesmo tempo, estar errado, inclusive inventando fatos com convicção. Daí a necessidade de verificar o que ele produz (Cap. 28).
+Uma consequência importante decorre disso: por padrão, o modelo **não consulta uma base de dados** nem "procura" a resposta — ele a *gera* a partir de padrões aprendidos. Por isso pode ser fluente e, ao mesmo tempo, estar errado, inclusive inventando fatos com convicção. Daí a necessidade de verificar o que ele produz (Cap. -@sec-best-practices).
 
 ## Como se mede um modelo
 
@@ -34,7 +34,7 @@ Para moldar o comportamento do Claude, a Anthropic usa um método próprio, apre
 
 ## Opus, Sonnet e Haiku
 
-Desde a terceira geração (2024), o Claude vem em uma família de modelos de tamanhos diferentes: **Opus**, o mais capaz, porém mais lento e caro; **Sonnet**, o equilíbrio entre qualidade e custo; e **Haiku**, o mais rápido e barato. A escolha depende da tarefa (Cap. 3).
+Desde a terceira geração (2024), o Claude vem em uma família de modelos de tamanhos diferentes: **Opus**, o mais capaz, porém mais lento e caro; **Sonnet**, o equilíbrio entre qualidade e custo; e **Haiku**, o mais rápido e barato. A escolha depende da tarefa (Cap. -@sec-ecosystem).
 
 Os nomes vêm de formas de escrita — *opus*, soneto, haicai —, o que combina com um assistente voltado a texto. As versões avançam com o tempo (em 2026, por exemplo, a linha Opus já ia na versão 4.x), então o número importa menos que a posição do modelo na escala capacidade × custo × velocidade.
 

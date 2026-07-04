@@ -1,29 +1,29 @@
-# Cowork
+# Cowork {#sec-cowork}
 
 O Cowork é o aplicativo de desktop em que o Claude, como agente, trabalha com uma pasta conectada do computador: lê, cria e edita arquivos, executa tarefas em várias etapas, conecta-se a serviços externos e agenda trabalhos que se repetem. Estreou em janeiro de 2026, com disponibilidade geral em abril, e faz tudo isso por uma interface gráfica, ao alcance de quem trabalha com documentos e dados sem programar.
 
-Esse modo de trabalhar, o Claude agindo sobre arquivos, não surgiu no Cowork. Veio um ano antes, em fevereiro de 2025, no Claude Code, dentro do terminal, na linha de comando (Cap. 2). Era poderoso, mas intimidante para quem nunca abriu um terminal. O Cowork oferece as mesmas capacidades por menus e botões, sem esse obstáculo.
+Esse modo de trabalhar, o Claude agindo sobre arquivos, não surgiu no Cowork. Veio um ano antes, em fevereiro de 2025, no Claude Code, dentro do terminal, na linha de comando (Cap. -@sec-anthropic-claude). Era poderoso, mas intimidante para quem nunca abriu um terminal. O Cowork oferece as mesmas capacidades por menus e botões, sem esse obstáculo.
 
-A diferença para o Chat está no que o agente pode tocar. No Chat, a conversa devolve texto; os arquivos ficam intactos até serem copiados e colados (Cap. 11). No Cowork, com a pasta conectada, o agente age sobre ela, e cada passo aparece na tela para ser aprovado ou corrigido. 
+A diferença para o Chat está no que o agente pode tocar. No Chat, a conversa devolve texto; os arquivos ficam intactos até serem copiados e colados (Cap. -@sec-chat-practice). No Cowork, com a pasta conectada, o agente age sobre ela, e cada passo aparece na tela para ser aprovado ou corrigido. 
 
 ## Exemplo de uso
 
 Um trabalho recorrente de todo pesquisador é buscar referências e ajustá-las ao estilo da revista onde o artigo será submetido, analisar um conjunto de dados, preparar as figuras e imagens no texto e em pastas, formatar o texto no padrão da revista, adequar a estrutura de seções exigida (resumo estruturado, palavras-chave, IMRaD) e inúmeras outras pequenas etapas.
 
-No Cowork, o Claude pode auxiliar em todas essas tarefas. Pode buscar os artigos no PUBMED pelo conector MCP (Cap. 15); montar o arquivo de referências com os metadados reais de cada registro — autores, ano, periódico, DOI (o `.bib`, Cap. 17); escrever o código para a análise de dados e a geração dos gráficos, figuras e tabelas; baixar o estilo bibliográfico da revista; organizar os arquivos do manuscrito no formato Quarto (Cap. 7), de onde saem o Word ou o PDF da submissão; gerar os PDFs anonimizados para a revisão por pares.
+No Cowork, o Claude pode auxiliar em todas essas tarefas. Pode buscar os artigos no PUBMED pelo conector MCP (Cap. -@sec-connectors); montar o arquivo de referências com os metadados reais de cada registro — autores, ano, periódico, DOI (o `.bib`, Cap. -@sec-references); escrever o código para a análise de dados e a geração dos gráficos, figuras e tabelas; baixar o estilo bibliográfico da revista; organizar os arquivos do manuscrito no formato Quarto (Cap. -@sec-markdown), de onde saem o Word ou o PDF da submissão; gerar os PDFs anonimizados para a revisão por pares.
 
 
 ## A tela inicial
 
-Tudo isso acontece numa única janela, a do aplicativo de desktop, a mesma da instalação (Cap. 8). No topo, as abas **Home** e **Code** separam o ambiente gráfico do Claude Code (Parte IV). À esquerda, a barra lateral acumula o que persiste entre sessões. Ao centro, a saudação e a **caixa de composição**, de onde parte toda conversa e toda tarefa (@fig-cowork-home). Nada acontece até que um pedido seja escrito ali.
+Tudo isso acontece numa única janela, a do aplicativo de desktop, a mesma da instalação (Cap. -@sec-setup). No topo, as abas **Home** e **Code** separam o ambiente gráfico do Claude Code (Parte IV). À esquerda, a barra lateral acumula o que persiste entre sessões. Ao centro, a saudação e a **caixa de composição**, de onde parte toda conversa e toda tarefa (@fig-cowork-home). Nada acontece até que um pedido seja escrito ali.
 
 ![A tela inicial do Cowork: a barra lateral à esquerda, a caixa de composição ao centro e as abas Home e Code no topo.](/images/cowork-tela-inicial-home.png){#fig-cowork-home width=85% fig-alt="Tela inicial do aplicativo de desktop do Claude: barra lateral à esquerda com Nova tarefa, Projetos, Artefatos, Programado, Despacho, Personalizar, Fixado e Recentes; ao centro, a saudação e a caixa de composição; no topo, as abas Home e Code."}
 
 ## A caixa de composição
 
-Na base da caixa, um alternador troca entre **Chat** e **Cowork**: na posição Chat, a caixa envia uma conversa comum (Cap. 11); na posição Cowork, cria uma tarefa, com acesso ao que estiver conectado. Um pequeno rótulo, o *chip*, mostra o contexto em uso — **Local**, quando nenhuma pasta está conectada, ou o nome da pasta conectada. <!-- TODO: verificar no aplicativo: o comportamento exato do alternador, o significado preciso do chip "Local" e a posição desses controles. Evidência nova (captura cowork-caixa-de-composicao-e-contexto.png, usada no Cap. 13): os chips "Local" e o da pasta aparecem LADO A LADO, não um no lugar do outro — o "ou" desta frase provavelmente precisa de ajuste. -->
+Na base da caixa, um alternador troca entre **Chat** e **Cowork**: na posição Chat, a caixa envia uma conversa comum (Cap. -@sec-chat-practice); na posição Cowork, cria uma tarefa, com acesso ao que estiver conectado. Um pequeno rótulo, o *chip*, mostra o contexto em uso — **Local**, quando nenhuma pasta está conectada, ou o nome da pasta conectada. <!-- TODO: verificar no aplicativo: o comportamento exato do alternador, o significado preciso do chip "Local" e a posição desses controles. Evidência nova (captura cowork-caixa-de-composicao-e-contexto.png, usada no Cap. -@sec-tasks): os chips "Local" e o da pasta aparecem LADO A LADO, não um no lugar do outro — o "ou" desta frase provavelmente precisa de ajuste. -->
 
-A caixa reúne ainda três controles vistos na instalação, o modelo, o esforço e o modo de permissão (Cap. 8). O terceiro importa mais no Cowork, porque um agente que grava arquivos transforma o seletor em decisão prática — no modo que pede permissões, cada gravação passa por um pedido na tela. <!-- TODO: verificar o rótulo atual do seletor de modo (a captura da tela inicial mostra "Perguntar"; as notas registram "Solicitar permissões") -->
+A caixa reúne ainda três controles vistos na instalação, o modelo, o esforço e o modo de permissão (Cap. -@sec-setup). O terceiro importa mais no Cowork, porque um agente que grava arquivos transforma o seletor em decisão prática — no modo que pede permissões, cada gravação passa por um pedido na tela. <!-- TODO: verificar o rótulo atual do seletor de modo (a captura da tela inicial mostra "Perguntar"; as notas registram "Solicitar permissões") -->
 
 <!-- FIGURA a fazer: cowork-alternador-chat-cowork.png — plano fechado do alternador Chat↔Cowork na caixa de composição. -->
 
@@ -32,21 +32,21 @@ A caixa reúne ainda três controles vistos na instalação, o modelo, o esforç
 O botão **+**, na própria caixa, reúne as formas de dar contexto ao agente (@fig-menu-mais):
 
 - **Adicionar arquivos ou fotos** anexa documentos avulsos, como no Chat.
-- **Adicionar pasta** concede ao agente acesso a uma pasta do computador (Caps. 6 e 13).
+- **Adicionar pasta** concede ao agente acesso a uma pasta do computador (Caps. -@sec-mcp e -@sec-tasks).
 - **Importar issue do GitHub** traz uma tarefa de um repositório de código (Parte IV).
-- **Comandos de barra** abre os atalhos digitados com a barra (`/`), que guardam pedidos frequentes (Cap. 14).
-- **Conectores** e **Plugins** ligam o Claude a serviços externos e a extensões (Cap. 15).
+- **Comandos de barra** abre os atalhos digitados com a barra (`/`), que guardam pedidos frequentes (Cap. -@sec-skills).
+- **Conectores** e **Plugins** ligam o Claude a serviços externos e a extensões (Cap. -@sec-connectors).
 
 ![O menu +: arquivos, pasta, issue do GitHub, comandos de barra, conectores e plugins.](/images/cowork-menu-adicionar.png){#fig-menu-mais width=70% fig-alt="Menu aberto a partir do botão +, listando Adicionar arquivos ou fotos, Adicionar pasta, Importar issue do GitHub, Comandos de barra, Conectores e Plugins."}
 
 ## A barra lateral
 
-A barra lateral organiza o resto. **Nova tarefa** abre uma caixa em branco. **Projetos** agrupa as frentes recorrentes, como uma disciplina ou um artigo em andamento, cada uma com instruções e arquivos próprios (Cap. 9); as tarefas do dia a dia se organizam dentro deles (Cap. 13). **Artefatos** guarda documentos e páginas que o agente produz, prontos para reabrir e editar (Cap. 18). **Programado** e **Despacho** cuidam do trabalho que corre sem supervisão: tarefas agendadas e agentes em segundo plano (Cap. 19). **Personalizar** concentra os ajustes do aplicativo (Cap. 9). <!-- TODO: verificar o que o item Personalizar abre exatamente -->
+A barra lateral organiza o resto. **Nova tarefa** abre uma caixa em branco. **Projetos** agrupa as frentes recorrentes, como uma disciplina ou um artigo em andamento, cada uma com instruções e arquivos próprios (Cap. -@sec-customization); as tarefas do dia a dia se organizam dentro deles (Cap. -@sec-tasks). **Artefatos** guarda documentos e páginas que o agente produz, prontos para reabrir e editar (Cap. -@sec-artifacts). **Programado** e **Despacho** cuidam do trabalho que corre sem supervisão: tarefas agendadas e agentes em segundo plano (Cap. -@sec-scheduled-dispatch). **Personalizar** concentra os ajustes do aplicativo (Cap. -@sec-customization). <!-- TODO: verificar o que o item Personalizar abre exatamente -->
 
 ## Recentes e o indicador
 
 A lista **Recentes** registra conversas e tarefas, e um ícone distingue as duas — balão para conversa, lista para tarefa. Itens de uso constante podem ser movidos para **Fixado**.
 
-Uma tarefa como a preparação do manuscrito do início do capítulo pode seguir em andamento enquanto a atenção está em outro lugar. Na volta, um ponto azul sobre o ícone do item avisa que houve novidade. É o **indicador de atividade**: como o "não lido" de um aplicativo de mensagens, marca a tarefa que avançou ou que espera uma decisão, e some quando o item é aberto (@fig-indicador). No Programado e no Despacho (Cap. 19), em que o trabalho é autônomo, esse aviso torna-se o principal ponto de contato. <!-- TODO: verificar se o indicador aparece também nas listas do Programado e do Despacho -->
+Uma tarefa como a preparação do manuscrito do início do capítulo pode seguir em andamento enquanto a atenção está em outro lugar. Na volta, um ponto azul sobre o ícone do item avisa que houve novidade. É o **indicador de atividade**: como o "não lido" de um aplicativo de mensagens, marca a tarefa que avançou ou que espera uma decisão, e some quando o item é aberto (@fig-indicador). No Programado e no Despacho (Cap. -@sec-scheduled-dispatch), em que o trabalho é autônomo, esse aviso torna-se o principal ponto de contato. <!-- TODO: verificar se o indicador aparece também nas listas do Programado e do Despacho -->
 
 ![O indicador de atividade na lista Recentes: o ponto azul marca a tarefa com novidade ainda não vista.](/images/cowork-recentes-indicador-de-atividade.png){#fig-indicador width=70% fig-alt="Lista Recentes na barra lateral, com itens de conversa e de tarefa; um deles exibe um ponto azul sobre o ícone, indicando atividade não vista."}

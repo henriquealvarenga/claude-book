@@ -1,6 +1,6 @@
-# O harness {#sec-o-harness}
+# O harness {#sec-harness}
 
-O capítulo anterior mostrou o agente em movimento: o ciclo de raciocinar, agir e observar, volta após volta; a janela de contexto que ele enxerga; as ferramentas que aciona (@sec-como-trabalha). O que não foi nomeado ali é o que sustenta tudo isso. O modelo de linguagem, sozinho, não dá voltas em ciclo nem abre arquivos. Ele faz uma coisa só: recebe texto e devolve texto. Quem monta o ciclo, entrega as ferramentas e decide o que cabe na janela é uma camada de software em volta do modelo — e essa camada tem nome.
+O capítulo anterior mostrou o agente em movimento: o ciclo de raciocinar, agir e observar, volta após volta; a janela de contexto que ele enxerga; as ferramentas que aciona (Cap. -@sec-how-agents-work). O que não foi nomeado ali é o que sustenta tudo isso. O modelo de linguagem, sozinho, não dá voltas em ciclo nem abre arquivos. Ele faz uma coisa só: recebe texto e devolve texto. Quem monta o ciclo, entrega as ferramentas e decide o que cabe na janela é uma camada de software em volta do modelo — e essa camada tem nome.
 
 ## O modelo e o arreio
 
@@ -8,7 +8,7 @@ No vocabulário da área, essa camada se chama ***harness***. A palavra, em ingl
 
 Convém separar com cuidado as duas partes, porque o livro inteiro depende dessa distinção. O modelo é uma função pura: entra texto, sai texto. Não guarda memória de uma chamada para a outra, não roda programas, não abre arquivos, não consulta a internet, não sabe que horas são. Tudo o que parece ir além disso — planejar uma tarefa, editar um documento, corrigir o próprio erro, encadear vinte passos rumo a um objetivo — não acontece dentro do modelo. Acontece no harness, que é feito de quatro peças:
 
-- **O laço de execução** (*loop*): chama o modelo, lê a resposta e, quando o modelo pede uma ferramenta, executa a ferramenta e devolve o resultado, repetindo o ciclo até a tarefa terminar (@sec-como-trabalha).
+- **O laço de execução** (*loop*): chama o modelo, lê a resposta e, quando o modelo pede uma ferramenta, executa a ferramenta e devolve o resultado, repetindo o ciclo até a tarefa terminar (Cap. -@sec-how-agents-work).
 - **As ferramentas** (*tools*): as ações concretas que o modelo pode invocar — rodar um script, ler um PDF, buscar na web, salvar um arquivo, consultar um banco de dados.
 - **A montagem do contexto** (*context management*): decidir o que entra na janela a cada chamada — instruções, histórico, resultados de ferramentas, arquivos — e, como a janela é finita, também resumir, cortar e priorizar.
 - **Os limites e as permissões**: o que o modelo pode fazer sem pedir autorização e o que exige um aval antes de acontecer.
@@ -23,19 +23,19 @@ A consequência é que a agência não é uma propriedade que o modelo possui, c
 
 ## O aperto de mão da ferramenta
 
-O Cap. 4 disse que o agente "escolhe qual ferramenta usar". Vale ver como essa escolha vira ação, porque o mecanismo é menos mágico e mais engenhoso do que parece.
+O Cap. -@sec-how-agents-work disse que o agente "escolhe qual ferramenta usar". Vale ver como essa escolha vira ação, porque o mecanismo é menos mágico e mais engenhoso do que parece.
 
 O modelo não executa nada. Quando decide usar uma ferramenta, ele apenas *emite um texto estruturado* — o nome da ferramenta e os argumentos, num formato que o harness sabe ler. Quem lê esse pedido, executa a ação de verdade e devolve o resultado é o harness. O modelo então recebe esse resultado como mais um trecho de texto na janela e segue de onde parou [@anthropic_effective_agents_2024; @yao2023react].
 
-É um aperto de mão em dois lados. De um lado, o modelo, que só sabe produzir texto — inclusive o texto que *descreve* uma ação. Do outro, o harness, que sabe transformar aquela descrição em efeito no mundo e relatar o que aconteceu. Nenhum dos dois faz o trabalho do outro. O modelo nunca toca no arquivo; o harness nunca decide, por conta própria, qual arquivo abrir. Quando as ferramentas moram fora do harness — num serviço externo, num banco de dados de terceiros —, esse aperto de mão passa a seguir um protocolo comum, assunto do próximo capítulo (Cap. 6).
+É um aperto de mão em dois lados. De um lado, o modelo, que só sabe produzir texto — inclusive o texto que *descreve* uma ação. Do outro, o harness, que sabe transformar aquela descrição em efeito no mundo e relatar o que aconteceu. Nenhum dos dois faz o trabalho do outro. O modelo nunca toca no arquivo; o harness nunca decide, por conta própria, qual arquivo abrir. Quando as ferramentas moram fora do harness — num serviço externo, num banco de dados de terceiros —, esse aperto de mão passa a seguir um protocolo comum, assunto do próximo capítulo (Cap. -@sec-mcp).
 
 ## A montagem do contexto
 
-A janela de contexto foi apresentada como um espaço limitado (@sec-como-trabalha). O que o capítulo anterior não disse é que preencher esse espaço é uma decisão ativa, tomada a cada chamada — e uma das partes mais delicadas do harness.
+A janela de contexto foi apresentada como um espaço limitado (Cap. -@sec-how-agents-work). O que o capítulo anterior não disse é que preencher esse espaço é uma decisão ativa, tomada a cada chamada — e uma das partes mais delicadas do harness.
 
 A cada volta do laço, o harness monta de novo o que o modelo vai enxergar: as instruções de sistema, o histórico relevante da conversa, os resultados das ferramentas, os arquivos que importam agora. Como o espaço é finito e a tarefa é longa, essa montagem não é um acúmulo — é uma curadoria. O harness resume o que ficou para trás, descarta o que já não serve, promove o que voltou a ser importante. Essa disciplina de decidir o que entra e o que sai tem nome próprio na engenharia de agentes: **engenharia de contexto** (*context engineering*) [@anthropic_context_engineering_2025].
 
-Vem daí uma lição que o Cap. 4 antecipou e que aqui ganha fundamento: uma janela grande não é uma janela bem usada. O trabalho de um bom harness não é despejar tudo na janela, e sim manter nela, a cada passo, o mínimo suficiente para o próximo passo — do mesmo modo que um pesquisador não relê a biblioteca inteira antes de escrever cada frase.
+Vem daí uma lição que o Cap. -@sec-how-agents-work antecipou e que aqui ganha fundamento: uma janela grande não é uma janela bem usada. O trabalho de um bom harness não é despejar tudo na janela, e sim manter nela, a cada passo, o mínimo suficiente para o próximo passo — do mesmo modo que um pesquisador não relê a biblioteca inteira antes de escrever cada frase.
 
 ## Memória num sistema sem estado
 
@@ -43,7 +43,7 @@ A peça mais contraintuitiva vem agora. O modelo não tem memória entre chamada
 
 Vem do harness. É ele que, a cada volta, reconstrói o fio: reapresenta ao modelo o que foi feito até ali, o estado da tarefa, o resultado do último passo. A memória não está no modelo — está na montagem que o harness refaz de fora.
 
-A Anthropic propôs uma imagem para agentes de longa duração que torna isso concreto: um agente que trabalha por muitas horas é como uma obra tocada por engenheiros em turnos, em que cada turno começa sem lembrança do anterior e recebe do harness um relatório do que já foi feito [@anthropic_effective_harnesses_2025]. A competência do sistema depende menos da memória de cada turno e mais da qualidade desse repasse. É também por isso que trazer contexto de volta de uma conversa para outra — em Projetos ou num arquivo de contexto — é um recurso do harness, não do modelo, e será tratado quando o livro chegar à personalização (Cap. 9).
+A Anthropic propôs uma imagem para agentes de longa duração que torna isso concreto: um agente que trabalha por muitas horas é como uma obra tocada por engenheiros em turnos, em que cada turno começa sem lembrança do anterior e recebe do harness um relatório do que já foi feito [@anthropic_effective_harnesses_2025]. A competência do sistema depende menos da memória de cada turno e mais da qualidade desse repasse. É também por isso que trazer contexto de volta de uma conversa para outra — em Projetos ou num arquivo de contexto — é um recurso do harness, não do modelo, e será tratado quando o livro chegar à personalização (Cap. -@sec-customization).
 
 ## Um modelo, muitos harnesses
 
@@ -51,6 +51,6 @@ Reunindo as peças, a tese do início se sustenta sozinha. Existe *um* modelo. O
 
 O Chat é um harness fino: pouco mais que o laço de pergunta e resposta, sem ferramentas para agir no computador do usuário. O Cowork é um harness espesso, com ferramentas para trabalhar com arquivos e dados. O Code é outro harness espesso, com ferramentas voltadas para programação — editar arquivos, rodar comandos no terminal, navegar num repositório. O mesmo modelo por baixo; comportamentos agênticos muito diferentes, porque as ferramentas, o laço e a gestão de contexto são diferentes. É a prova prática de que a agência mora na relação, não no modelo.
 
-Dois eixos desse desenho aparecem adiante no livro. O primeiro é a **orquestração**: um harness pode acionar não só ferramentas, mas outros agentes — um agente principal que delega partes da tarefa a subagentes e reúne os resultados, arranjo que a Anthropic descreveu no sistema de pesquisa multiagente [@anthropic_multi_agent_research_2025] e que reaparece na prática do Cowork (Cap. 20). O segundo é a **autonomia**: quanto o agente pode fazer sem pedir autorização não é um traço do modelo, é um parâmetro do harness — regulado pelos modos de permissão (Cap. 8). Um mesmo modelo pode ser mantido em rédea curta ou solto conforme o que o harness permite.
+Dois eixos desse desenho aparecem adiante no livro. O primeiro é a **orquestração**: um harness pode acionar não só ferramentas, mas outros agentes — um agente principal que delega partes da tarefa a subagentes e reúne os resultados, arranjo que a Anthropic descreveu no sistema de pesquisa multiagente [@anthropic_multi_agent_research_2025] e que reaparece na prática do Cowork (Cap. -@sec-case-studies). O segundo é a **autonomia**: quanto o agente pode fazer sem pedir autorização não é um traço do modelo, é um parâmetro do harness — regulado pelos modos de permissão (Cap. -@sec-setup). Um mesmo modelo pode ser mantido em rédea curta ou solto conforme o que o harness permite.
 
 A divisão do livro em partes segue exatamente esse mapa. Os fundamentos desta primeira parte descrevem a máquina comum — o modelo, o harness e as peças que todos os produtos compartilham. As partes seguintes tratam, uma a uma, das formas de pôr essa máquina para trabalhar: conversar, colaborar, programar. Sempre o mesmo modelo; a cada parte, um harness diferente.

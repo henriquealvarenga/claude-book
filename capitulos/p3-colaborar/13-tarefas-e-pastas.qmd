@@ -1,14 +1,14 @@
-# Tarefas
+# Tarefas {#sec-tasks}
 
 O ciclo de trabalho de um agente é a sequência de passos que ele repete para atingir um objetivo. Cada execução individual desse ciclo é uma **tarefa**. Em vez de dar uma única resposta e parar (como num chat comum), o agente fica girando nesse ciclo dentro de uma tarefa, um passo de cada vez, até concluí-la.
 
-A cada volta, ele faz três coisas — o mesmo ciclo do Cap. 4:
+A cada volta, ele faz três coisas — o mesmo ciclo do Cap. -@sec-how-agents-work:
 
 **Raciocina** — analisa o objetivo da tarefa e o que já aconteceu até agora, e decide qual é o próximo passo.
 **Age** — executa esse passo com uma ferramenta: buscar na web, ler ou escrever um arquivo, rodar um código.
 **Observa** — recebe o resultado daquela ação: o texto do arquivo, o retorno da busca, o erro que apareceu.
 
-Então recomeça, volta após volta, até o objetivo estar cumprido. Quem sustenta esse giro é o harness (Cap. 5): é ele que executa a ação de verdade contra os arquivos, anexa o resultado ao contexto e chama o modelo de novo, até o modelo declarar o objetivo cumprido.
+Então recomeça, volta após volta, até o objetivo estar cumprido. Quem sustenta esse giro é o harness (Cap. -@sec-harness): é ele que executa a ação de verdade contra os arquivos, anexa o resultado ao contexto e chama o modelo de novo, até o modelo declarar o objetivo cumprido.
 
 A anatomia da tarefa tem cinco peças:
 
@@ -20,7 +20,7 @@ A anatomia da tarefa tem cinco peças:
 
 Uma tarefa é um objetivo entregue ao agente para executar sobre uma pasta: ele planeja as etapas, age sobre os arquivos, observa o resultado e repete até o objetivo estar cumprido.
 
-Se o que se espera é uma mudança nos arquivos, é tarefa: renomear os PDFs da pasta, converter trinta entrevistas para um formato único, montar os arquivos de submissão de um manuscrito (Cap. 12). Na caixa de composição, o alternador na posição Cowork cria a tarefa (Cap. 12).
+Se o que se espera é uma mudança nos arquivos, é tarefa: renomear os PDFs da pasta, converter trinta entrevistas para um formato único, montar os arquivos de submissão de um manuscrito (Cap. -@sec-cowork). Na caixa de composição, o alternador na posição Cowork cria a tarefa (Cap. -@sec-cowork).
 
 ## A pasta conectada
 
@@ -28,7 +28,7 @@ No menu **+**, **Adicionar pasta** abre o seletor de pastas do sistema, o mesmo 
 
 ![A caixa de composição com uma pasta conectada: o chip da pasta ao lado do chip Local.](/images/cowork-caixa-de-composicao-e-contexto.png){#fig-caixa-contexto width=70% fig-alt="Plano fechado da caixa de composição: acima do campo de texto, os chips Local e Claude_Project, este com ícone de pasta, e um botão de adicionar pasta; no campo, o texto 'Descreva uma tarefa ou faça uma pergunta'; abaixo, o modo Solicitar permissões, o botão + e o microfone."}
 
-Conectar define um perímetro. O agente passa a enxergar aquela pasta, com seus arquivos e subpastas, e nada fora dela. <!-- TODO: verificar se as subpastas entram no acesso por padrão e se o acesso do agente fica estrito à pasta conectada --> É diferente de anexar: o anexo envia uma cópia para leitura, como no Chat; a pasta conectada é lugar de trabalho, onde o agente lê, cria, edita e renomeia. E nenhuma dessas ações acontece em silêncio: cada uma aparece na tela, e as que alteram arquivos pedem aprovação no modo **Solicitar permissões** (Cap. 8).
+Conectar define um perímetro. O agente passa a enxergar aquela pasta, com seus arquivos e subpastas, e nada fora dela. <!-- TODO: verificar se as subpastas entram no acesso por padrão e se o acesso do agente fica estrito à pasta conectada --> É diferente de anexar: o anexo envia uma cópia para leitura, como no Chat; a pasta conectada é lugar de trabalho, onde o agente lê, cria, edita e renomeia. E nenhuma dessas ações acontece em silêncio: cada uma aparece na tela, e as que alteram arquivos pedem aprovação no modo **Solicitar permissões** (Cap. -@sec-setup).
 
 Antes de qualquer mudança, vale abrir a tarefa com um reconhecimento: *"Descreva o que há nesta pasta: quantos arquivos, de que tipo, com que nomes."* O agente lê e devolve o retrato, sem alterar nada: vinte e três PDFs, nomes de download, dois aparentemente duplicados. É a maneira de conferir se o agente vê o que se imagina que ele vê — e de descobrir o que a pasta esconde.
 
@@ -53,7 +53,7 @@ O pedido também traça limites e deixa rastro. Limites: nenhum arquivo apagado 
 
 > *Renomeie os PDFs desta pasta para o padrão autor-ano-tema: sobrenome do primeiro autor, ano de publicação e duas ou três palavras do tema, em minúsculas, separados por hífens (ex.: `cade-1949-litio-mania.pdf`). Abra cada arquivo e confirme autor e ano no próprio texto; não confie no nome atual. Não apague nem mova nenhum arquivo; na dúvida, pergunte. Ao final, crie um arquivo `inventario.md` listando o nome antigo e o novo de cada PDF e marcando os casos em que autor ou ano ficaram em dúvida.*
 
-No pedido, o exemplo diz mais que a descrição do padrão (Cap. 10). Numa tarefa maior, o modo de planejamento ajuda (Cap. 8): o agente propõe o plano e nada executa até a aprovação.
+No pedido, o exemplo diz mais que a descrição do padrão (Cap. -@sec-prompt). Numa tarefa maior, o modo de planejamento ajuda (Cap. -@sec-setup): o agente propõe o plano e nada executa até a aprovação.
 
 ## A lista de etapas
 
@@ -61,15 +61,15 @@ Enviado o pedido, o agente responde primeiro com um plano, em forma de lista: le
 
 <!-- FIGURA a fazer: cowork-tarefa-em-andamento-todos.png — a tarefa de renomeação em execução: etapas concluídas marcadas e a ação corrente nomeada. Capturar ao rodar a tarefa real. -->
 
-Essa lista é o instrumento de supervisão. Não é preciso vigiar cada ação: uma olhada mostra onde a tarefa está, o que já foi feito e o que falta. Por dentro, roda o ciclo do Cap. 4 — raciocinar, agir, observar, volta após volta; a lista o traduz em linhas que se marcam.
+Essa lista é o instrumento de supervisão. Não é preciso vigiar cada ação: uma olhada mostra onde a tarefa está, o que já foi feito e o que falta. Por dentro, roda o ciclo do Cap. -@sec-how-agents-work — raciocinar, agir, observar, volta após volta; a lista o traduz em linhas que se marcam.
 
 A etapa de leitura é a que rende. Para nomear `sdarticle.pdf`, o agente abre o arquivo e extrai do próprio texto o autor, o ano e o assunto: era o artigo de Loftus sobre a memória das testemunhas.
 
-As etapas não exigem espera diante da tela: o indicador de atividade avisa a novidade (Cap. 12).
+As etapas não exigem espera diante da tela: o indicador de atividade avisa a novidade (Cap. -@sec-cowork).
 
 ## Aprovação e revisão
 
-No modo **Solicitar permissões** (Cap. 8), as ações que alteram arquivos param na tela antes de acontecer: um pedido nomeia a ação (renomear um arquivo, criar o inventário) e espera a resposta. Dá para aprovar a ação, aprovar as semelhantes até o fim da tarefa ou recusar. <!-- TODO: verificar as opções exatas do pedido de permissão -->
+No modo **Solicitar permissões** (Cap. -@sec-setup), as ações que alteram arquivos param na tela antes de acontecer: um pedido nomeia a ação (renomear um arquivo, criar o inventário) e espera a resposta. Dá para aprovar a ação, aprovar as semelhantes até o fim da tarefa ou recusar. <!-- TODO: verificar as opções exatas do pedido de permissão -->
 
 <!-- FIGURA a fazer: cowork-pedido-de-permissao.png — o pedido de permissão na tela durante a renomeação, com as opções de resposta. Mesma sessão de captura da figura da lista de etapas. -->
 
@@ -77,26 +77,26 @@ A pergunta também pode vir do agente. Na pasta de artigos, um dos arquivos é s
 
 Corrigir o rumo é uma mensagem, não um recomeço. Se os primeiros nomes saírem com os autores completos onde o padrão pedia só o sobrenome, uma linha resolve: *"use apenas o sobrenome do primeiro autor e corrija os nomes já feitos"*.
 
-Terminada a tarefa, a revisão sai do Cowork. Abra a pasta no Finder (Mac) ou no Explorador de Arquivos (Windows): os nomes mudaram de verdade — não há prévia nem rascunho; os arquivos no disco são os renomeados. Abra dois ou três PDFs e confira autor e ano contra o nome novo (Cap. 28), a começar pelos que o inventário marcar como duvidosos.
+Terminada a tarefa, a revisão sai do Cowork. Abra a pasta no Finder (Mac) ou no Explorador de Arquivos (Windows): os nomes mudaram de verdade — não há prévia nem rascunho; os arquivos no disco são os renomeados. Abra dois ou três PDFs e confira autor e ano contra o nome novo (Cap. -@sec-best-practices), a começar pelos que o inventário marcar como duvidosos.
 
-Nessa conferência aparece o erro plausível. Um dos PDFs era uma cópia digitalizada anos depois da publicação, e a data impressa na folha de rosto confundiu o agente: `marmot-2005-whitehall-ii.pdf` para um artigo de 1991. A correção cabe na mesma tarefa, que permanece em **Recentes** (Cap. 12): *"o ano do marmot está errado; é 1991 — corrija o nome e o inventário"*.
+Nessa conferência aparece o erro plausível. Um dos PDFs era uma cópia digitalizada anos depois da publicação, e a data impressa na folha de rosto confundiu o agente: `marmot-2005-whitehall-ii.pdf` para um artigo de 1991. A correção cabe na mesma tarefa, que permanece em **Recentes** (Cap. -@sec-cowork): *"o ano do marmot está errado; é 1991 — corrija o nome e o inventário"*.
 
 ## Organização de pastas
 
-A pasta renomeada ficou legível de relance: qualquer nome diz autor, ano e assunto. Essa legibilidade serve a quem procura um artigo — e serve ao agente, porque a pasta conectada é o que ele vê do disco, e o contexto da tarefa é montado a partir dela (Cap. 4). Pasta arrumada, tarefa melhor: menos adivinhação sobre o que cada arquivo é, menos perguntas no meio do caminho, menos erro.
+A pasta renomeada ficou legível de relance: qualquer nome diz autor, ano e assunto. Essa legibilidade serve a quem procura um artigo — e serve ao agente, porque a pasta conectada é o que ele vê do disco, e o contexto da tarefa é montado a partir dela (Cap. -@sec-how-agents-work). Pasta arrumada, tarefa melhor: menos adivinhação sobre o que cada arquivo é, menos perguntas no meio do caminho, menos erro.
 
 As práticas que ajudam são conhecidas. Nomes descritivos: o padrão autor-ano-tema, aplicado uma vez pela tarefa, continua nos próximos downloads como convenção da pasta. Uma pasta por frente de trabalho (o artigo em andamento, a disciplina do semestre, o projeto de extensão), para conectar apenas o que interessa à tarefa.
 
 Ajuda ainda separar fontes de produtos: os PDFs baixados num lugar, o texto próprio e as análises noutro, para o material de leitura não se misturar com o que está sendo escrito. E evitar a pasta-depósito onde tudo se acumula, porque nela nenhum pedido consegue ser específico.
 
-Instruções que valem para a pasta inteira, como o padrão de nomes, podem ficar num arquivo dentro dela, o `CLAUDE.md` (Cap. 23). E a pasta de artigos renomeada é matéria-prima adiante: dela sai o arquivo de referências do manuscrito (Cap. 17).
+Instruções que valem para a pasta inteira, como o padrão de nomes, podem ficar num arquivo dentro dela, o `CLAUDE.md` (Cap. -@sec-claude-md). E a pasta de artigos renomeada é matéria-prima adiante: dela sai o arquivo de referências do manuscrito (Cap. -@sec-references).
 
 ## Tarefas dentro de Projetos
 
-A tarefa dos PDFs foi avulsa: uma pasta conectada, um pedido, um resultado. Mas os downloads não param, e repetir o pedido inteiro a cada leva, com padrão e limites, é retrabalho. Para o trabalho que retorna existem os **Projetos** (Cap. 9).
+A tarefa dos PDFs foi avulsa: uma pasta conectada, um pedido, um resultado. Mas os downloads não param, e repetir o pedido inteiro a cada leva, com padrão e limites, é retrabalho. Para o trabalho que retorna existem os **Projetos** (Cap. -@sec-customization).
 
 Uma tarefa iniciada dentro de um Projeto herda o que ele guarda: a pasta e as instruções. <!-- TODO: verificar no aplicativo como uma tarefa nasce dentro de um Projeto e como a pasta fica associada a ele --> Escrito uma vez nas instruções do Projeto, *"os PDFs de artigos seguem o padrão autor-ano-tema; atualize o `inventario.md` a cada mudança"*, o padrão vale para todas as tarefas dali. Os arquivos novos se resolvem com um pedido curto: *"renomeie os PDFs que chegaram"*.
 
-As tarefas ficam listadas dentro do Projeto, e o histórico da frente de trabalho se concentra num lugar só. O que se repete em datas fixas pode ainda ser agendado (Cap. 19); um pedido frequente pode virar um comando de barra (Cap. 14).
+As tarefas ficam listadas dentro do Projeto, e o histórico da frente de trabalho se concentra num lugar só. O que se repete em datas fixas pode ainda ser agendado (Cap. -@sec-scheduled-dispatch); um pedido frequente pode virar um comando de barra (Cap. -@sec-skills).
 
 <!-- FIGURA a fazer: cowork-projetos-aberto.png — um Projeto aberto, com pasta e instruções associadas e as tarefas listadas dentro dele. -->

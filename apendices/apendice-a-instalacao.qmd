@@ -1,3 +1,3 @@
-# Instalação por sistema operacional
+# Instalação por sistema operacional {#sec-install-os}
 
 <!-- TODO -->

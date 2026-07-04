@@ -1,4 +1,4 @@
-# Markdown
+# Markdown {#sec-markdown}
 
 Markdown é uma linguagem simples de marcação que permite formatar textos com títulos, listas, links, imagens, negrito e itálico usando sinais comuns do teclado. A formatação não vem de botões, mas de marcas inseridas no próprio texto: `#` para um título, `**` em torno de uma palavra para negrito, `-` no início da linha para um item de lista. As marcas são discretas para não atrapalhar a leitura, e precisas o suficiente para um programa convertê-las num documento formatado (@fig-markdown).
 
@@ -8,7 +8,7 @@ Markdown está presente em quase todo o ecossistema das IAs modernas: as respost
 
 O formato nasceu em 2004, criado por John Gruber com a colaboração de Aaron Swartz [@gruber2004markdown]. O objetivo era escrever para a web sem digitar HTML: um texto legível como está, que um pequeno programa convertesse em página. Essa simplicidade explica sua adoção muito além do uso original.
 
-Markdown distingue-se pela legibilidade da própria fonte. Um arquivo `.docx` é um pacote compactado: aberto num editor de texto simples, mostra uma sequência ilegível de caracteres. Um arquivo `.md` mostra o próprio texto. Disso decorrem três propriedades úteis ao trabalho acadêmico: abre em qualquer programa, sem depender de software pago; integra-se ao controle de versões (Cap. 27), porque cada alteração aparece linha a linha; e os modelos de linguagem, treinados em grande volume de Markdown, o produzem naturalmente.
+Markdown distingue-se pela legibilidade da própria fonte. Um arquivo `.docx` é um pacote compactado: aberto num editor de texto simples, mostra uma sequência ilegível de caracteres. Um arquivo `.md` mostra o próprio texto. Disso decorrem três propriedades úteis ao trabalho acadêmico: abre em qualquer programa, sem depender de software pago; integra-se ao controle de versões (Cap. -@sec-reproducible), porque cada alteração aparece linha a linha; e os modelos de linguagem, treinados em grande volume de Markdown, o produzem naturalmente.
 
 ::: {.callout-note}
 ## As marcas do WhatsApp
@@ -70,7 +70,7 @@ Uma citação em bloco começa cada linha com `>`:
 > Texto citado, recuado e destacado.
 ```
 
-Existe ainda a citação bibliográfica no formato `[@chave]`, que liga o texto a uma referência. É um recurso que o Quarto herda do Pandoc, tratado no Cap. 17.
+Existe ainda a citação bibliográfica no formato `[@chave]`, que liga o texto a uma referência. É um recurso que o Quarto herda do Pandoc, tratado no Cap. -@sec-references.
 
 ## Código
 
@@ -90,7 +90,7 @@ Não existe **um** Markdown, e sim uma família de dialetos que foi crescendo. A
 
 Rodar código dentro do texto não começou com o Quarto. Veio antes, com o **R Markdown** [@xie2018rmarkdown], que unia texto e código numa página só, preso à linguagem R. Em 2022, a Posit (a antiga RStudio) estendeu a ideia a Python, Julia e outras linguagens e a batizou de **Quarto** [@allaire2022quarto].
 
-O Quarto é um sistema de publicação: converte um arquivo escrito em Markdown no documento final. Apoia-se no Pandoc, de onde herda os recursos que o texto acadêmico pede — citações, referências cruzadas, notas, equações — e a conversão para Word, PDF ou HTML. É com ele que se escrevem documentos, sites e livros; este livro é um deles, um arquivo Markdown por capítulo (Cap. 27). O Quarto se comanda pelo terminal — o ambiente do Claude Code, que a Parte IV apresenta.
+O Quarto é um sistema de publicação: converte um arquivo escrito em Markdown no documento final. Apoia-se no Pandoc, de onde herda os recursos que o texto acadêmico pede — citações, referências cruzadas, notas, equações — e a conversão para Word, PDF ou HTML. É com ele que se escrevem documentos, sites e livros; este livro é um deles, um arquivo Markdown por capítulo (Cap. -@sec-reproducible). O Quarto se comanda pelo terminal — o ambiente do Claude Code, que a Parte IV apresenta.
 
 ::: {.callout-note}
 ## A origem do nome
@@ -106,6 +106,6 @@ Do mesmo arquivo, o Quarto gera os formatos em que o trabalho costuma circular: 
 
 ## Markdown no Claude
 
-No mundo do Claude, o Markdown está em toda parte: nas respostas do agente, no arquivo de instruções `CLAUDE.md` (Cap. 23), nas *skills* (Cap. 14) e nos artefatos (Cap. 18). Como o agente já escreve nesse formato, dá para pedir a formatação diretamente: *"reescreva isto em Markdown, com seções e uma tabela onde fizer sentido"*, ou *"monte o esqueleto de um capítulo, com um título de seção para cada tópico"*. O resultado costuma vir pronto para colar num documento.
+No mundo do Claude, o Markdown está em toda parte: nas respostas do agente, no arquivo de instruções `CLAUDE.md` (Cap. -@sec-claude-md), nas *skills* (Cap. -@sec-skills) e nos artefatos (Cap. -@sec-artifacts). Como o agente já escreve nesse formato, dá para pedir a formatação diretamente: *"reescreva isto em Markdown, com seções e uma tabela onde fizer sentido"*, ou *"monte o esqueleto de um capítulo, com um título de seção para cada tópico"*. O resultado costuma vir pronto para colar num documento.
 
 Um cuidado: às vezes o modelo usa uma marcação fora do padrão e o texto "não renderiza" como esperado. Quando isso acontece, em geral basta pedir que ele corrija para a sintaxe padrão, ou conferir o resultado já formatado na própria interface.

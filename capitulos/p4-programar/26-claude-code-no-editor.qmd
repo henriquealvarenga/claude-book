@@ -1,4 +1,4 @@
-# Claude Code no IDE
+# Claude Code no IDE {#sec-code-ide}
 
 <!-- TODO: redigir. -->
 

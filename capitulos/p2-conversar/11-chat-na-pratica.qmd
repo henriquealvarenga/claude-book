@@ -1,16 +1,16 @@
-# O Chat na prática
+# O Chat na prática {#sec-chat-practice}
 
 O Chat cobre a maior parte do trabalho intelectual que cabe numa conversa: ler um artigo e extrair sua tese, revisar um parágrafo, organizar notas dispersas num roteiro, levantar o que já se escreveu sobre um tema. O resultado é texto, e nada muda no computador enquanto ele não for copiado e colado.
 
 ## Leitura e síntese
 
-Podemos usar o Chat para ler e sintetizar artigos. Anexe um PDF e peça a tese, os argumentos que a sustentam e os pontos em que o autor reconhece objeções; cole dois artigos e solicite avaliar onde discordam; anexe um relatório e peça a tabela de resultados em texto corrido. O Claude lê o arquivo anexado ou o trecho colado e devolve compreensão, mas não cria arquivos. Extrair páginas, converter formatos ou gerar um documento a partir das fontes é trabalho do Cowork (Cap. 16).
+Podemos usar o Chat para ler e sintetizar artigos. Anexe um PDF e peça a tese, os argumentos que a sustentam e os pontos em que o autor reconhece objeções; cole dois artigos e solicite avaliar onde discordam; anexe um relatório e peça a tabela de resultados em texto corrido. O Claude lê o arquivo anexado ou o trecho colado e devolve compreensão, mas não cria arquivos. Extrair páginas, converter formatos ou gerar um documento a partir das fontes é trabalho do Cowork (Cap. -@sec-academic-docs).
 
 ## Escrita e revisão
 
 Na escrita, o Claude rende mais como leitor crítico do que como redator. Peça o diagnóstico, não a substituição: "onde este parágrafo perde o leitor?", "a conclusão decorre das premissas?", "que objeção um parecerista levantaria?". Um jurista cola a fundamentação e pergunta se as premissas sustentam o pedido; um biólogo pergunta se a discussão vai além do que os dados mostram. A resposta aponta o problema; o conserto ideal é a redação do usuário(autor).
 
-Deixar que ele escreva o texto inteiro troca a voz de quem escreve pela dele e leva a autoria para um terreno incômodo (Cap. 29). Corrigir a partir do diagnóstico preserva essa voz. Serve, ainda, para trocar o registro sem reescrever tudo: adaptar um resumo técnico a um público leigo, verter um *abstract* para outra língua preservando os termos da área. Quando o resultado é longo — uma versão limpa, um roteiro —, o Chat pode abri-lo num artefato, um painel à parte que dá para editar e reabrir (Cap. 18).
+Deixar que ele escreva o texto inteiro troca a voz de quem escreve pela dele e leva a autoria para um terreno incômodo (Cap. -@sec-ethics). Corrigir a partir do diagnóstico preserva essa voz. Serve, ainda, para trocar o registro sem reescrever tudo: adaptar um resumo técnico a um público leigo, verter um *abstract* para outra língua preservando os termos da área. Quando o resultado é longo — uma versão limpa, um roteiro —, o Chat pode abri-lo num artefato, um painel à parte que dá para editar e reabrir (Cap. -@sec-artifacts).
 
 ## Ideias e argumentos
 
@@ -24,11 +24,11 @@ Um dos usos menos óbvios é pedir perguntas, não respostas. Peça um roteiro d
 
 ## Busca de fontes
 
-O Chat do Claude também pode buscar na web. Por padrão, ele responde com base no que aprendeu no treino, até um corte de conhecimento (Cap. 4); quando busca na web, ancora a resposta em páginas reais e atuais. Para um levantamento maior, há uma modalidade de pesquisa mais longa e aprofundada (*deep research*): o Claude encadeia muitas buscas, lê as páginas e devolve um relatório com as fontes — um panorama inicial de um tema, com os autores centrais e o que já se publicou, em minutos.
+O Chat do Claude também pode buscar na web. Por padrão, ele responde com base no que aprendeu no treino, até um corte de conhecimento (Cap. -@sec-how-agents-work); quando busca na web, ancora a resposta em páginas reais e atuais. Para um levantamento maior, há uma modalidade de pesquisa mais longa e aprofundada (*deep research*): o Claude encadeia muitas buscas, lê as páginas e devolve um relatório com as fontes — um panorama inicial de um tema, com os autores centrais e o que já se publicou, em minutos.
 
-O risco real é de uma citação inventada. O Claude pode produzir uma referência de aparência impecável — periódico plausível, autores plausíveis, um DOI bem-formado — que não resolve em lugar nenhum, ou que aponta para um artigo diferente do descrito. A regra prática é uma só: toda citação que ele der deve ser conferida. Uma busca ancorada em resultados reais, com links que levam às fontes, é mais segura que um pedido respondido de memória. O Cap. 17 traz o checklist para limpar uma bibliografia; o Cap. 28, a postura de verificação.
+O risco real é de uma citação inventada. O Claude pode produzir uma referência de aparência impecável — periódico plausível, autores plausíveis, um DOI bem-formado — que não resolve em lugar nenhum, ou que aponta para um artigo diferente do descrito. A regra prática é uma só: toda citação que ele der deve ser conferida. Uma busca ancorada em resultados reais, com links que levam às fontes, é mais segura que um pedido respondido de memória. O Cap. -@sec-references traz o checklist para limpar uma bibliografia; o Cap. -@sec-best-practices, a postura de verificação.
 
-O caminho mais confiável para a busca bibliográfica vem no Cowork, por um conector. Ligado a uma base científica como o PUBMED por um servidor MCP (Cap. 6), o Claude deixa de gerar a referência de memória e passa a buscá-la na própria base. O que volta são os metadados reais do registro — título, autores, periódico, ano, volume, páginas e o DOI —, não uma citação plausível. A busca fica mais rápida e mais fidedigna, porque cada resultado corresponde a um artigo que existe. Os conectores do Cowork ficam no Cap. 15; o fluxo de referências, no Cap. 17.
+O caminho mais confiável para a busca bibliográfica vem no Cowork, por um conector. Ligado a uma base científica como o PUBMED por um servidor MCP (Cap. -@sec-mcp), o Claude deixa de gerar a referência de memória e passa a buscá-la na própria base. O que volta são os metadados reais do registro — título, autores, periódico, ano, volume, páginas e o DOI —, não uma citação plausível. A busca fica mais rápida e mais fidedigna, porque cada resultado corresponde a um artigo que existe. Os conectores do Cowork ficam no Cap. -@sec-connectors; o fluxo de referências, no Cap. -@sec-references.
 
 ::: {.callout-tip}
 ## Na prática
@@ -42,8 +42,8 @@ A citação inventada é um caso de um problema maior. Peça o resumo de um rela
 
 ## Projetos no Chat
 
-Cada conversa nova começa do zero (Cap. 4). Para não remontar o contexto toda vez, o Chat o guarda em **Projetos**. Um Projeto reúne, num lugar só, as instruções que valem em toda conversa dali e os arquivos de referência. Um professor mantém um Projeto por disciplina — a ementa, a bibliografia, o tom das respostas, a regra de citar as fontes; um pesquisador mantém um por artigo em andamento, com o texto atual e as convenções da revista. Cada nova conversa dentro do Projeto já parte desse contexto (Cap. 9).
+Cada conversa nova começa do zero (Cap. -@sec-how-agents-work). Para não remontar o contexto toda vez, o Chat o guarda em **Projetos**. Um Projeto reúne, num lugar só, as instruções que valem em toda conversa dali e os arquivos de referência. Um professor mantém um Projeto por disciplina — a ementa, a bibliografia, o tom das respostas, a regra de citar as fontes; um pesquisador mantém um por artigo em andamento, com o texto atual e as convenções da revista. Cada nova conversa dentro do Projeto já parte desse contexto (Cap. -@sec-customization).
 
 <!-- FIGURA a fazer: chat-projetos.png — um Projeto no Chat, com instruções e arquivos. -->
 
-É assim que a persistência funciona no Chat: instruções e arquivos que se repetem, não um arquivo de regras numa pasta do computador — o `CLAUDE.md` chega com o Cowork e o Code (Cap. 23). E há um limite. O Projeto guarda o contexto, mas o Chat segue apenas conversando. Pedir que o agente não fale sobre os arquivos, e sim trabalhe neles — abra, edite, gere, execute —, cruza a fronteira para o Cowork.
+É assim que a persistência funciona no Chat: instruções e arquivos que se repetem, não um arquivo de regras numa pasta do computador — o `CLAUDE.md` chega com o Cowork e o Code (Cap. -@sec-claude-md). E há um limite. O Projeto guarda o contexto, mas o Chat segue apenas conversando. Pedir que o agente não fale sobre os arquivos, e sim trabalhe neles — abra, edite, gere, execute —, cruza a fronteira para o Cowork.

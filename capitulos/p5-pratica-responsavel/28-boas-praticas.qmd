@@ -1,4 +1,4 @@
-# Boas práticas
+# Boas práticas {#sec-best-practices}
 
 <!-- TODO: redigir. -->
 

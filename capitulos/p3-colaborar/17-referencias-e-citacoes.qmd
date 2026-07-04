@@ -1,4 +1,4 @@
-# Referências e citações
+# Referências e citações {#sec-references}
 
 <!-- TODO: redigir. Conversa com os diagramas de fluxo de citação e BibTeX+CSL+Quarto. -->
 

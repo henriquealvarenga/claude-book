@@ -24,7 +24,7 @@ Recomenda-se ler com o Claude aberto ao lado, reproduzindo os exemplos à medida
 
 ## Convenções
 
-Os termos da interface são apresentados em **português**, como aparecem na tela, com o equivalente em inglês entre parênteses na primeira menção; um quadro completo de equivalências está no Apêndice C. Alguns termos sem tradução consagrada — *token*, *prompt*, *skill*, *MCP* — permanecem em inglês. Trechos de código e nomes de arquivo aparecem em `fonte monoespaçada`. Ao longo do texto, caixas destacadas assinalam observações práticas, alertas e sugestões de aprofundamento.
+Os termos da interface são apresentados em **português**, como aparecem na tela, com o equivalente em inglês entre parênteses na primeira menção; um quadro completo de equivalências está no Apêndice -@sec-glossary. Alguns termos sem tradução consagrada — *token*, *prompt*, *skill*, *MCP* — permanecem em inglês. Trechos de código e nomes de arquivo aparecem em `fonte monoespaçada`. Ao longo do texto, caixas destacadas assinalam observações práticas, alertas e sugestões de aprofundamento.
 
 ::: {.callout-note}
 ## Sobre a atualidade do conteúdo

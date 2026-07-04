@@ -1,4 +1,4 @@
-# Estudo de casos
+# Estudo de casos {#sec-case-studies}
 
 <!-- TODO: redigir. -->
 

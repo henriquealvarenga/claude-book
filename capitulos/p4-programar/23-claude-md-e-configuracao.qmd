@@ -1,4 +1,4 @@
-# CLAUDE.md
+# CLAUDE.md {#sec-claude-md}
 
 <!-- TODO: redigir. -->
 

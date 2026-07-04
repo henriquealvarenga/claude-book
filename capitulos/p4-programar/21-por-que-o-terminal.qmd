@@ -1,4 +1,4 @@
-# Terminal
+# Terminal {#sec-terminal}
 
 <!-- TODO: redigir. -->
 

@@ -1,4 +1,4 @@
-# Conectando ferramentas e dados
+# Conectando ferramentas e dados {#sec-mcp-data}
 
 <!-- TODO: redigir. Remissão ao Cap. 6. -->
 
@@ -6,7 +6,7 @@
 
 ## Adicionar um servidor MCP a um projeto
 
-Nem toda ferramenta tem um conector pronto. Em meados de 2026, o catálogo da Anthropic não trazia nenhum servidor para o Google Forms <!-- TODO: verificar disponibilidade/data -->. Sem o conector de prateleira, resta o caminho que o Cap. 6 chamou de servidor próprio: um pequeno programa que fica entre o agente e a interface (API) do serviço, traduz os pedidos e devolve as respostas. Escrever esse programa é trabalho de quem programa — e é o que se delega ao Code.
+Nem toda ferramenta tem um conector pronto. Em meados de 2026, o catálogo da Anthropic não trazia nenhum servidor para o Google Forms <!-- TODO: verificar disponibilidade/data -->. Sem o conector de prateleira, resta o caminho que o Cap. -@sec-mcp chamou de servidor próprio: um pequeno programa que fica entre o agente e a interface (API) do serviço, traduz os pedidos e devolve as respostas. Escrever esse programa é trabalho de quem programa — e é o que se delega ao Code.
 
 Conectar o Code ao Google Forms para criar e editar formulários tem duas frentes. A primeira é a credencial do Google, que só o usuário obtém: ela depende da conta, da autorização, dos cliques no navegador. A segunda é o servidor, que o agente escreve, instala e registra. O usuário não programou nada; o Claude gravou cerca de cem linhas de código num arquivo, rodou esse arquivo e o conectou ao Code. O código existe, está no disco e roda — apenas não passou pelas mãos de quem pediu.
 

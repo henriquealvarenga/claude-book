@@ -1,4 +1,4 @@
-# Setup
+# Setup {#sec-setup}
 
 Antes de usar o Claude no Chat, no Cowork ou no Code, valem algumas decisões comuns aos três: criar uma conta, escolher um plano e definir como tratar dados e quanta autonomia conceder ao agente. A maior parte se resolve uma vez. O que merece atenção são as escolhas de privacidade e de permissão, que moldam o que o agente pode ver e fazer.
 
@@ -10,11 +10,11 @@ O Chat tem uma camada gratuita, de uso limitado. O Cowork e o Code exigem um pla
 
 ## Limites de uso
 
-Todo plano por assinatura traz um limite de uso, renovado a cada período. O Chat consome pouco por mensagem; o agente — Cowork e Code — consome mais, porque uma tarefa são muitas etapas (Cap. 1), e cada etapa gasta tokens (Cap. 4). Por isso o mesmo plano rende menos no Cowork do que no Chat: o agente faz mais a cada pedido.
+Todo plano por assinatura traz um limite de uso, renovado a cada período. O Chat consome pouco por mensagem; o agente — Cowork e Code — consome mais, porque uma tarefa são muitas etapas (Cap. -@sec-agentic-turn), e cada etapa gasta tokens (Cap. -@sec-how-agents-work). Por isso o mesmo plano rende menos no Cowork do que no Chat: o agente faz mais a cada pedido.
 
 Dentro do aplicativo, um painel de uso mostra quanto resta em cada janela de tempo e o saldo de créditos (@fig-uso). Há ainda o acesso pela interface de programação (*API*), pago por token, voltado a quem integra o Claude a outros sistemas.
 
-Na caixa de composição, um seletor permite escolher o **modelo** (Opus, Sonnet ou Haiku — Cap. 2) e o **esforço**, numa escala que vai de "mais rápido" a "mais inteligente". Mais esforço significa mais raciocínio a cada resposta — e mais consumo do limite; para o dia a dia, o padrão costuma bastar.
+Na caixa de composição, um seletor permite escolher o **modelo** (Opus, Sonnet ou Haiku — Cap. -@sec-anthropic-claude) e o **esforço**, numa escala que vai de "mais rápido" a "mais inteligente". Mais esforço significa mais raciocínio a cada resposta — e mais consumo do limite; para o dia a dia, o padrão costuma bastar.
 
 ![O painel de uso, com os limites de cada janela e o saldo de créditos.](/images/cowork-uso-do-plano.png){#fig-uso width=75% fig-alt="Painel 'Uso do plano' com quatro barras: Limite de 5 horas (renova às 12:00, 4%); Semanal, todos os modelos (renova 29 de jun., 39%); Apenas Sonnet (0%); Créditos de uso (US$ 0,00 de US$ 550,00)."}
 
@@ -28,13 +28,13 @@ O Chat funciona no navegador, sem instalar nada, e tem aplicativos para celular 
 
 O agente lê aquilo a que recebeu acesso, e só isso. O que compartilhar é decisão do usuário, e as configurações de privacidade controlam, por exemplo, se as conversas podem servir para treinar os modelos. Reveja esses ajustes antes de começar.
 
-Material sensível — dados de pacientes, pesquisa não publicada, informações pessoais protegidas pela LGPD [@brasil2018lgpd] — exige mais cautela. Tudo o que o agente recebe sai do computador: vai para os servidores que rodam o modelo. Não é proibido trabalhar com esses dados, mas a decisão é de quem pesquisa: anonimizar o que for possível e conferir as regras da instituição e do comitê de ética, que podem ser mais estritas que as do produto (Cap. 29).
+Material sensível — dados de pacientes, pesquisa não publicada, informações pessoais protegidas pela LGPD [@brasil2018lgpd] — exige mais cautela. Tudo o que o agente recebe sai do computador: vai para os servidores que rodam o modelo. Não é proibido trabalhar com esses dados, mas a decisão é de quem pesquisa: anonimizar o que for possível e conferir as regras da instituição e do comitê de ética, que podem ser mais estritas que as do produto (Cap. -@sec-ethics).
 
 ## Responsabilidade
 
-O agente age, mas a responsabilidade pelo resultado é do usuário. Ele pode errar com aparência de acerto — alucina, inventa referências (Cap. 4) —, e texto fluente não garante conteúdo correto. É preciso revisar o que sai e validar antes de usar (Cap. 28).
+O agente age, mas a responsabilidade pelo resultado é do usuário. Ele pode errar com aparência de acerto — alucina, inventa referências (Cap. -@sec-how-agents-work) —, e texto fluente não garante conteúdo correto. É preciso revisar o que sai e validar antes de usar (Cap. -@sec-best-practices).
 
-No trabalho acadêmico soma-se a transparência: muitas revistas e instituições pedem que se declare o uso de IA (Cap. 29).
+No trabalho acadêmico soma-se a transparência: muitas revistas e instituições pedem que se declare o uso de IA (Cap. -@sec-ethics).
 
 ## Modos de permissão
 
@@ -48,4 +48,4 @@ No extremo do controle está o **modo de planejamento**: o agente lê e propõe 
 
 A escolha equilibra velocidade e controle. Mais autonomia poupa cliques e acelera o repetitivo; também aumenta a chance de uma ação indesejada passar sem revisão. Suba na escala à medida que a confiança na tarefa cresce, não antes. O ponto não é evitar a autonomia, e sim concedê-la vendo o que se aprova.
 
-O seletor do aplicativo traz esses cinco modos. No terminal, o Code acrescenta um sexto, feito para execuções sem supervisão: nega tudo o que não tiver sido liberado de antemão. E permite regras finas de permissão — por comando, por arquivo, por domínio (Cap. 24).
+O seletor do aplicativo traz esses cinco modos. No terminal, o Code acrescenta um sexto, feito para execuções sem supervisão: nega tudo o que não tiver sido liberado de antemão. E permite regras finas de permissão — por comando, por arquivo, por domínio (Cap. -@sec-commands-permissions).

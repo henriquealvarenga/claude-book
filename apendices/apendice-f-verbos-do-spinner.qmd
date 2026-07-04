@@ -1,6 +1,6 @@
 # Os verbos do *spinner* {#sec-spinner-verbs}
 
-Enquanto o Claude trabalha, o indicador de atividade não mostra uma fria barra de progresso: mostra uma palavra. *Sautéing…*, *Pondering…*, *Lollygagging…* São os **verbos do *spinner*** (em inglês, *spinner verbs*) — gerúndios bem-humorados que aparecem no Claude Code e no Cowork enquanto o agente pensa. O fenômeno foi apresentado no @sec-como-trabalha; aqui fica o registro lúdico.
+Enquanto o Claude trabalha, o indicador de atividade não mostra uma fria barra de progresso: mostra uma palavra. *Sautéing…*, *Pondering…*, *Lollygagging…* São os **verbos do *spinner*** (em inglês, *spinner verbs*) — gerúndios bem-humorados que aparecem no Claude Code e no Cowork enquanto o agente pensa. O fenômeno foi apresentado no Cap. -@sec-how-agents-work; aqui fica o registro lúdico.
 
 São cerca de 185 por padrão, distribuídos em categorias temáticas, e a lista **muda entre versões** — alguns verbos são aposentados, outros entram. A seleção abaixo, portanto, é uma amostra, não um catálogo oficial. Como aparecem em **inglês** na interface, acompanha uma tradução aproximada — boa parte do charme está justamente no que cada palavra evoca.
 

@@ -1,3 +1,3 @@
-# Referência rápida de comandos e atalhos
+# Referência rápida de comandos e atalhos {#sec-command-ref}
 
 <!-- TODO -->
