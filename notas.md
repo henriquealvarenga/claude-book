@@ -357,6 +357,26 @@ Bibliografia com ~57 entradas (30 importadas do curso, **NÃO VERIFICADAS**; o
 resto verificado nesta etapa). Diagramas em `images/diagramas/`. PDF desativado
 (reativar: descomentar bloco no `_quarto.yml` + `quarto install tinytex`).
 
+**Cross-references e git (04/07/2026):** as remissões manuais a capítulos
+viraram cross-references nativas do Quarto. Todos os 31 caps. e 6 apêndices têm
+identificador no título: **slug curto em inglês** com prefixo `sec-` (ex.:
+`sec-harness`, `sec-mcp-data`, `sec-glossary`); colisão Cap. 22/Apêndice A
+resolvida com `sec-install` / `sec-install-os`. IDs antigos renomeados:
+`sec-como-trabalha`→`sec-how-agents-work`, `sec-o-harness`→`sec-harness`,
+`sec-injecao`→`sec-prompt-injection` (`sec-spinner-verbs` mantido). **Estilo
+fixado para remissões novas:** manter o texto "Cap."/"Capítulo"/"Apêndice" e
+usar a forma **sem prefixo** `-@sec-x` só no número — ex.: `(Cap. -@sec-mcp)`
+renderiza "(Cap. 6)". Não usar `@sec-x` puro, que renderizaria "Capítulo 6"
+por extenso e quebraria a convenção tipográfica do livro. 134 remissões
+convertidas e conferidas contra o render (sem warnings; número renderizado =
+número original em todas). **Ficam manuais:** menções a "Parte I–V" (partes
+são strings no `_quarto.yml`, não recebem ID — atenção ao reordenar partes) e
+os números citados em comentários `<!-- TODO -->`. **Git:** repositório
+iniciado nesta data como rede de segurança (`73facd8` estado pré-conversão,
+`01c3396` conversão); `_book/` e `.quarto/` fora do versionamento. Regra
+prática daqui em diante: capítulo novo ganha `{#sec-...}` no título, e toda
+remissão nova usa `Cap. -@sec-x`.
+
 **Reorganização (esta sessão):** capítulos movidos para subpastas por parte
 (`capitulos/pN-.../`), figuras com caminho a partir da raiz (`/images/...`).
 **Caps. 8 e 9 trocados de ordem e renumerados:** **7 — Setup** (arquivo
