@@ -1,4 +1,4 @@
-# Conectando ferramentas e dados {#sec-mcp-data}
+# MCP e dados {#sec-mcp-data}
 
 <!-- TODO: redigir. Remissão ao Cap. 6. -->
 

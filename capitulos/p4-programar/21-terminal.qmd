@@ -1,0 +1,37 @@
+# Terminal {#sec-terminal}
+
+Um terminal é uma interface de texto pela qual uma pessoa conversa diretamente com o sistema operacional, digitando comandos e recebendo respostas também em texto.
+
+Antes das interfaces gráficas com janelas, ícones e mouse, a única forma de interagir com um computador era através de texto. O usuário digitava comandos; o computador respondia — também em texto. Essa interação acontecia através de terminais físicos: máquinas compostas por um teclado e uma tela (ou impressora) conectadas a um computador central distante.
+
+Nos anos 1960 e 1970, os terminais eram a porta de entrada para os grandes mainframes das universidades e empresas. Programadores, cientistas e engenheiros passavam horas diante dessas telas escuras com letras verdes ou âmbar, digitando comandos para executar cálculos, processar dados e desenvolver software.
+
+Com a chegada dos computadores pessoais nos anos 1980, as interfaces gráficas (GUI) começaram a se popularizar. O Macintosh da Apple, lançado em janeiro de 1984 (Apple Computer, Inc., 1984), e posteriormente o Windows da Microsoft tornaram os computadores acessíveis a pessoas sem conhecimento técnico. Bastava apontar e clicar.
+
+Mas o terminal não desapareceu. Ele permaneceu como ferramenta essencial para desenvolvedores, administradores de sistemas e usuários avançados. A razão é que a linha de comando oferece três coisas que a interface gráfica nem sempre consegue. **Precisão**, porque você diz exatamente o que quer, sem depender de menus que escondem opções. **Automação**, porque sequências de comandos podem ser salvas e executadas de novo. **Universalidade**, porque os comandos básicos funcionam praticamente igual em qualquer servidor Linux do mundo, em qualquer máquina remota acessada via SSH, em qualquer container Docker.
+
+Por trás do terminal existe um programa que interpreta seus comandos e os executa, chamado de shell. Já o shell sempre teve o sentido de uma “casca” em torno do sistema operacional. Ele fica entre o usuário e o núcleo do sistema. O usuário não fala diretamente com o coração do sistema operacional; fala com o shell, que traduz comandos humanos em operações do sistema.
+
+No Mac, o aplicativo se chama Terminal e vem instalado por padrão. O Terminal é a janela onde digitamos comandos. Dentro dessa janela roda um shell, que é o programa responsável por interpretar esses comandos. Nas versões atuais do macOS, o shell padrão é o zsh; em versões mais antigas, era comum o uso do bash.
+
+No Windows, é importante separar a janela do interpretador de comandos. O Windows Terminal, lançado pela Microsoft em 2019, é o aplicativo moderno que funciona como janela de terminal, com abas e suporte a diferentes ambientes. Dentro dele podem rodar vários shells, como o Prompt de Comando (cmd), herdeiro do MS-DOS, o PowerShell, mais moderno e com linguagem própria, ou shells do Linux por meio do WSL. Portanto, o Windows Terminal é a janela; cmd e PowerShell são shells.
+
+A maioria dos agentes de IA de hoje (Claude Code, Codex CLI, Gemini CLI) rodam no terminal. Quando você os invoca, eles operam com o shell que está disponível: zsh no Mac, bash no Linux, PowerShell ou Git Bash no Windows. Para usar agentes CLI com fluência, é preciso ter o terminal funcionando.
+
+
+
+APPLE COMPUTER, INC. Apple Introduces Macintosh Advanced Personal Computer., 1984. Disponível em: https://web.stanford.edu/dept/SUL/sites/mac/primary/docs/pr1.html.
+
+MICROSOFT CORPORATION. Windows Terminal Documentation., 2024. Disponível em: https://learn.microsoft.com/en-us/windows/terminal/.
+
+## O que é o terminal — e por que assusta sem precisar assustar
+
+## O que o Code faz que o Cowork não faz
+
+## Casos acadêmicos: reprodutibilidade, automação e escala
+
+## A aba Code e sua relação com o Cowork
+
+## O panorama dos agentes de terminal (Claude Code, Codex, Antigravity CLI)
+
+## Expectativas realistas

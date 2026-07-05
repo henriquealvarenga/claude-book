@@ -1,0 +1,116 @@
+# Análise de dados {#sec-data-analysis}
+
+A análise de dados é o momento em que a pesquisa deixa de ser apenas coleta e começa a produzir resultados. Quase todo estudo chega a esse ponto na forma de uma tabela: respostas de questionário, medições de experimento, registros clínicos, decisões judiciais, temperaturas de uma estação, vendas de uma série histórica.
+
+A análise envolve várias etapas técnicas, muitas vezes dependentes de conhecer uma linguagem de análise, softwares proprietários ou depender de alguém que a dominasse esses procedimentos: escrever ou operar um programa estatístico, transformar arquivos, limpar inconsistências, gerar tabelas e figuras, interpretar resultados.
+
+No Cowork essa análise passa a ser tratada como uma tarefa (Cap. -@sec-tasks). Com a pasta com os dados conectada, podemos fazer o pedido, acompanhar o raciocínio do agente, e o código necessário para responder é escrito, executado e preservado como parte do projeto.
+
+## Estrutura de arquivos do projeto
+
+A tarefa de análise fica mais eficiente se cuidarmos primeiro da estrutura de arquivos de dados. Organizar os arquivos é parte do método de pesquisa. Um projeto acumula materiais de naturezas diferentes — os dados originais da coleta, as versões limpas, os scripts de análise, as figuras e tabelas, as versões do texto — e cada um pede um tratamento próprio: o dado original se preserva, a versão limpa se refaz, o script se corrige, o texto se reescreve. Numa pasta única esses papéis se misturam e as versões se multiplicam: `dados.xlsx`, `dados_v2.xlsx`, `dados_final_CORRIGIDO.xlsx`. Com o agente, a desordem pesa mais: a pasta conectada é tudo o que ele vê (Cap. -@sec-tasks), e quem acumulou os arquivos ao menos lembra qual deles vale — o agente não tem essa memória, e pode analisar, sem nenhum erro aparente, a versão errada.
+
+A solução é dar a cada papel uma pasta. Os dados originais — a exportação do equipamento, a planilha do sistema, as respostas brutas do formulário — ficam numa pasta própria; toda limpeza e análise trabalha sobre cópia. O que a análise produz fica noutra; o texto em andamento, noutra ainda. Uma árvore mínima resolve a maior parte dos projetos:
+
+```
+projeto-sono-universitarios/
+├── dados-brutos/          os arquivos originais, nunca alterados
+├── dados-processados/     as versões limpas, geradas a partir dos brutos
+├── codigo/                os scripts que o agente escreve
+├── resultados/            figuras e tabelas
+└── manuscrito/            o texto do artigo
+```
+
+Os nomes das pastas importam menos que a separação; um grupo que prefira `dados/originais` e `dados/limpos` não perde nada. O que não muda é a regra que sustenta o arranjo: dos dados brutos se lê; neles não se escreve. Se uma decisão de limpeza se revelar errada, refaz-se tudo a partir do bruto, que continua como chegou. A separação é prática estabelecida da computação científica, recomendada em guias clássicos da área [@noble2009organizing; @wilson2017good]. Projetos maiores pedem mais pastas — o texto dividido em capítulos, as figuras geradas por código separadas das desenhadas à mão, os arquivos do controle de versão —, e o Cap. -@sec-reproducible traz exemplos de árvores mais completas.
+
+Nada disso se monta à mão. Numa pasta já cheia, o pedido descreve o estado final e traça os limites: *"organize esta pasta para um projeto de análise: crie dados-brutos, dados-processados, codigo, resultados e manuscrito e mova cada arquivo para o lugar certo; não renomeie nem altere os arquivos de dados; na dúvida, pergunte"*. A convenção que vale dali em diante — figuras novas em `resultados/`, scripts em `codigo/` — pode ficar registrada no `CLAUDE.md` da pasta (Cap. -@sec-claude-md), e as tarefas seguintes passam a segui-la sem que ninguém a repita.
+
+Um projeto novo repõe a mesma arrumação, e procedimento que se repete com forma estável é caso para uma skill (Cap. -@sec-skills). O procedimento inteiro cabe num `SKILL.md` de poucas linhas:
+
+```markdown
+---
+name: estrutura-de-projeto
+description: Cria a estrutura de pastas de um projeto de pesquisa com
+  análise de dados. Usar ao iniciar um projeto novo (pasta ainda
+  vazia) ou ao organizar uma pasta de dados existente.
+---
+
+Crie as pastas dados-brutos, dados-processados, codigo, resultados
+e manuscrito — as que ainda não existirem.
+
+Se a pasta já contiver arquivos, mova cada um para a pasta adequada,
+sem renomear. Arquivos de dados originais vão para dados-brutos e
+não podem ser alterados — deles apenas se lê.
+
+Crie um CLAUDE.md registrando a convenção: scripts em codigo,
+figuras e tabelas em resultados, versões limpas dos dados em
+dados-processados.
+
+Na dúvida sobre o destino de um arquivo, pergunte.
+```
+
+Criar a skill é, ela própria, uma tarefa: o comando `/skill-creator` (Cap. -@sec-skills) conduz o processo. <!-- TODO: verificar no app o fluxo do skill-creator --> Dali em diante, começar um projeto é um pedido curto — *"monte a estrutura para o estudo novo"* — e a pasta nasce no padrão.
+
+
+## Arquivos de dados
+
+O material da análise tem quase sempre a mesma forma: cada linha, uma observação — um paciente, um respondente, um processo, um ponto de coleta; cada coluna, uma variável — idade, resposta, data, resultado. O que varia é o arquivo em que essa tabela chega.
+
+Cada área tem os seus formatos de costume. A planilha de Excel (`.xlsx`, ou o `.xls` mais antigo) está em todas; o Numbers, da Apple, tem o formato próprio. O SPSS grava `.sav`, comum nas ciências sociais e da saúde; o SAS, `.sas7bdat`, frequente em ensaios clínicos; o Stata, `.dta`, padrão na economia; o R guarda `.RData` e `.rds`. Bases maiores circulam em formatos como o *parquet*, comprimido, comum em repositórios de dados públicos.
+
+No meio dessa variedade, o `.csv` (*comma-separated values*) é o mais simples e o mais transparente — o formato prático para o dia a dia da pesquisa. Guarda a tabela em texto puro, o formato na base do Markdown (Cap. -@sec-markdown): aberto em qualquer editor, mostra uma linha por registro, com os valores separados por vírgula ou ponto e vírgula.
+
+Para o agente, a variedade importa pouco: ele lê todos e converte entre eles a pedido. O alívio é maior do que parece. Abrir um `.sav` fora do SPSS sempre exigiu saber que existe um pacote para isso, instalá-lo e operá-lo numa linguagem de análise — trabalho de quem programa. O agente faz esse serviço por conta própria: identifica o formato, instala no próprio ambiente o que a leitura pedir e devolve a tabela. O arquivo que o colaborador mandou deixa de exigir o programa que o gerou — e, muitas vezes, a licença paga que vem com ele.
+
+::: {.callout-warning}
+## Dados que identificam pessoas
+
+Planilhas de pesquisa carregam nomes, prontuários, matrículas, números de processo. Antes de conectar a pasta, remova ou codifique esses identificadores e guarde a tabela de correspondência fora da pasta conectada: o agente lê tudo a que recebe acesso. O tratamento de dados sensíveis é assunto do Cap. -@sec-ethics.
+:::
+
+
+## *Vibe coding*
+
+A tarefa de criar o código da análise através da linguagem natural é uma das formas de *vibe coding*. Com essa técnica, o agente escreve um script — um programa curto que abre o arquivo de dados, executa as operações e grava o resultado — e rodando-o em seguida. Se o script falha, porque uma coluna veio com outro nome ou uma célula trazia texto onde se esperava número, ele lê a mensagem de erro, corrige o próprio código e roda de novo (Cap. -@sec-how-agents-work).
+
+<!-- FIGURA a fazer: cowork-analise-dados-tarefa.png — uma tarefa de análise em execução sobre uma planilha: lista de etapas com leitura do arquivo, script escrito e figura gerada. Capturar ao rodar uma análise real no Cowork. -->
+
+## Da pergunta à análise
+
+Podemos pedir por exemplo: *"abra dados-brutos/respostas.csv e descreva o que encontrar: quantas linhas, que colunas, que valores aparecem em cada uma, onde faltam dados"*. A resposta confirma que o agente leu o arquivo certo e entendeu as variáveis — e costuma revelar o que o dono dos dados não sabia que estava lá: a coluna duplicada, o participante repetido, o mês sem registros.
+
+Dali em diante, os pedidos sobem um degrau por vez. Descrever: *"calcule média e desvio-padrão da idade e a distribuição por sexo"*. Cruzar: *"compare a nota final entre quem participou e quem não participou da monitoria"*. Testar: *"essa diferença é estatisticamente significativa?"*. O padrão é o mesmo em qualquer área: o historiador conta ocorrências por década no acervo; o jurista, decisões por câmara e por desfecho; o biólogo compara medições entre tratamentos.
+
+Cada resposta alimenta o pedido seguinte, e não é preciso acertar de primeira: *"refaça excluindo os alunos sem frequência mínima"* corrige o rumo sem recomeçar, como em qualquer tarefa (Cap. -@sec-tasks). Para quem prefere partir de um atalho, a lista de comandos do Cap. -@sec-skills traz um grupo dedicado a dados, com comandos como `/analyze` (@fig-comando-analyze). O `/data:analyze` é uma skill do plugin de dados que serve para responder perguntas sobre dados — desde consultas rápidas até análises completas. Casos de uso típicos: consultar uma métrica específica ("quantos X tivemos em junho?"), investigar o que está causando uma tendência ou queda, comparar segmentos ao longo do tempo, ou preparar um relatório de dados formal.
+
+![O comando `analyze` na lista de comandos do plugin Data, filtrada ao digitar `/data` na caixa de composição. Ao lado, a descrição do comando: responder perguntas sobre dados, de consultas rápidas a análises completas. Na mesma lista, `create-viz`, `explore-data`, `validate-data` e `build-dashboard`.](/images/cowork-comandos-data-analyze.png){#fig-comando-analyze width=85% fig-alt="Caixa de composição do Cowork com /data digitado e a lista de comandos do plugin Data aberta: data-context-extractor, analyze (destacado), create-viz, write-query, explore-data, validate-data, build-dashboard e schedule. À direita, um cartão descreve o analyze: responder perguntas sobre dados, de consultas rápidas a relatórios formais. Abaixo, o alternador Chat/Cowork na posição Cowork e o seletor de modelo."}
+
+Na prática, quando invocada, ela orienta o processo de análise: entender a pergunta, explorar os dados disponíveis (arquivos CSV/Excel, ou bancos conectados via MCP como BigQuery), escrever as consultas/código necessários, validar os resultados e apresentar as conclusões.
+
+O agente pode ajudar a decidir quando perguntado — *"que teste você usaria aqui, e por quê?"* — e executa o que for decidido; mas a decisão continua sendo sempre de quem pesquisa.
+
+## Limpeza de dados
+
+Antes da primeira média, quase sempre, vem o serviço que os manuais de estatística pulam: os dados chegam sujos. Na coluna de sexo convivem "F", "fem." e "Feminino"; as datas alternam `12/03/2024` e `2024-03-12`; o dado faltante aparece ora como célula vazia, ora como "NA", ora como zero — e zero não é falta, é valor. Nenhum teste sobrevive a isso sem limpeza, e limpar costuma tomar mais tempo que analisar.
+
+É trabalho para o agente. *"Padronize a coluna sexo para F e M, converta as datas para ano-mês-dia e liste as linhas com dados faltantes"* resolve numa tarefa o que à mão tomaria uma tarde — e o pedido de listar, em vez de excluir, mantém a decisão sobre os casos incompletos com quem pesquisa. Juntar fontes também é limpeza: as três planilhas de coleta, cada uma com as colunas em outra ordem, viram uma tabela única; a planilha em que cada prova é uma coluna se reorganiza numa linha por aluno e prova, quando a análise pede esse formato.
+
+A estrutura de pastas protege o processo inteiro: o script lê de `dados-brutos/` e grava a versão limpa em `dados-processados/`; o arquivo original permanece como chegou. Numerar os scripts na ordem em que rodam — `01-limpeza`, `02-analise`, `03-figuras` — deixa a sequência escrita no próprio nome. Cada decisão de limpeza — o que virou F, o que se fez com os faltantes — fica visível no script correspondente em `codigo/`, e uma decisão mal tomada se corrige refazendo a partir do bruto, não remendando a cópia.
+
+## Tabelas e figuras
+
+O destino da análise é o manuscrito, e o resultado sai nos formatos que ele pede. Figuras saem como arquivos de imagem: *"gere um gráfico de barras da distribuição por faixa etária e grave em resultados/, em PNG"*. Tabelas saem formatadas num documento ou numa planilha, prontas para o texto. O estilo entra no pedido — eixos nomeados, legenda em português, as cores da instituição — e a exigência que se repete a cada figura é caso para uma skill com o padrão gráfico do grupo (Cap. -@sec-skills). O comando `/create-viz`, do mesmo grupo de comandos de dados, parte direto para essa etapa.
+
+Nem toda figura termina estática. O gráfico que o leitor filtra, a tabela que se reordena, o painel que acompanha dados ainda em coleta — esses deixam de ser arquivo e viram artefato, a página interativa do Cap. -@sec-artifacts.
+
+## Conferir a análise
+
+Código que roda não garante análise correta (Cap. -@sec-agentic-turn), e o erro de análise tem um agravante: não avisa. A referência inventada denuncia a si mesma quando o DOI não resolve (Cap. -@sec-references); a média calculada sobre a planilha errada sai plausível, entra na tabela, atravessa a revisão dos coautores e só aparece — se aparecer — quando outro grupo tenta reproduzir o resultado.
+
+A conferência cabe em três gestos. Contar: se o questionário teve 214 respostas e a tabela descreve 198, dezesseis casos se perderam em algum filtro, e a diferença precisa de explicação. Amostrar: duas ou três células da tabela final conferidas contra o arquivo original, uma soma de coluna refeita na calculadora. Pedir contas: *"descreva passo a passo como chegou a esta tabela: que arquivo leu, que linhas excluiu, que teste aplicou e por quê"* — a explicação que não fecha denuncia o erro antes de ele chegar ao artigo.
+
+::: {.callout-note}
+## Para aprofundar
+
+A análise inteira ficou em arquivos: os dados limpos em `dados-processados/`, os scripts em `codigo/`, as figuras em `resultados/`. Uma consequência vale registrar: apagados os resultados, tudo se refaz rodando os scripts de novo, do bruto à figura. Essa propriedade — a análise que qualquer pessoa, inclusive o autor de daqui a um ano, consegue refazer — é o assunto do Cap. -@sec-reproducible.
+:::

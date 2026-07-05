@@ -180,6 +180,18 @@ SUBSTANTIVOS-CONCEITO (frases sem gente e sem verbo de ação)
   verbos. Desenterrar o verbo da nominalização: "fazer a instalação de" →
   "instalar"; "realizar a análise" → "analisar".
 
+RÓTULO NO LUGAR DA AÇÃO (péssimo; caso real do Cap. 16, jul/2026)
+- Não classificar a instrução; dá-la. A frase-rótulo ("… é de X:") obriga o
+  leitor a decifrar a categoria para achar a ação; em trecho prático, o
+  imperativo com a ação por extenso resolve.
+  Ruim: "O primeiro pedido é de reconhecimento: 'abra o arquivo e descreva
+  o que encontrar'."
+  Bom: "Antes de qualquer cálculo, peça a descrição do arquivo: 'abra o
+  arquivo e descreva o que encontrar'."
+- Teste: se a frase-tópico não sobrevive a "o que isso quer dizer, em
+  português?", reescrever. Jargão de atalho ("reconhecimento") não substitui
+  a instrução.
+
 EMPILHAMENTO DE SUBSTANTIVOS ("creeping nounism")
 - Não encadear 3–4 substantivos onde um verbo resolve: "situação de
   probabilidade de tempestade" → "pode haver tempestade".
@@ -332,6 +344,7 @@ Ofício [Z][F][W][B]:
 [ ] Qualificador tímido a podar? ("meio", "um pouco", "de certa forma")
 [ ] A frase atolou? Quebrar em duas. Pôr o ponto mais cedo.
 [ ] Frase só com substantivos abstratos e "é/são"? Pôr gente + verbo de ação.
+[ ] Frase-rótulo ("… é de X:") onde caberia a ação dita por extenso?
 [ ] Abertura de frase = afirmação direta, não moldura ("A virtude que… é uma só").
 [ ] Mudança de tom sinalizada cedo? ("mas", "porém", "Entretanto")
 [ ] A 1ª frase puxa para a 2ª? O fim para no ponto certo, sem resumo?

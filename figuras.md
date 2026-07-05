@@ -22,6 +22,11 @@
 | `modos-de-permissao.svg` | 8, 24 | Modos de permissão, do mais controlado ao mais autônomo. | Cinco modos em escala de cor. |
 | `estrutura-projeto-quarto.svg` | 27 | A estrutura de um projeto Quarto. | Árvore de pastas e arquivos do projeto. |
 
+**Resolvido sem figura:** a árvore mínima do projeto de dados (cap. 16) entrou
+como bloco de texto monoespaçado no próprio capítulo; o SVG
+(`diagrama-pasta-projeto-dados.svg`, no traço de `estrutura-projeto-quarto.svg`)
+fica como opção se o autor preferir figura.
+
 ## Capturas de tela existentes — `images/`
 
 | Arquivo | Cap. | Legenda sugerida |
@@ -38,6 +43,7 @@
 | `claude-configuracoes-geral-perfil-instrucoes.png` | 9 | Configurações: perfil e instruções personalizadas. |
 | `comandos-de-barra.png` | 14 | A lista de comandos de barra, aberta ao digitar `/`, agrupada por finalidade (geral e Data). |
 | `conectores.png` | 15 | O menu de conectores: serviços ligados (Gmail, Google Calendar, Drive, PUBMED…) com interruptor, e os atalhos de adicionar/gerenciar. |
+| `cowork-comandos-data-analyze.png` | 16 | O comando `analyze` do plugin Data, com sua descrição, na lista filtrada ao digitar `/data`. |
 
 ## Capturas a fazer (nomes sugeridos)
 
@@ -47,7 +53,7 @@
 
 **Caixa de composição:** `cowork-alternador-chat-cowork.png` (cap. 12) — plano fechado do alternador Chat↔Cowork na caixa; o gesto que cruza a fronteira do Cap. 11.
 
-**Agente em ação:** `cowork-tarefa-em-andamento-todos.png` (cap. 13 — a tarefa de renomeação em execução, etapas concluídas e ação corrente; realocada de 4/12: o Cap. 4 usa o diagrama do loop e o Cap. 12 pronto não a usa); `cowork-pedido-de-permissao.png` (cap. 13 — o pedido de permissão durante a renomeação; realocada de 8, que usa o diagrama e o seletor); `cowork-skill-gerando-documento.png` (cap. 16). As duas primeiras saem da mesma sessão: rodar a tarefa real do Cap. 13 no Cowork.
+**Agente em ação:** `cowork-tarefa-em-andamento-todos.png` (cap. 13 — a tarefa de renomeação em execução, etapas concluídas e ação corrente; realocada de 4/12: o Cap. 4 usa o diagrama do loop e o Cap. 12 pronto não a usa); `cowork-pedido-de-permissao.png` (cap. 13 — o pedido de permissão durante a renomeação; realocada de 8, que usa o diagrama e o seletor); `cowork-analise-dados-tarefa.png` (cap. 16 — tarefa de análise de dados em execução sobre uma planilha; substitui a antiga `cowork-skill-gerando-documento.png`, do foco descartado do capítulo). As duas primeiras saem da mesma sessão: rodar a tarefa real do Cap. 13 no Cowork.
 
 **Parte IV (Code):** `code-aba-sessao-terminal.png` (cap. 21); `code-positron-terminal.png`, `code-cursor.png`, `code-antigravity.png` (cap. 26).
 

@@ -1,6 +1,6 @@
 # Conectores e Plugins {#sec-connectors}
 
-O agente ganha alcance de duas formas, com conectores e plugins. Um **Conector** liga o Claude a um serviço externo — o e-mail, a agenda, uma base científica. Um **plugin** reúne vários desses recursos num único pacote, para instalar de uma vez. 
+No Claude, **Conectores** e **Plugins** são extensões que permitem à IA acessar serviços, arquivos, bases de dados ou ferramentas externas.
 
 ## Conectores
 

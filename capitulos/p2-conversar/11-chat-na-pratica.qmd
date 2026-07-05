@@ -4,7 +4,7 @@ O Chat cobre a maior parte do trabalho intelectual que cabe numa conversa: ler u
 
 ## Leitura e síntese
 
-Podemos usar o Chat para ler e sintetizar artigos. Anexe um PDF e peça a tese, os argumentos que a sustentam e os pontos em que o autor reconhece objeções; cole dois artigos e solicite avaliar onde discordam; anexe um relatório e peça a tabela de resultados em texto corrido. O Claude lê o arquivo anexado ou o trecho colado e devolve compreensão, mas não cria arquivos. Extrair páginas, converter formatos ou gerar um documento a partir das fontes é trabalho do Cowork (Cap. -@sec-academic-docs).
+Podemos usar o Chat para ler e sintetizar artigos. Anexe um PDF e peça a tese, os argumentos que a sustentam e os pontos em que o autor reconhece objeções; cole dois artigos e solicite avaliar onde discordam; anexe um relatório e peça a tabela de resultados em texto corrido. O Claude lê o arquivo anexado ou o trecho colado e devolve compreensão, mas não cria arquivos. Extrair páginas, converter formatos ou gerar um documento a partir das fontes é trabalho do Cowork (Cap. -@sec-tasks).
 
 ## Escrita e revisão
 

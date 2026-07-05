@@ -42,20 +42,20 @@ book:
         - capitulos/p3-colaborar/13-tarefas-e-pastas.qmd
         - capitulos/p3-colaborar/14-skills.qmd
         - capitulos/p3-colaborar/15-conectores.qmd
-        - capitulos/p3-colaborar/16-documentos-academicos.qmd
+        - capitulos/p3-colaborar/16-analise-de-dados.qmd
         - capitulos/p3-colaborar/17-referencias-e-citacoes.qmd
         - capitulos/p3-colaborar/18-artefatos.qmd
         - capitulos/p3-colaborar/19-programado-e-despacho.qmd
         - capitulos/p3-colaborar/20-estudos-de-caso.qmd
     - part: "Parte IV — Programar (Claude Code)"
       chapters:
-        - capitulos/p4-programar/21-por-que-o-terminal.qmd
-        - capitulos/p4-programar/22-instalacao-primeiro-projeto.qmd
-        - capitulos/p4-programar/23-claude-md-e-configuracao.qmd
-        - capitulos/p4-programar/24-comandos-skills-permissoes.qmd
+        - capitulos/p4-programar/21-terminal.qmd
+        - capitulos/p4-programar/22-instalacao.qmd
+        - capitulos/p4-programar/23-claude-md.qmd
+        - capitulos/p4-programar/24-comandos-skills.qmd
         - capitulos/p4-programar/25-mcp-e-dados.qmd
-        - capitulos/p4-programar/26-claude-code-no-editor.qmd
-        - capitulos/p4-programar/27-pesquisa-reproduzivel.qmd
+        - capitulos/p4-programar/26-code-no-ide.qmd
+        - capitulos/p4-programar/27-reproduzivel.qmd
     - part: "Parte V — Prática responsável"
       chapters:
         - capitulos/p5-pratica-responsavel/28-boas-praticas.qmd

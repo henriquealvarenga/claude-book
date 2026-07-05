@@ -134,6 +134,16 @@ textos-fonte antigos as violam:
   depois (regra de exatidão do CLAUDE.md).
 - **Frases com gente e verbo de ação.** "A reação comum é o riso incrédulo" →
   "As pessoas riem, sem acreditar."
+- **Rótulo no lugar da ação — PÉSSIMO.** Não classificar a instrução; dá-la.
+  A frase-rótulo ("… é de X:") obriga o leitor a decifrar a categoria para
+  achar a ação; em trecho prático, o imperativo com a ação por extenso resolve.
+  - Ruim: "O primeiro pedido é de reconhecimento: *'abra o arquivo e descreva
+    o que encontrar'*."
+  - Bom: "Antes de qualquer cálculo, peça a descrição do arquivo: *'abra o
+    arquivo e descreva o que encontrar'*."
+  Teste: a frase-tópico sobrevive à pergunta "o que isso quer dizer, em
+  português?"? Se precisa de tradução, reescrever. (Caso real do Cap. 16 —
+  ver Lista viva.)
 - **Sem empilhar substantivos:** "situação de probabilidade de tempestade" →
   "pode haver tempestade".
 - **Parágrafos curtos** arejam, mas sem picotar.
@@ -246,6 +256,7 @@ Leitor e fluxo:
 Ofício:
 [ ] Cada palavra cumpre função? (-50% é meta realista)
 [ ] Verbos ativos e precisos? Nominalização a desenterrar? Passiva evitável?
+[ ] Frase-rótulo ("… é de X:") onde caberia a ação dita por extenso?
 [ ] Advérbio/adjetivo repetindo o verbo/substantivo? Qualificador tímido?
 [ ] Frase atolou? Quebrar em duas; pôr o ponto mais cedo.
 [ ] Virada de sentido sinalizada cedo ("Mas", "Entretanto")?
@@ -412,3 +423,111 @@ contador subir acima de zero, o vício voltou.
   frase): quebrar em duas, uma função por marca de pontuação.
 - Cap. 7 — paralelismo ornamental "discretas o bastante… precisas o bastante":
   manter um lado do paralelo, não os dois (a repetição existia pelo ritmo).
+
+**Cap. 16 (jul/2026) — abertura de capítulo: situar a atividade antes do
+artefato.** O autor reescreveu a abertura ("achei o início meio bobo"):
+
+- Antes: "Quase toda pesquisa produz uma tabela que espera análise: […] Entre
+  essa tabela e o artigo há uma barreira conhecida — analisar exige um programa
+  estatístico e alguém que saiba usá-lo. A saída tradicional é aprender um ou
+  esperar a vez na agenda de quem sabe."
+- Depois: "A análise de dados é o momento em que a pesquisa deixa de ser apenas
+  coleta e começa a produzir argumento. […] costuma haver uma barreira técnica:
+  é preciso escolher um procedimento, escrever ou operar um programa
+  estatístico, transformar arquivos, limpar inconsistências, gerar tabelas e
+  figuras, interpretar resultados. Durante muito tempo, isso significou aprender
+  uma linguagem de análise ou depender de alguém que a dominasse."
+
+Lições: (a) **a abertura do capítulo situa a atividade no fazer da pesquisa**
+(o papel dela, o que ela muda) antes de chegar ao artefato — abrir pelo objeto
+("uma tabela que espera análise") fica raso; (b) **decompor a barreira em suas
+partes reais** (escolher procedimento, operar programa, transformar, limpar,
+gerar, interpretar) em vez de resumi-la numa linha — o inventário concreto pesa
+mais e prenuncia o capítulo sem anunciá-lo; (c) tom sóbrio no lugar da graça:
+"esperar a vez na agenda de quem sabe" → "depender de alguém que a dominasse";
+(d) a frase final da abertura carrega o arco completo (o código "escrito,
+executado e preservado como parte do projeto"); (e) o "menos palavras" tem
+limite na abertura: compressão que corta substância soa "boba" — na dúvida,
+abrir com mais lastro e enxugar no meio do capítulo, não no início.
+
+Dois ajustes posteriores do autor no mesmo capítulo:
+
+- "a pesquisa deixa de ser apenas coleta e começa a produzir **argumento**" →
+  "…a produzir **resultados**". Preferir o termo concreto do ofício ao termo
+  retórico, mesmo quando o retórico parece mais elegante.
+- Seção "Arquivos de dados" devolvida para ampliar: o autor pediu **mais
+  formatos, amarrados às áreas que os usam** (SPSS `.sav` → sociais e saúde;
+  SAS `.sas7bdat` → ensaios clínicos; Stata `.dta` → economia; R, Numbers) e o
+  ponto de que **o agente elimina o trabalho de instalar pacotes** para ler
+  cada formato — antes tarefa de quem programa. Lição: em seção de "material",
+  não parar nos dois formatos óbvios; o inventário por área faz o leitor se
+  reconhecer, e a dor que o agente remove deve ser dita (pacote, programa,
+  licença), não subentendida.
+- **A lição da abertura vale também para abrir seção** ("Estrutura de arquivos
+  do projeto", devolvida com "assim está ruim; lembre-se do ajuste do primeiro
+  parágrafo"):
+  - Antes: "A pasta conectada é tudo o que o agente vê — e numa pasta
+    desorganizada ele vê demais. […] A desordem que antes custava tempo passa a
+    custar resultado." (abre pelo mecanismo; fecha em aforismo fabricado)
+  - Depois: "Organizar os arquivos é parte do método de pesquisa. Um projeto
+    acumula materiais de naturezas diferentes […] o dado original se preserva,
+    a versão limpa se refaz, o script se corrige, o texto se reescreve. […] quem
+    acumulou os arquivos ao menos lembra qual deles vale — o agente não tem essa
+    memória, e pode analisar, sem nenhum erro aparente, a versão errada."
+  - Lições: abrir a seção pela atividade no ofício, não pelo produto; terminar
+    em consequência concreta, não em máxima; o argumento mais verdadeiro (o
+    agente não tem a memória de quem fez a desordem) vale mais que o jogo de
+    palavras. E vocabulário: **"solução", não "defesa"** — preferir a palavra
+    plana à metáfora de combate (escolha do autor).
+
+**Cap. 16 (jul/2026) — PÉSSIMO: remissão-eco e falsa correção.** O autor
+devolveu esta frase com "já pedi inúmeras vezes, NÃO USE ESSE TIPO DE
+CONSTRUÇÃO. NUNCA MAIS":
+
+- Antes: "O primeiro pedido não é estatístico, é de reconhecimento — o mesmo
+  gesto do Cap. 13, agora voltado ao conteúdo: […]"
+- Depois: "O primeiro pedido é de reconhecimento: […]"
+
+A frase funde dois vícios, agora nomeados e **proibidos em qualquer variante**
+(também gravados no CLAUDE.md):
+
+1. **Remissão-eco** — vestir conteúdo novo de reencenação de capítulo
+   anterior: "o mesmo movimento/gesto/ciclo de…, agora aplicado a/voltado
+   a…", "aqui como no Cap. X", "o análogo de… do Cap. X", "a mesma solução
+   de…". O CLAUDE.md já vetava "o mesmo movimento…"; a frase contornou por
+   sinônimo ("gesto") — **trocar a palavra não desativa a proibição; o vício é
+   a construção**. Remissão permitida é a nua: dizer a coisa diretamente e
+   apontar "(Cap. -@sec-x)". Na varredura do Cap. 16 caíram, da mesma família:
+   "o ciclo raciocinar, agir e observar do Cap. 4, **aplicado a dados**" →
+   "…roda de novo (Cap. 4)"; "As habilidades que contam, **aqui como no
+   Cap. 1**, são…" → "As habilidades que contam são…"; "É **o mesmo** texto
+   simples que serve de base ao Markdown, **agora guardando dados**" → "texto
+   puro, o formato na base do Markdown (Cap. 7)"; "o caso **que o Cap. 14
+   definiu** para uma skill" → "é caso para uma skill (Cap. 14)"; "a **mesma
+   solução da** estrutura de pastas: uma skill" → "é caso para uma skill".
+2. **Falsa correção** — "não é X, é Y" negando o que ninguém afirmou, para
+   encenar revelação. Afirmar direto o que a coisa é. Distinguir do contraste
+   legítimo entre alternativas reais ("refazer do bruto, não remendar a
+   cópia"), que continua permitido.
+
+Verificação objetiva ao revisar: grep por "o mesmo|a mesma|aqui como|agora
+aplicad|agora voltad|análogo|não é .*, é" no rascunho antes de entregar.
+
+**Cap. 16 (jul/2026) — rótulo no lugar da ação.** Corrigida a falsa correção,
+sobrou "O primeiro pedido é de reconhecimento:" — e o autor pediu que a frase
+fosse *traduzida* ("me explique isso!!!"). Se o autor precisa de tradução, o
+leitor não tem chance.
+
+- Antes: "O primeiro pedido é de reconhecimento: *'abra
+  dados-brutos/respostas.csv e descreva…'*"
+- Depois: "Antes de qualquer cálculo, peça a descrição do arquivo: *'abra
+  dados-brutos/respostas.csv e descreva…'*"
+
+Lições: (a) **não classificar o pedido; dizê-lo** — "é de reconhecimento"
+põe a frase na prateleira de uma categoria em vez de instruir; a forma certa é
+o imperativo prático (permitido) com a ação nomeada: "peça a descrição";
+(b) **jargão de atalho não substitui a instrução** — "reconhecimento" (sentido
+militar de *reconnaissance*) pressupõe que o leitor lembra do Cap. 13; é a
+maldição do conhecimento em uma palavra; (c) teste rápido: se a frase-tópico
+não sobrevive à pergunta "o que isso quer dizer, em português?", reescrever
+antes de entregar.

@@ -45,7 +45,7 @@ Cada parte sobe um degrau nessa escala.
   (lista cresce conforme a revisão do autor)
 - **Clichês/transições de IA a cortar:** "porta de entrada", "em três atos",
   "a Parte/capítulo X fecha/encerra…", "convém (também) ter presentes…",
-  "que acabamos de descrever", "o mesmo movimento…", "que hoje organizam/
+  "que acabamos de descrever", "que hoje organizam/
   dominam…", "por isso fala/é/faz…" (personificação + "por isso"), "a diferença
   é de grau, não de espécie", "as próximas seções tratam de… / o Cap. X
   retoma…" (anúncio do que vem), abrir frase com "Quando…" (soa infantil),
@@ -53,6 +53,18 @@ Cada parte sobe um degrau nessa escala.
   aparece quando…"), fórmulas de resumo ("Em uma frase:", "Em suma:") e
   retro-referência meta ("No capítulo anterior vimos…"). Dizer de forma direta
   e simples.
+- **PÉSSIMO — remissão-eco (proibida em qualquer variante):** "o mesmo
+  movimento/gesto/ciclo/passo de…, agora aplicado a/voltado a…", "aqui como no
+  Cap. X", "o análogo de… do Cap. X", "a mesma solução de…", "a regra de X
+  promovida a Y". Vestir conteúdo novo de reencenação de capítulo anterior.
+  Trocar a palavra ("movimento"→"gesto") NÃO desativa a proibição — o vício é a
+  construção, não o vocábulo. Remissão permitida é a nua: dizer a coisa
+  diretamente e apontar "(Cap. -@sec-x)".
+- **PÉSSIMO — falsa correção:** "não é X, é Y" negando algo que ninguém
+  afirmou, só para encenar a revelação ("O primeiro pedido não é estatístico,
+  é de reconhecimento"). Afirmar direto o que a coisa é. (Contraste legítimo
+  entre duas alternativas reais — "refazer do bruto, não remendar a cópia" —
+  continua permitido: ali as duas opções existem de verdade.)
 - **Sem pompa nem exagero.** Evitar tom autoritário ou grandioso ("explora a
   fundo", "domina", "definitivo", "exaustivo"). O livro é introdutório e
   prático; **não** trata do funcionamento interno (o que é um *transformer*,
@@ -161,4 +173,3 @@ Nomes em minúsculas, com hífens, descritivos do conteúdo da tela
 ## Decisões em aberto (não tratar como fechadas)
 - Tipografia/fontes do livro.
 - Inclusão do Apêndice E (folha de referência de Markdown).
-- Menção a Zotero/Mendeley no Cap. 16.

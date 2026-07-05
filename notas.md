@@ -52,7 +52,8 @@ harness** *(novo)* · 6 MCP · 7 Markdown · 8 Setup · 9 Personalização.
 (Chat enxuto, por decisão editorial.)
 
 **Parte III — Colaborar (Claude Cowork)** (9): 12 Primeiros passos · 13 Tarefas
-e pastas · 14 Skills · 15 Conectores e Plugins · 16 Documentos acadêmicos · 17 Referências
+e pastas · 14 Skills · 15 Conectores e Plugins · 16 Análise de dados (era
+"Documentos acadêmicos" — reformulação de 04/07/2026, ver §13) · 17 Referências
 e citações (BibTeX) · 18 Artefatos · 19 Programado e Despacho · 20 Estudos de
 caso por área.
 
@@ -185,8 +186,8 @@ Aplicado no Cowork (Cap. 15) e no Code (Cap. 25).
 Anatomia do `.bib` (chave de citação, tipos `@article`/`@book`/…). Fluxo:
 encontrar → metadados → gerar `.bib` → formatar (`.csl` ABNT/Vancouver via
 Quarto) → **verificar**. Cuidado central: **alucinação de citações** (checklist:
-o DOI resolve? o periódico existe? o ano confere?). Decisão em aberto: mencionar
-Zotero/Mendeley como origem das `.bib`.
+o DOI resolve? o periódico existe? o ano confere?). Zotero/Mendeley como origem
+das `.bib`: RESOLVIDO — mencionados (ver §6).
 
 ### Git e GitHub → Cap. 27 (+ toque leve no Cap. 22)
 **Decisão:** concentrar git/GitHub no **Cap. 27** (controle de versão + GitHub
@@ -198,6 +199,21 @@ exige git, mas no Windows o Git for Windows ajuda o Bash). Enquadramento
 supervisionar, não decora comandos. Referenciar o **Manual de Git e GitHub** do
 autor [@alvarenga_github_manual] no Apêndice D e num boxe "Para aprofundar" no
 Cap. 27 — não reescrever git do zero.
+
+### Estrutura de projeto completa (árvore Quarto) → Cap. 27
+**Material aprovado pelo autor (04/07/2026)** para "O fluxo: do dado bruto ao
+relatório final" e "Estudo de caso: como este livro foi feito": árvore de um
+projeto-livro Quarto completo — `_quarto.yml`, `index.qmd`, pré-textuais,
+capítulos numerados, apêndices, `data/raw` × `data/processed`, `code/` com
+scripts numerados (`01-limpeza`, `02-modelos`), `images/figures` (geradas por
+código) × `images/static` (manuais), `references/` + CSL, `_extensions/`,
+`.gitignore`, `README.md`. É a versão adulta da árvore mínima do Cap. 16
+(as cinco pastas do 16 crescidas). **Dois reparos ao usar:** (a) nomes de
+pastas em PT-BR, batendo com o repositório real deste livro (`capitulos/`,
+`apendices/` — o estudo de caso deve mostrar a árvore verdadeira, não uma
+genérica em inglês); (b) `csl_styles/` fica dentro de `references/`, como no
+repositório real. O Cap. 16 já remete ao 27 por "exemplos de árvores mais
+completas" — o 27 precisa pagar essa promessa.
 
 ### Bases de referência → Cap. 17; estudos de caso Cap. 20
 - **PubMed/médicas:** conector dedicado (MCP) — metadados estruturados.
@@ -316,7 +332,9 @@ chips **Local** / pasta; **Solicitar permissões**.
 
 - Tipografia/fontes do livro.
 - Apêndice E (folha de referência de Markdown): incluir?
-- Mencionar Zotero/Mendeley no Cap. 17.
+- Zotero/Mendeley no Cap. 17: **RESOLVIDO (04/07/2026)** — o autor os mencionou
+  na introdução (Zotero, Mendeley e JabRef; datas com fonte `ivey2018citation`);
+  a seção "Importar de gerenciadores de referência (Zotero/Mendeley)" os trata.
 - Data/edição de referência a fixar no prefácio.
 - *vibe coding*: **RESOLVIDO** — boxe "Para aprofundar" no Cap. 1, com
   @karpathy2025vibe e @willison2025vibe.
@@ -382,6 +400,50 @@ remissão nova usa `Cap. -@sec-x`.
 **Setup e Personalização trocados de ordem:** Setup vem antes da
 personalização. (Numeração atual, após a reestruturação de jul/2026: **8 —
 Setup**, `08-setup.qmd`, e **9 — Personalização**, `09-personalizacao.qmd`.)
+
+**Cap. 16 reformulado e REDIGIDO (04/07/2026):** "Documentos acadêmicos" virou
+**"Análise de dados"** (`16-analise-de-dados.qmd`, `sec-data-analysis`) —
+decisão e estrutura de 7 seções no **§13**. Prosa redigida com a skill
+writing-style; **aguarda revisão do autor**. Refs novas verificadas
+(`noble2009organizing`, `wilson2017good` — DOI conferido na PLOS). Ajustados
+`_quarto.yml`, remissão do Cap. 11, `figuras.md` e CLAUDE.md (Zotero → Cap. 17).
+TODOs de interface no arquivo: fluxo do `/skill-creator` e comandos do grupo
+Data; captura `cowork-analise-dados-tarefa.png` a fazer.
+
+**Cap. 17 — introdução com referências verificadas (04/07/2026):** o autor
+redigiu a introdução; todas as afirmações históricas foram conferidas com
+dupla verificação e receberam fonte — 5 entradas novas no `.bib` (seção
+"Historia da referencia bibliografica"): `avram1975marc` (MARC/Library of
+Congress; ERIC + WorldCat), `lesk1978refer` (refer/troff, Bell Labs 1978),
+`patashnik2003bibtex` (TUGboat 24(1):25–30; PDF integral lido — BibTeX 0.98
+em mar/1985, projetado para o LaTeX de Lamport, .bib modelado nos registros
+do Scribe), `fenner2014reference` (Opening Science, Springer 2014, DOI no
+Crossref) e `ivey2018citation` (JMLA 2018, DOI + PMC: EndNote 1988, Zotero
+2006, Mendeley 2008). As datas do texto do autor conferiram todas. Com
+aprovação do autor: typo "boibtex" corrigido e frase nova sobre o Scribe
+(elo direto do formato .bib, cf. Patashnik). Duplicata `wilson2017good`
+removida do `.bib`. Render conferido: 6 citações resolvem, sem órfãs.
+**Seção CSL verificada (04/07/2026, na sequência):** o autor enxugou a seção
+(saíram D'Arcus/Kornblith e o CSL 1.0/2010) e unificou os títulos duplicados;
+as afirmações restantes foram todas confirmadas em páginas oficiais e
+receberam fonte — `csl_project` (citationstyles.org: definição, >10 mil
+estilos, adotantes), `csl_history` (citationstyles.org/about: "Zotero was the
+first program to adopt CSL"; "their roots have always been firmly
+intertwined"), `zotero_styles_docs` (docs do Zotero: >10 mil estilos, todos em
+CSL) e `quarto_citations` (Quarto usa Pandoc; campos `bibliography:`/`csl:`;
+padrão Chicago autor-data). **Nenhum erro factual na seção**; única correção
+(aprovada): concordância "associada"→"associado". Render conferido: 9
+citações resolvem. **PDFs das fontes do Cap. 17 em `_source/`** (padrão
+autor-ano-tema, todos abertos e conferidos):
+`avram-1975-marc-history-implications.pdf` (scan ERIC ED127954),
+`lesk-1978-inverted-indexes-refer.pdf` (recomposição groff/1997 dos fontes do
+manual UNIX v7, mirror de W. Schneider; o paper do Lesk começa na p. 5,
+precedido do memo-companheiro "Updating Publication Lists"),
+`patashnik-2003-bibtex-yesterday-today-tomorrow.pdf` (TUGboat),
+`fenner-2014-reference-management.pdf` (capítulo OA, Springer) e
+`ivey-2018-choosing-citation-management-tool.pdf` (via Europe PMC; as três
+datas — EndNote 1988, Zotero 2006, Mendeley 2008 — visíveis na p. 399).
+As fontes CSL são páginas web (sem PDF).
 
 **Próximo passo (atualizado 03/07/2026):** **Cap. 13 REDIGIDO** (estrutura em
 §12) e passado pela verificação em 3 lentes — estilo, exatidão, leitor — com
@@ -524,7 +586,7 @@ da seção já é "O que muda na prática".
 - Chave `perez2019publishing` no `.bib` tem ano enganoso (artigo é de 2016).
   Verificar/renomear.
 - Tipografia/produção: hoje na Ficha técnica; avaliar se viram **colofão** no fim.
-- Apêndice E (folha de Markdown): incluir? Zotero/Mendeley no Cap. 17? (ver §6).
+- Apêndice E (folha de Markdown): incluir? (ver §6).
 - Data de referência a fixar no prefácio (§6).
 
 ## 9. Mapa de reaproveitamento do curso (Vibe_Coding_Project)
@@ -638,3 +700,59 @@ interface do Cap. 12) e gera as capturas das figs. 4 e 5; (c) **imperativos
 dirigidos ao leitor: PERMITIDOS** em trechos práticos (decisão vale para o
 livro todo; CLAUDE.md atualizado); (d) antes/depois da pasta = tabela curta na
 prosa, sem figura nova.
+
+## 13. Cap. 16 — de "Documentos acadêmicos" a "Análise de dados" (04/07/2026)
+
+**Por que mudou (decisão do autor).** O capítulo antigo era um catálogo em que
+cada seção resumia outro capítulo (geração de documentos e formatação = 14;
+leitura de PDFs = 13; "das fontes ao documento" = 12; verificação = 17) — nada
+era dele. "Documentos acadêmicos" é categoria grande demais (CSV, parquet,
+grant proposals, versões de manuscrito, código, figuras) para render capítulo.
+No lugar entrou o buraco real da Parte III: **o Cowork como analista de
+dados** — possivelmente o caso de uso mais forte para o público. A sequência
+15→16→17→18 passa a encadear conectores → análise → referências → artefatos.
+Posição e numeração preservadas (exigência do autor). Texto antigo no
+histórico do git; o pouco aproveitável (editável × PDF, skill por revista) já
+existe nos Caps. 7 e 14.
+
+**Arquivo/ID:** `16-analise-de-dados.qmd`, `{#sec-data-analysis}` (era
+`sec-academic-docs`; a única remissão externa, no Cap. 11, foi redirecionada
+para `sec-tasks`).
+
+**Estrutura decidida (7 seções; roteiro em comentários no `.qmd`):**
+
+1. **Arquivos de dados** — CSV/Excel/parquet, dado tabular (linha =
+   observação, coluna = variável); callout Atenção: dados identificáveis →
+   anonimizar antes de enviar (Cap. 29).
+2. **Estrutura de arquivos do projeto** (título do autor) — a pasta é o que o
+   agente vê; dados originais numa pasta onde nada escreve; árvore mínima
+   (dados-brutos, dados-processados, codigo, resultados, manuscrito); o prompt
+   que monta a estrutura + convenção no CLAUDE.md da pasta. FECHO: criar a
+   skill `estrutura-de-projeto` (mostrar um SKILL.md curto) para reutilizar a
+   cada projeto novo — aplica o critério "procedimento que se repete" do
+   Cap. 14, que **não é alterado**. Prosa direta, sem subtítulos internos nem
+   rótulos de chamada (pedido do autor).
+3. ***Vibe coding*** — o agente escreve o script, grava e executa; loop do
+   Cap. 4 sobre dados; código visível e auditável; eco da definição do Cap. 1
+   (saber pedir e saber avaliar). Título homônimo ao do Cap. 1: ok, capítulos
+   diferentes, sem colisão de ID.
+4. **Da pergunta à análise** — descritivas, cruzamentos, testes; exemplos
+   multi-área; método estatístico = decisão de quem assina; comandos do grupo
+   Data (`/analyze`).
+5. **Limpeza de dados** — inconsistências, faltantes, juntar planilhas,
+   largo↔longo; sempre em cópia.
+6. **Tabelas e figuras** — saídas em `resultados/`; estilo do destino via
+   skill (Cap. 14); `/create-viz`, `/build-dashboard`; interativo → artefato
+   (Cap. 18).
+7. **Conferir a análise** — análogo estatístico do checklist do Cap. 17 (o N
+   bate? somas conferem?); pedir explicação do método; "acelera, não assina".
+   Callout Para aprofundar → Cap. 27 (reprodutibilidade).
+
+**Pendências do Cap. 16:** (a) ~~verificar e adicionar ao `.bib` Noble 2009 e
+Wilson et al. 2017~~ **FEITO em 04/07/2026** — DOIs conferidos na PLOS,
+entradas `noble2009organizing` e `wilson2017good`; (b) entrada *vibe coding*
+no glossário (Apêndice C, ainda stub); (c) figuras: captura
+`cowork-analise-dados-tarefa.png` a fazer; a árvore de pastas entrou como
+bloco de texto no capítulo (SVG dispensado — opcional, ver figuras.md);
+(d) confirmar no app os comandos do grupo Data (`/analyze`, `/create-viz`,
+`/build-dashboard`) e o fluxo do `skill-creator` (TODOs no `.qmd`).
