@@ -2,6 +2,10 @@
 /.quarto/
 /_book/
 
+# Slides reveal.js renderizados (embed-resources, ~19MB — regeneráveis
+# via `quarto render`; os fontes .qmd/.scss/img ficam versionados)
+/slides/vibe-coding-docencia.html
+
 # Intermediários de PDF/LaTeX (gerados automaticamente)
 /index.tex
 *.aux

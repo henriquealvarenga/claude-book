@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="820" height="440" viewBox="0 0 820 440" xmlns="http://www.w3.org/2000/svg">
+  <title>O fluxo tradicional</title>
+  <desc>No fluxo tradicional a análise sai do software estatístico, é copiada e colada manualmente e termina no documento do Word — três etapas separadas, ligadas à mão.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .clay{fill:#C15F3C;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="820" height="440" fill="#F6F3EC"/>
+
+  <text x="60" y="58" class="s clay" font-size="28" font-weight="700">O fluxo tradicional</text>
+
+  <!-- etapa 1 -->
+  <rect x="210" y="92" width="400" height="70" rx="12" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.9"/>
+  <text x="410" y="124" text-anchor="middle" class="s ink" font-size="17" font-weight="600">Software estatístico</text>
+  <text x="410" y="146" text-anchor="middle" class="s mut" font-size="12.5">roda a análise, gera gráficos e tabelas</text>
+
+  <!-- seta 1 -->
+  <line x1="410" y1="164" x2="410" y2="196" stroke="#C15F3C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M403,190 L410,200 L417,190" fill="none" stroke="#C15F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- etapa 2 -->
+  <rect x="210" y="202" width="400" height="70" rx="12" fill="#F7E9E2" stroke="#C15F3C" stroke-width="1.1"/>
+  <text x="410" y="234" text-anchor="middle" class="s ink" font-size="17" font-weight="600">Copia · Cola</text>
+  <text x="410" y="256" text-anchor="middle" class="s clay" font-size="12.5" font-weight="600">manualmente</text>
+
+  <!-- seta 2 -->
+  <line x1="410" y1="274" x2="410" y2="306" stroke="#C15F3C" stroke-width="2" stroke-linecap="round"/>
+  <path d="M403,300 L410,310 L417,300" fill="none" stroke="#C15F3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- etapa 3 -->
+  <rect x="210" y="312" width="400" height="70" rx="12" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.9"/>
+  <text x="410" y="344" text-anchor="middle" class="s ink" font-size="17" font-weight="600">Word</text>
+  <text x="410" y="366" text-anchor="middle" class="s mut" font-size="12.5">documento final</text>
+
+  <text x="410" y="418" text-anchor="middle" class="s mut" font-size="12.5" font-style="italic">cada mudança na análise refaz tudo à mão, de novo</text>
+</svg>

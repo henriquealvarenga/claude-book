@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="860" height="470" viewBox="0 0 860 470" xmlns="http://www.w3.org/2000/svg">
+  <title>Um arquivo .qmd, várias saídas</title>
+  <desc>Um único arquivo .qmd no centro gera quatro saídas: site em HTML, PDF para submissão científica, DOCX para colaboradores e uma apresentação em reveal.js.</desc>
+  <defs>
+    <style>
+      .s{font-family:'Inter',system-ui,sans-serif;}
+      .m{font-family:'JetBrains Mono',monospace;}
+      .ink{fill:#2A2622;} .mut{fill:#8A8175;} .clay{fill:#C15F3C;}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="860" height="470" fill="#F6F3EC"/>
+
+  <!-- conectores centro -> saídas -->
+  <g stroke="#C4B7A6" stroke-width="1.8" fill="none">
+    <path d="M360,205 C300,160 260,140 214,124"/>
+    <path d="M500,205 C560,160 600,140 646,124"/>
+    <path d="M360,265 C300,310 260,330 214,346"/>
+    <path d="M500,265 C560,310 600,330 646,346"/>
+  </g>
+
+  <!-- nó central .qmd -->
+  <circle cx="430" cy="235" r="74" fill="#F7E9E2" stroke="#C15F3C" stroke-width="1.6"/>
+  <text x="430" y="230" text-anchor="middle" class="m" fill="#C15F3C" font-size="26" font-weight="700">.qmd</text>
+  <text x="430" y="256" text-anchor="middle" class="s mut" font-size="11.5" letter-spacing="0.3">arquivo central</text>
+
+  <!-- saída HTML (topo-esq) -->
+  <rect x="60" y="74" width="288" height="66" rx="12" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="84" y="106" class="s ink" font-size="16" font-weight="600">HTML</text>
+  <text x="84" y="126" class="s mut" font-size="12">sítio web</text>
+
+  <!-- saída PDF (topo-dir) -->
+  <rect x="512" y="74" width="288" height="66" rx="12" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="536" y="106" class="s ink" font-size="16" font-weight="600">PDF</text>
+  <text x="536" y="126" class="s mut" font-size="12">submissão científica</text>
+
+  <!-- saída DOCX (base-esq) -->
+  <rect x="60" y="330" width="288" height="66" rx="12" fill="#FCFAF6" stroke="#2A2622" stroke-width="0.8"/>
+  <text x="84" y="362" class="s ink" font-size="16" font-weight="600">DOCX</text>
+  <text x="84" y="382" class="s mut" font-size="12">colaboradores</text>
+
+  <!-- saída REVEAL.JS (base-dir) — destacada: é esta apresentação -->
+  <rect x="512" y="330" width="288" height="66" rx="12" fill="#F7E9E2" stroke="#C15F3C" stroke-width="1.4"/>
+  <text x="536" y="362" class="s clay" font-size="16" font-weight="700">REVEAL.JS</text>
+  <text x="536" y="382" class="s mut" font-size="12">apresentação — esta aqui</text>
+
+  <text x="430" y="446" text-anchor="middle" class="s mut" font-size="12.5" font-style="italic">escreve-se uma vez; o Quarto renderiza em todos os formatos</text>
+</svg>

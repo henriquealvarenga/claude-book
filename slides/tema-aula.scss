@@ -1,0 +1,346 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// Tema da aula "Claude Code na docência"
+// Reaproveita a identidade da capa do livro (Conceito B, fundo grafite):
+// paleta grafite/terracota/papel + o sistema tipográfico
+// (Playfair = humano, Inter = ponte, JetBrains Mono = máquina).
+// =====================================================================
+$grafite:   #26211D;   // fundo — grafite da capa
+$grafite-2: #2E2823;   // leve elevação (caixas)
+$clay:      #C15F3C;   // terracota — acento
+$paper:     #F2ECE3;   // texto claro
+$muted:     #9A8E80;   // apagado — texto secundário
+$line:      #43392F;   // divisores discretos sobre o grafite
+
+// --- Fundo e texto ---
+$body-bg:    $grafite;
+$body-color: $paper;
+
+// --- Tipografia ---
+$presentation-font-family:   "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$presentation-heading-font:  "Playfair Display", Georgia, "Times New Roman", serif;
+$font-family-monospace:      "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+$presentation-heading-color:       $paper;
+$presentation-heading-font-weight: 700;
+$presentation-heading-line-height: 1.05;
+
+$presentation-font-size-root: 34px;
+$presentation-line-height:    1.5;
+
+// Poucas palavras → tipo grande
+$presentation-h1-font-size: 2.5em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1.15em;
+
+// --- Cor de acento ---
+$link-color:       $clay;
+$link-color-hover: lighten($clay, 12%);
+$selection-bg:     $clay;
+$selection-color:  $paper;
+
+// --- Código ---
+$code-block-bg: #1E1A17;
+$code-color:    lighten($clay, 10%);
+
+
+/*-- scss:rules --*/
+
+// As fontes locais (Playfair, Inter, JetBrains Mono) são carregadas via
+// include-in-header (slides/fontes.html), porque o caminho relativo dentro
+// do tema compilado não resolve. Aqui ficam só os stacks.
+
+.reveal h1, .reveal h2, .reveal h3 { letter-spacing: -0.01em; }
+.reveal code, .reveal pre { font-family: "JetBrains Mono", monospace; }
+
+// Acentos de cor reutilizáveis
+.reveal .clay  { color: $clay; }
+.reveal .muted { color: $muted; }
+
+// Frase grande e centrada (aforismo / virada)
+.reveal .frase {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.55em;
+  line-height: 1.2;
+  max-width: 20em;
+  margin: 0 auto;
+  text-align: center;
+}
+.reveal .frase .fonte {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: .42em;
+  color: $muted;
+  margin-top: 1.2em;
+}
+
+// Subtítulo apagado abaixo de um título/frase
+.reveal .sub {
+  color: $muted;
+  font-size: .8em;
+  max-width: 26em;
+  margin: .8em auto 0;
+}
+
+// Divisória de bloco (parte da aula)
+.reveal .slide-secao h2 {
+  color: $clay;
+  border-left: 6px solid $clay;
+  padding-left: .45em;
+  text-align: left;
+}
+
+// Listas com respiro
+.reveal ul { line-height: 1.55; }
+.reveal li { margin-bottom: .4em; }
+
+// Figuras: sem moldura, legenda apagada
+.reveal img { border: none; box-shadow: none; background: transparent; }
+.reveal figure figcaption { color: $muted; font-size: .55em; }
+
+// Imagens soltas em slides de destaque ({.center}): centrar no eixo.
+// (As telas com rótulo usam flex e já ficam centradas — não são atingidas.)
+.reveal .slide.center > img { display: block; margin-inline: auto; }
+
+// Caixa de terminal (para a parte do Code)
+.reveal .term {
+  background: #1E1A17;
+  border: 1px solid $line;
+  border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: .62em;
+  line-height: 1.5;
+  text-align: left;
+  padding: .9em 1.1em;
+  color: $paper;
+}
+.reveal .term .prompt { color: $clay; }
+.reveal .term .dim    { color: $muted; }
+
+// Rodapé de atribuição / fonte
+.reveal .attribution { color: $muted; font-size: .55em; }
+
+// Número de slide discreto
+.reveal .slide-number { color: $muted; background: transparent; }
+
+
+// =====================================================================
+// Componentes da aula "Vibe Coding na Docência"
+// =====================================================================
+
+// --- Divisor de seção (grandes "1." "2." "3.") ---
+.reveal .divisor { text-align: center; }
+.reveal .divisor .num {
+  font-family: "Playfair Display", Georgia, serif;
+  color: $clay;
+  font-size: 1.5em;
+  line-height: 1;
+  margin-bottom: .15em;
+}
+.reveal .titulo-grande {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 2.2em;
+  line-height: 1.05;
+  color: $paper;
+}
+
+// --- Molduras de tela (screenshots) ---
+.reveal img.tela {
+  border: 1px solid $line;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  background: transparent;
+}
+
+// --- Screenshot com rótulo vertical à esquerda (Cowork/Code/Positron…) ---
+.reveal .tela-rotulada {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8em;
+}
+.reveal .rotulo-vert {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15em;
+  color: $paper;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.reveal .tela-rotulada img { max-height: 600px; width: auto; max-width: 86%; margin: 0; }
+
+// --- Faixa de título sobre screenshot (agentes concorrentes) ---
+.reveal .faixa-titulo {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.6em;
+  color: $paper;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
+// --- Cartões (grades de conceitos) ---
+.reveal .cartoes {
+  display: flex;
+  gap: 1.1em;
+  justify-content: center;
+  align-items: stretch;
+  margin: .3em auto 0;
+  max-width: 30em;
+}
+.reveal .cartoes.grade-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1em;
+  max-width: 24em;
+}
+.reveal .cartao {
+  flex: 1 1 0;
+  min-width: 8em;
+  background: $grafite-2;
+  border: 1px solid $line;
+  border-radius: 12px;
+  padding: .9em 1em;
+  text-align: center;
+}
+.reveal .cartoes.grade-2x2 .cartao { flex-basis: 10em; }
+.reveal .cartao .rotulo {
+  color: $muted;
+  font-size: .62em;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: .3em;
+}
+.reveal .cartao .destaque {
+  color: $clay;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.15em;
+  display: block;
+}
+.reveal .cartao .desc { color: $muted; font-size: .6em; display: block; margin-top: .35em; line-height: 1.3; }
+.reveal .seta-h {
+  align-self: center;
+  color: $clay;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+// --- Seta grande para baixo (viradas "podemos criar…") ---
+.reveal .seta-baixo {
+  color: $clay;
+  font-size: 2.2em;
+  line-height: 1;
+  margin: .25em 0;
+  text-align: center;
+}
+
+// Nos slides de aforismo/virada (que trazem uma .frase), centrar também
+// o título, para que h2, seta e frase fiquem no mesmo eixo.
+.reveal .slide:has(.frase) h2 { text-align: center; }
+
+// --- Aviso (retrabalho / atenção) ---
+.reveal .aviso {
+  display: block;
+  width: fit-content;
+  background: rgba(201,162,75,.12);
+  border-left: 4px solid #C9A24B;
+  color: lighten($muted, 18%);
+  font-size: .72em;
+  padding: .55em 1em;
+  border-radius: 6px;
+  margin: 1em auto 0;
+}
+.reveal .aviso strong { color: #D9B968; }
+
+// --- Blocos numerados (Problemas / Solução) ---
+.reveal .bloco-num {
+  display: flex;
+  gap: .8em;
+  align-items: flex-start;
+  border: 1px solid $line;
+  border-radius: 10px;
+  padding: .7em 1em;
+  margin: .55em 0;
+  text-align: left;
+}
+.reveal .bloco-num .n {
+  font-family: "Playfair Display", Georgia, serif;
+  color: $clay;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+.reveal .bloco-num p { margin: 0; font-size: .8em; line-height: 1.4; }
+
+// --- Citação de fonte (rodapé de artigo) ---
+.reveal .fonte-citacao {
+  color: $muted;
+  font-size: .42em;
+  line-height: 1.4;
+  max-width: 44em;
+  margin: 1em auto 0;
+}
+.reveal .fonte-citacao a { color: $muted; }
+
+// --- Anatomia do .qmd (camadas com código) ---
+.reveal .camadas { max-width: 24em; margin: .3em auto 0; text-align: left; }
+.reveal .camada {
+  display: flex;
+  gap: .7em;
+  align-items: center;
+  border: 1px solid $line;
+  border-radius: 10px;
+  padding: .5em .8em;
+  margin: .4em 0;
+}
+.reveal .camada .n {
+  font-family: "Playfair Display", Georgia, serif;
+  color: $clay;
+  font-size: 1.2em;
+  font-weight: 700;
+  flex: 0 0 1.1em;
+}
+.reveal .camada .corpo { flex: 1 1 auto; min-width: 0; }
+.reveal .camada .rot { color: $muted; font-size: .55em; letter-spacing: .05em; text-transform: uppercase; display:block; margin-bottom:.2em; }
+.reveal .camada pre {
+  background: #1E1A17;
+  border-radius: 6px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: .5em;
+  line-height: 1.4;
+  color: $paper;
+  padding: .5em .7em;
+  margin: 0;
+  white-space: pre;
+}
+
+// --- Bloco de quote (Solução 2 / métodos) ---
+.reveal .quote-livre {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.05em;
+  line-height: 1.35;
+  color: $paper;
+  border-left: 4px solid $clay;
+  padding-left: .7em;
+  text-align: left;
+  max-width: 22em;
+  margin: .2em auto;
+}
+
+// --- Seta de anotação (destaques vermelhos sobre screenshots) ---
+.reveal .anota {
+  position: absolute;
+  color: #E0492B;
+  font-size: 1.8em;
+  line-height: 1;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  z-index: 5;
+}
