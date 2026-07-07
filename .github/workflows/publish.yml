@@ -1,0 +1,58 @@
+name: Publicar o livro
+
+# Renderiza o livro Quarto e publica no GitHub Pages (fonte: GitHub Actions,
+# sem branch gh-pages) a cada push no branch main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Permissões mínimas para o deploy moderno no GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Um deploy por vez; não cancela uma publicação já em andamento.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Renderizar (Quarto)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Instalar o Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.9.38"
+
+      - name: Renderizar o livro
+        run: quarto render
+
+      - name: Configurar o GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          # Ativa o Pages (fonte = Actions) automaticamente no 1º deploy.
+          enablement: true
+
+      - name: Enviar o site como artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Fazer o deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
