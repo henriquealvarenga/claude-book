@@ -4,7 +4,7 @@ Um terminal é uma interface de texto pela qual uma pessoa conversa diretamente 
 
 Antes das interfaces gráficas com janelas, ícones e mouse, a única forma de interagir com um computador era através de texto. O usuário digitava comandos; o computador respondia — também em texto. Essa interação acontecia através de terminais físicos: máquinas compostas por um teclado e uma tela (ou impressora) conectadas a um computador central distante.
 
-Nos anos 1960 e 1970, os terminais eram a porta de entrada para os grandes mainframes das universidades e empresas. Programadores, cientistas e engenheiros passavam horas diante dessas telas escuras com letras verdes ou âmbar, digitando comandos para executar cálculos, processar dados e desenvolver software.
+Nos anos 1960 e 1970, os terminais davam acesso aos grandes mainframes das universidades e empresas. Programadores, cientistas e engenheiros passavam horas diante dessas telas escuras com letras verdes ou âmbar, digitando comandos para executar cálculos, processar dados e desenvolver software.
 
 Com a chegada dos computadores pessoais nos anos 1980, as interfaces gráficas (GUI) começaram a se popularizar. O Macintosh da Apple, lançado em janeiro de 1984 (Apple Computer, Inc., 1984), e posteriormente o Windows da Microsoft tornaram os computadores acessíveis a pessoas sem conhecimento técnico. Bastava apontar e clicar.
 
@@ -24,14 +24,6 @@ APPLE COMPUTER, INC. Apple Introduces Macintosh Advanced Personal Computer., 198
 
 MICROSOFT CORPORATION. Windows Terminal Documentation., 2024. Disponível em: https://learn.microsoft.com/en-us/windows/terminal/.
 
-## O que é o terminal — e por que assusta sem precisar assustar
+<!-- Split de jul/2026: a apresentação do Code como produto (o que ele faz que o Cowork não faz, os casos acadêmicos, a aba Code, o panorama de agentes CLI, as expectativas) migrou para o Cap. -@sec-code, que abre a Parte IV. Este capítulo trata só do terminal como conceito, e fica logo antes da Instalação (Cap. -@sec-install). A prosa acima já cobre "o que é o terminal"; a seção abaixo carrega a desmistificação (não é preciso decorar comandos — o Claude opera o terminal, o usuário supervisiona). -->
 
-## O que o Code faz que o Cowork não faz
-
-## Casos acadêmicos: reprodutibilidade, automação e escala
-
-## A aba Code e sua relação com o Cowork
-
-## O panorama dos agentes de terminal (Claude Code, Codex, Antigravity CLI)
-
-## Expectativas realistas
+## Por que não precisa assustar

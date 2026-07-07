@@ -49,19 +49,20 @@ book:
         - capitulos/p3-colaborar/20-estudos-de-caso.qmd
     - part: "Parte IV — Programar (Claude Code)"
       chapters:
-        - capitulos/p4-programar/21-terminal.qmd
-        - capitulos/p4-programar/22-instalacao.qmd
-        - capitulos/p4-programar/23-claude-md.qmd
-        - capitulos/p4-programar/24-comandos-skills.qmd
-        - capitulos/p4-programar/25-mcp-e-dados.qmd
-        - capitulos/p4-programar/26-code-no-ide.qmd
-        - capitulos/p4-programar/27-reproduzivel.qmd
+        - capitulos/p4-programar/21-code.qmd
+        - capitulos/p4-programar/22-terminal.qmd
+        - capitulos/p4-programar/23-instalacao.qmd
+        - capitulos/p4-programar/24-claude-md.qmd
+        - capitulos/p4-programar/25-comandos-skills.qmd
+        - capitulos/p4-programar/26-mcp-e-dados.qmd
+        - capitulos/p4-programar/27-code-no-ide.qmd
+        - capitulos/p4-programar/28-reproduzivel.qmd
     - part: "Parte V — Prática responsável"
       chapters:
-        - capitulos/p5-pratica-responsavel/28-boas-praticas.qmd
-        - capitulos/p5-pratica-responsavel/29-etica-privacidade-custos.qmd
-        - capitulos/p5-pratica-responsavel/30-injecao-de-prompt.qmd
-        - capitulos/p5-pratica-responsavel/31-futuro.qmd
+        - capitulos/p5-pratica-responsavel/29-boas-praticas.qmd
+        - capitulos/p5-pratica-responsavel/30-etica-privacidade-custos.qmd
+        - capitulos/p5-pratica-responsavel/31-injecao-de-prompt.qmd
+        - capitulos/p5-pratica-responsavel/32-futuro.qmd
   appendices:
     - apendices/apendice-a-instalacao.qmd
     - apendices/apendice-b-referencia-comandos.qmd

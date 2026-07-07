@@ -1,0 +1,30 @@
+# Code {#sec-code}
+
+## Claude Code
+
+O Claude Code é a ferramenta de codificação agêntica da Anthropic, que opera dentro do terminal: edita arquivos, executa comandos, explica trechos de código e conduz o versionamento com git a partir de instruções em linguagem natural [@anthropic_claudecode]. Em vez de responder a um único *prompt*, o agente lê a base de código, planeja uma sequência de ações, executa-as com ferramentas reais de desenvolvimento, avalia o resultado e ajusta a abordagem; o desenvolvedor define o objetivo e mantém o controle sobre o que é efetivamente consolidado, mas o laço de execução corre de forma independente [@anthropic_claudecode].
+
+O Cowork (Parte III) leva o trabalho agêntico ao aplicativo de desktop, por uma interface gráfica que dispensa o terminal [@anthropic_cowork_getstarted]; o Code trabalha no terminal, e daí vem o alcance maior. O Cowork opera num espaço contido, restrito às pastas compartilhadas; o Code roda diretamente no projeto, com acesso ao sistema de arquivos inteiro, ao terminal e às ferramentas de desenvolvimento [@anthropic_navegando].
+
+Os dois compartilham o mesmo núcleo — capacidade agêntica, execução local, subagentes, conectores, *Skills*, integração com o navegador via Claude in Chrome e *plugins* — mas divergem quanto ao público (desenvolvedores versus profissionais de conhecimento), à interface (terminal e *diffs* versus barra lateral visual guiada) e, sobretudo, ao alcance concedido ao agente (acesso total ao sistema versus ambiente contido às pastas compartilhadas) [@anthropic_navegando; @anthropic_cowork].
+
+O quadro a seguir sistematiza as principais diferenças.
+
+| Dimensão | Claude Code | Claude Cowork |
+|---|---|---|
+| **Otimizado para** | Construção de software: escrever, testar, executar e implantar código | Trabalho complexo e sustentado: pesquisa, análise, organização de arquivos e entregáveis acabados |
+| **Público-alvo** | Desenvolvedores | Profissionais de conhecimento (sem exigência técnica) |
+| **Interface** | Linha de comando (terminal); ambiente de desenvolvimento com *diffs* visuais e git | Barra lateral visual, com plano revisável e acompanhamento em tempo real |
+| **Escopo de acesso** | Acesso total ao sistema de arquivos, terminal e ferramentas de desenvolvimento | Ambiente contido, restrito às pastas explicitamente compartilhadas |
+| **Ambientes de execução** | Local (pasta na máquina) ou remoto (repositório GitHub, com sessões persistentes na nuvem) | Local, no desktop, sobre as pastas compartilhadas |
+| **Modos de controle** | Ask / Code / Plan | Plano prévio com perguntas de escopo; aprovação antes de ações significativas |
+| **Recursos característicos** | *Diffs* visuais, integração com git, *hooks*, ambientes local e remoto | Acesso a pastas, tarefas agendadas/recorrentes, *plugins* de fluxo de trabalho, subagentes |
+| **Ferramentas comuns** | Conectores, *Skills*, Claude in Chrome, *plugins*, subagentes | Conectores, *Skills*, Claude in Chrome, *plugins*, subagentes |
+| **Núcleo tecnológico** | Motor Claude Code (local, agêntico) | Mesmo motor Claude Code, adaptado ao trabalho sem código |
+
+: Comparativo entre Claude Code e Claude Cowork {#tbl-comparativo}
+
+O Claude Code pode trabalhar tanto localmente como de forma remota. No modo **local**, seleciona uma pasta no computador e o agente opera diretamente sobre esses arquivos, podendo acessar ferramentas locais e executar um servidor de desenvolvimento visível no navegador. No modo **remoto**, conecta um repositório do GitHub e o agente trabalha em um ambiente de nuvem, com sessões que prosseguem mesmo com o aplicativo fechado — útil para bases de código maiores [@anthropic_navegando].
+
+Três modos de interação regulam o grau de autonomia: **Ask**, em que o agente propõe cada alteração e aguarda aprovação; **Code**, em que aplica mudanças em arquivos automaticamente, mas confirma antes de rodar comandos no terminal; e **Plan**, em que expõe toda a sua abordagem antes de tocar em qualquer coisa [@anthropic_navegando].
+
