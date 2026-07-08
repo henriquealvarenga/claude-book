@@ -85,8 +85,8 @@ format:
     toc-title: "Neste capítulo"
     number-sections: true
     fig-cap-location: bottom
-  # PDF desativado por enquanto (exige TeX: rode 'quarto install tinytex').
-  # Para reativar, descomente o bloco abaixo.
+  # PDF desativado por enquanto (TeX já instalado via 'quarto install tinytex').
+  # Para reativar, descomente o bloco abaixo e rode 'quarto render --to pdf'.
   # pdf:
   #   documentclass: scrbook
   #   papersize: a4
