@@ -30,7 +30,7 @@ PÁGINA DE DIREITOS (abertura) — preencher os campos entre colchetes. Vem logo
 
 Este livro foi escrito e diagramado em [Quarto](https://quarto.org), com saída em HTML e PDF. As referências bibliográficas são geridas em BibTeX, com formatação pelos estilos ABNT e Vancouver.
 
-Parte do trabalho de escrita, organização e revisão foi conduzida em colaboração com o próprio Claude — uma escolha coerente com o tema da obra e detalhada no Capítulo -@sec-research.
+Parte do trabalho de escrita, organização e revisão foi conduzida em colaboração com o próprio Claude — uma escolha coerente com o tema da obra.
 
 ## Créditos de imagens
 
