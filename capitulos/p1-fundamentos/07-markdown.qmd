@@ -8,7 +8,7 @@ Markdown está presente em quase todo o ecossistema das IAs modernas: as respost
 
 O formato nasceu em 2004, criado por John Gruber com a colaboração de Aaron Swartz [@gruber2004markdown]. O objetivo era escrever para a web sem digitar HTML: um texto legível como está, que um pequeno programa convertesse em página. Essa simplicidade explica sua adoção muito além do uso original.
 
-Markdown distingue-se pela legibilidade da própria fonte. Um arquivo `.docx` é um pacote compactado: aberto num editor de texto simples, mostra uma sequência ilegível de caracteres. Um arquivo `.md` mostra o próprio texto. Disso decorrem três propriedades úteis ao trabalho acadêmico: abre em qualquer programa, sem depender de software pago; integra-se ao controle de versões (Cap. -@sec-reproducible), porque cada alteração aparece linha a linha; e os modelos de linguagem, treinados em grande volume de Markdown, o produzem naturalmente.
+Markdown distingue-se pela legibilidade da própria fonte. Um arquivo `.docx` é um pacote compactado: aberto num editor de texto simples, mostra uma sequência ilegível de caracteres. Um arquivo `.md` mostra o próprio texto. Disso decorrem três propriedades úteis ao trabalho acadêmico: abre em qualquer programa, sem depender de software pago; integra-se ao controle de versões (Cap. -@sec-research), porque cada alteração aparece linha a linha; e os modelos de linguagem, treinados em grande volume de Markdown, o produzem naturalmente.
 
 ::: {.callout-note}
 ## As marcas do WhatsApp
@@ -90,7 +90,7 @@ Não existe **um** Markdown, e sim uma família de dialetos que foi crescendo. A
 
 Rodar código dentro do texto não começou com o Quarto. Veio antes, com o **R Markdown** [@xie2018rmarkdown], que unia texto e código numa página só, preso à linguagem R. Em 2022, a Posit (a antiga RStudio) estendeu a ideia a Python, Julia e outras linguagens e a batizou de **Quarto** [@allaire2022quarto].
 
-O Quarto é um sistema de publicação: converte um arquivo escrito em Markdown no documento final. Apoia-se no Pandoc, de onde herda os recursos que o texto acadêmico pede — citações, referências cruzadas, notas, equações — e a conversão para Word, PDF ou HTML. É com ele que se escrevem documentos, sites e livros; este livro é um deles, um arquivo Markdown por capítulo (Cap. -@sec-reproducible). O Quarto se comanda pelo terminal — o ambiente do Claude Code, que a Parte IV apresenta.
+O Quarto é um sistema de publicação: converte um arquivo escrito em Markdown no documento final. Apoia-se no Pandoc, de onde herda os recursos que o texto acadêmico pede — citações, referências cruzadas, notas, equações — e a conversão para Word, PDF ou HTML. É com ele que se escrevem documentos, sites e livros; este livro é um deles, um arquivo Markdown por capítulo (Cap. -@sec-research). O Quarto se comanda pelo terminal — o ambiente do Claude Code, que a Parte IV apresenta.
 
 ::: {.callout-note}
 ## A origem do nome

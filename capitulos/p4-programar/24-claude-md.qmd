@@ -1,15 +1,397 @@
 # CLAUDE.md {#sec-claude-md}
 
-<!-- TODO: redigir. -->
+Quando trabalhamos com um agente de programação, há uma dificuldade que aparece rapidamente: o agente precisa entender o projeto antes de ajudar. Ele precisa saber que tipo de projeto é, onde estão os arquivos, quais comandos devem ser usados, quais estilos devem ser preservados e quais limites não devem ser ultrapassados.
 
-## O arquivo `CLAUDE.md`: a memória do projeto
+Se essas informações não estiverem registradas em algum lugar, o usuário acaba repetindo sempre as mesmas instruções: “este projeto é um livro em Quarto”, “escreva em português brasileiro”, “não invente referências”, “não altere os PDFs”, “use `quarto render` para testar”, “não coloque senhas no Git”. Isso funciona em uma conversa isolada, mas fica cansativo e inseguro quando o trabalho se repete.
 
-## O que escrever nele
+Arquivos como `CLAUDE.md` e `AGENTS.md` surgem para resolver esse problema. Eles funcionam como arquivos de instruções persistentes do projeto: documentos em Markdown, escritos em linguagem natural, que orientam o agente sobre como trabalhar naquela pasta. A ideia é simples: aquilo que vale apenas para a tarefa atual fica no prompt da conversa; aquilo que deve valer sempre, ou quase sempre, fica em um arquivo de instruções.
 
-## Configurações (*settings*) e preferências
+Uma boa pergunta prática é esta: **quero que esta regra seja aplicada em todas as conversas neste projeto?** Se a resposta for sim, ela provavelmente pertence ao `CLAUDE.md`, ao `AGENTS.md`, ou a ambos.
 
-## Memória entre sessões
+## Prompt da tarefa e instruções do projeto
 
-## Regras e instruções por projeto
+É importante distinguir duas camadas.
 
-## Versionamento: noções de *git* para preservar o contexto
+O **prompt da tarefa** é aquilo que o usuário pede em uma conversa específica. Por exemplo: “reescreva a introdução deste capítulo”, “corrija o erro no código”, “crie uma tabela em Markdown”, “adicione uma seção sobre segurança”. Esse pedido pertence ao momento atual. Depois que a tarefa termina, ele pode deixar de ser relevante.
+
+As **instruções do projeto**, por outro lado, são mais estáveis. Elas descrevem regras que continuam valendo ao longo do tempo. Por exemplo: “este livro usa português brasileiro”, “as referências ficam na pasta `references/`”, “não invente citações”, “não execute comandos destrutivos sem autorização”, “antes de grandes alterações, apresente um plano”.
+
+Essa separação é uma das formas mais simples de trabalhar melhor com agentes. O prompt da tarefa diz **o que fazer agora**. O arquivo de instruções diz **como trabalhar neste projeto**.
+
+## Configurações, preferências e memória entre sessões
+
+Além do prompt da tarefa e dos arquivos de instrução do projeto, existe uma terceira camada: as configurações e preferências do próprio agente. Elas não pertencem exatamente ao projeto, mas ao modo como a ferramenta se comporta para aquele usuário, naquela conta ou naquela instalação.
+
+As **configurações** (*settings*) costumam controlar aspectos operacionais: permissões, modelo usado, ferramentas habilitadas, modo de aprovação, comportamento do terminal, integrações disponíveis e preferências da interface. Elas dizem respeito ao funcionamento do ambiente, não necessariamente ao conteúdo do projeto. Por exemplo: permitir ou não que o agente execute certos comandos, pedir confirmação antes de modificar arquivos ou definir quais ferramentas estarão disponíveis.
+
+As **preferências** são orientações mais pessoais ou recorrentes. Podem incluir o idioma preferido, o tom de escrita, o estilo de resposta, o grau de detalhe esperado ou hábitos de trabalho. Algumas ferramentas permitem registrar esse tipo de preferência em configurações globais do usuário; outras dependem de arquivos como `CLAUDE.md`, `AGENTS.md` ou de instruções dadas na própria conversa.
+
+Já a **memória entre sessões** é a capacidade de uma ferramenta recuperar informações de interações anteriores. Ela pode guardar preferências, decisões recorrentes ou detalhes úteis sobre o usuário e seus projetos. Essa memória, porém, não deve ser confundida com o arquivo de instruções do projeto. A memória pertence à experiência do usuário com a ferramenta; o `CLAUDE.md` e o `AGENTS.md` pertencem ao projeto e podem ser lidos por outras pessoas ou agentes que trabalhem naquela pasta.
+
+Em termos práticos, a divisão é esta: o prompt da conversa diz o que fazer agora; o `CLAUDE.md` ou `AGENTS.md` dizem como trabalhar neste projeto; as configurações definem como a ferramenta pode agir; e a memória entre sessões guarda preferências ou informações recorrentes que podem acompanhar o usuário além de um projeto específico.
+
+| Camada | Onde vive | Para que serve | Exemplo |
+|---|---|---|---|
+| Prompt da tarefa | Conversa atual | Dizer o que fazer agora | “Reescreva esta seção” |
+| `CLAUDE.md` / `AGENTS.md` | Pasta do projeto | Orientar o agente naquele projeto | “Não invente referências” |
+| Configurações | Ferramenta, conta ou instalação | Controlar permissões e comportamento | “Pedir confirmação antes de editar” |
+| Preferências | Usuário ou ferramenta | Registrar estilo recorrente | “Responder em português formal” |
+| Memória entre sessões | Conta ou ferramenta | Recuperar informações de interações anteriores | “Este usuário trabalha com Quarto e R” |
+
+A frase-chave é simples: `CLAUDE.md` e `AGENTS.md` são uma espécie de **memória do projeto**, não uma memória pessoal do usuário.
+
+## O que é o `CLAUDE.md`?
+
+O `CLAUDE.md` é o arquivo de instruções associado ao Claude Code. Ele é colocado no projeto para informar ao Claude como deve trabalhar naquela pasta. Em vez de o usuário repetir as regras em toda conversa, essas orientações ficam registradas em um arquivo que o agente pode carregar como contexto.
+
+Um `CLAUDE.md` pode conter informações como:
+
+- o objetivo do projeto;
+- a estrutura das pastas;
+- os comandos mais usados;
+- o estilo de escrita ou de código;
+- as regras bibliográficas;
+- os cuidados de segurança;
+- os arquivos que não devem ser modificados;
+- os procedimentos que exigem confirmação.
+
+Em um livro escrito em Quarto, por exemplo, o `CLAUDE.md` pode dizer que os capítulos ficam em uma pasta específica, que as imagens ficam em `images/`, que as referências ficam em `references/`, que o texto deve usar português brasileiro formal e que nenhuma referência deve ser inventada. Pode também indicar que, depois de editar arquivos `.qmd`, o comando usual de verificação é `quarto render`.
+
+O `CLAUDE.md` não é um arquivo mágico. Ele não garante que o agente obedecerá perfeitamente a todas as instruções. Ele funciona como contexto e orientação. Quanto mais claro, específico e coerente for o arquivo, maior a chance de o agente seguir suas regras.
+
+## O que é o `AGENTS.md`?
+
+O `AGENTS.md` tem uma função muito parecida: orientar agentes que trabalham dentro de um projeto. A diferença principal é que ele foi pensado como uma convenção mais geral, não ligada a um único produto. Em vez de ser um arquivo específico do Claude Code, o `AGENTS.md` busca funcionar como um lugar previsível onde diferentes agentes podem encontrar instruções sobre o projeto.
+
+Uma forma simples de entendê-lo é pensar no `README.md`. O `README.md` explica o projeto para seres humanos: o que é, como instalar, como usar, como contribuir. O `AGENTS.md` explica o projeto para agentes: quais comandos executar, quais convenções seguir, quais arquivos evitar, quais testes rodar e quais cuidados tomar.
+
+Assim como o `CLAUDE.md`, o `AGENTS.md` costuma ser um arquivo Markdown colocado na raiz do projeto. Ele não exige uma sintaxe especial. Não é JSON, não é YAML, não é código. É texto estruturado com títulos, listas e exemplos.
+
+A pergunta central continua a mesma: **quero que esta regra valha em todas as conversas neste projeto?** Se a resposta for sim, ela pode entrar no `AGENTS.md`.
+
+## Por que existem os dois?
+
+A existência de dois nomes pode parecer confusa no início, mas ela tem uma explicação simples. Diferentes ferramentas de agentes surgiram em ecossistemas diferentes e adotaram nomes próprios para resolver o mesmo problema: como dar contexto permanente ao agente dentro de um projeto.
+
+O `CLAUDE.md` é o nome associado ao Claude Code. Ele é natural quando o usuário trabalha principalmente com Claude. Já o `AGENTS.md` tem uma pretensão mais geral: ser um arquivo reconhecível por diferentes agentes e ferramentas, uma espécie de convenção aberta para instruções de projeto.
+
+Na prática, os dois arquivos resolvem problemas muito parecidos. A diferença não está tanto no conteúdo, mas no ecossistema. O `CLAUDE.md` conversa diretamente com o Claude Code. O `AGENTS.md` tenta ser mais portável entre ferramentas.
+
+## Similaridades entre `CLAUDE.md` e `AGENTS.md`
+
+Os dois arquivos são parecidos em vários aspectos.
+
+Ambos são escritos em Markdown. Ambos costumam ficar na raiz do projeto. Ambos servem para dar contexto persistente ao agente. Ambos podem conter comandos, convenções, regras de estilo, instruções de segurança e detalhes sobre a organização dos arquivos.
+
+Também têm o mesmo limite fundamental: eles orientam o agente, mas não substituem a revisão humana. Um arquivo de instruções melhora o contexto, reduz repetição e aumenta a consistência, mas não transforma o agente em uma ferramenta infalível.
+
+| Ponto | Similaridade |
+|---|---|
+| Formato | Ambos são arquivos Markdown |
+| Local usual | Raiz do projeto |
+| Função | Dar contexto persistente ao agente |
+| Conteúdo | Regras, comandos, estilo, estrutura e restrições |
+| Escopo | Projeto, não tarefa isolada |
+| Limite | Orientam o agente, mas não garantem comportamento perfeito |
+
+## Diferenças entre `CLAUDE.md` e `AGENTS.md`
+
+A principal diferença é a associação com ferramentas. O `CLAUDE.md` é específico do ecossistema Claude Code. O `AGENTS.md` é mais genérico e busca servir como arquivo comum para diferentes agentes de programação.
+
+Isso afeta a estratégia de uso. Se o projeto será trabalhado quase sempre no Claude Code, um bom `CLAUDE.md` pode ser suficiente. Se o projeto será aberto por diferentes agentes, ou compartilhado com pessoas que usam outras ferramentas, o `AGENTS.md` pode funcionar melhor como instrução comum.
+
+| Aspecto | `CLAUDE.md` | `AGENTS.md` |
+|---|---|---|
+| Associação principal | Claude Code | Convenção mais geral para agentes |
+| Portabilidade | Melhor dentro do ecossistema Claude | Melhor para projetos usados por vários agentes |
+| Uso típico | Instruções específicas para Claude Code | Instruções gerais para agentes de código |
+| Local usual | Raiz do projeto, ou outros locais lidos pelo Claude Code | Raiz do projeto, com possibilidade de arquivos em subpastas |
+| Conteúdo | Contexto, comandos, estilo, preferências e restrições | Contexto, comandos, testes, convenções e restrições |
+| Risco | Ficar específico demais ao Claude | Ficar genérico demais para necessidades específicas |
+
+## O que colocar nesses arquivos?
+
+Um bom arquivo de instruções não precisa ser longo. Pelo contrário: quanto mais enxuto, claro e concreto, melhor. O objetivo não é escrever uma documentação completa do projeto, mas registrar aquilo que ajuda o agente a trabalhar corretamente.
+
+### Sobre o projeto
+
+A primeira seção pode explicar o que é o projeto. Essa descrição deve ser curta e direta.
+
+Por exemplo:
+
+> Este projeto é um livro em Quarto, escrito em português brasileiro, sobre programação assistida por inteligência artificial na pesquisa científica.
+
+Essa frase já orienta o agente sobre o tipo de material, o idioma, o público provável e a natureza do trabalho.
+
+### Estrutura de pastas
+
+A segunda seção pode explicar a organização dos arquivos. Isso evita que o agente procure no lugar errado ou crie arquivos desnecessários.
+
+Por exemplo:
+
+- Capítulos ficam em `chapters/`.
+- Imagens ficam em `images/`.
+- Referências ficam em `references/`.
+- PDFs consultados ficam em `references/PDFs/`.
+- Estilos CSL ficam em `references/Styles/`.
+
+Essa parte é especialmente útil em projetos de livro, tese, artigo ou curso, nos quais a organização das pastas faz parte do método de trabalho.
+
+### Comandos frequentes
+
+O agente também precisa saber quais comandos fazem sentido no projeto. Em um livro Quarto, por exemplo, o comando central pode ser:
+
+```bash
+quarto render
+```
+
+Em outros projetos, podem existir comandos de teste, instalação, lint, checagem ou publicação. O importante é registrar os comandos que o agente realmente deve usar.
+
+Também é possível indicar limites:
+
+- Use `quarto render` para verificar o livro.
+- Não execute comandos de publicação sem autorização.
+- Não instale pacotes novos sem perguntar antes.
+
+### Regras de escrita
+
+Em projetos de texto, as regras de estilo são tão importantes quanto os comandos. O arquivo pode indicar o tom, o idioma, o nível de formalidade e o tipo de leitor.
+
+Por exemplo:
+
+- Escreva em português brasileiro.
+- Use tom didático, claro e formal.
+- Explique termos técnicos na primeira ocorrência.
+- Evite jargão desnecessário.
+- Não use frases vagas como “é importante destacar” quando puder ser mais direto.
+
+Essas instruções ajudam o agente a manter a unidade do livro.
+
+### Regras bibliográficas
+
+Para projetos acadêmicos, esta seção é essencial. Um agente pode ajudar muito com referências, mas também pode errar, misturar dados ou completar lacunas de forma indevida. Por isso, convém registrar regras explícitas.
+
+Por exemplo:
+
+- Não invente referências.
+- Use apenas referências presentes no arquivo `.bib` ou fornecidas pelo usuário.
+- Quando uma referência estiver faltando, marque com `<!-- TODO: referência -->`.
+- Não crie DOI, ano, editora ou número de página sem verificação.
+- Para afirmações técnicas ou históricas, prefira fontes primárias ou documentação oficial.
+
+Essas regras não eliminam o risco de erro, mas tornam o comportamento esperado mais claro.
+
+### Regras de segurança
+
+O arquivo também deve dizer o que o agente não deve fazer. Isso é ainda mais importante quando o agente tem acesso ao terminal, ao Git, a conectores ou a servidores MCP.
+
+Por exemplo:
+
+- Não edite arquivos de credenciais.
+- Não inclua tokens, senhas ou chaves em arquivos versionados.
+- Não envie dados sensíveis para serviços externos sem autorização.
+- Não apague, mova ou renomeie arquivos importantes sem confirmação.
+- Não execute comandos destrutivos sem autorização explícita.
+
+Essas regras ajudam a estabelecer uma fronteira entre colaboração e risco.
+
+### Comportamento do agente
+
+Por fim, o arquivo pode registrar preferências sobre como o agente deve trabalhar.
+
+Por exemplo:
+
+- Antes de grandes alterações, apresente um plano curto.
+- Ao final, liste os arquivos modificados.
+- Preserve a estrutura do capítulo quando a tarefa for apenas revisar o texto.
+- Não crie arquivos novos se a tarefa puder ser resolvida editando arquivos existentes.
+- Em caso de dúvida, faça a menor alteração suficiente.
+
+Essas instruções são muito úteis porque não dizem apenas o que o agente deve produzir, mas como deve conduzir o trabalho.
+
+## Exemplo de `CLAUDE.md` para um livro em Quarto
+
+Um `CLAUDE.md` para este tipo de projeto poderia ser assim:
+
+```markdown
+# CLAUDE.md
+
+Este projeto é um livro em Quarto, escrito em português brasileiro, sobre programação assistida por inteligência artificial na pesquisa científica.
+
+## Estilo
+
+- Use linguagem didática, clara e formal.
+- Explique termos técnicos na primeira ocorrência.
+- Preserve o tom de livro introdutório.
+- Evite jargão desnecessário.
+- Não infle o texto com frases genéricas.
+
+## Estrutura
+
+- Capítulos ficam em `chapters/`.
+- Imagens ficam em `images/`.
+- Referências ficam em `references/`.
+- PDFs consultados ficam em `references/PDFs/`.
+- Estilos CSL ficam em `references/Styles/`.
+
+## Comandos
+
+- Para renderizar o livro, use `quarto render`.
+- Depois de editar arquivos `.qmd`, sugira renderizar o projeto.
+- Não publique o livro sem autorização explícita.
+
+## Referências
+
+- Não invente referências.
+- Use apenas citações presentes no arquivo `.bib` ou fornecidas pelo usuário.
+- Quando faltar uma referência, marque com `<!-- TODO: referência -->`.
+- Não invente DOI, ano, editora, periódico ou número de página.
+
+## Segurança
+
+- Não edite arquivos de credenciais.
+- Não inclua tokens, senhas ou chaves em arquivos versionados.
+- Não altere arquivos em `references/PDFs/` sem autorização.
+- Não execute comandos destrutivos sem confirmação.
+
+## Modo de trabalho
+
+- Antes de grandes alterações, apresente um plano.
+- Depois de editar, informe quais arquivos foram modificados.
+- Preserve a estrutura do capítulo quando a tarefa for apenas revisar.
+- Faça a menor alteração suficiente para resolver o pedido.
+```
+
+Esse exemplo não é uma regra universal. Ele deve ser adaptado ao projeto real. Um projeto de análise de dados, um pacote em R, um aplicativo em Python ou uma tese em Quarto teriam instruções diferentes.
+
+## Exemplo de `AGENTS.md` genérico
+
+Um `AGENTS.md` pode conter praticamente as mesmas informações, mas com linguagem menos ligada ao Claude Code e mais voltada a agentes em geral.
+
+```markdown
+# AGENTS.md
+
+Este repositório contém um livro em Quarto, escrito em português brasileiro, sobre programação assistida por IA na pesquisa científica.
+
+## Objetivo do projeto
+
+Produzir um material didático, claro e tecnicamente cuidadoso, voltado a leitores que escrevem, pesquisam e analisam dados, mas nem sempre têm formação avançada em programação.
+
+## Estrutura do projeto
+
+- `chapters/`: capítulos do livro.
+- `images/`: figuras e capturas de tela.
+- `references/`: arquivos bibliográficos.
+- `references/PDFs/`: PDFs usados para consulta.
+- `references/Styles/`: estilos CSL.
+
+## Comandos úteis
+
+- Renderizar o livro: `quarto render`.
+- Não publicar, apagar ou reorganizar o projeto sem autorização explícita.
+
+## Regras de escrita
+
+- Escrever em português brasileiro.
+- Usar tom formal, didático e claro.
+- Explicar termos técnicos.
+- Evitar jargão desnecessário.
+- Evitar texto inflado.
+
+## Referências
+
+- Não inventar referências.
+- Usar apenas dados bibliográficos verificados.
+- Marcar lacunas com `<!-- TODO: referência -->`.
+
+## Segurança
+
+- Não tocar em credenciais, tokens ou senhas.
+- Não colocar segredos em arquivos versionados.
+- Não executar comandos destrutivos sem autorização.
+- Não enviar dados sensíveis a serviços externos sem permissão.
+
+## Comportamento esperado
+
+- Antes de alterações grandes, apresentar um plano.
+- Ao terminar, resumir o que foi alterado.
+- Preferir mudanças pequenas e bem justificadas.
+- Em caso de dúvida, preservar a estrutura existente.
+```
+
+A diferença entre os dois exemplos é pequena de propósito. Na prática, `CLAUDE.md` e `AGENTS.md` frequentemente terão conteúdos muito parecidos. O que muda é o público imediato: no primeiro caso, Claude Code; no segundo, agentes de modo mais geral.
+
+## Usar `CLAUDE.md`, `AGENTS.md` ou os dois?
+
+Para um projeto usado quase sempre no Claude Code, um `CLAUDE.md` bem escrito pode ser suficiente. Ele é direto, simples e alinhado ao ambiente em que o usuário está trabalhando.
+
+Para um projeto que pode ser aberto por vários agentes, o `AGENTS.md` é mais portável. Ele funciona como uma camada comum de instruções, menos dependente de uma única ferramenta. Isso é útil em projetos compartilhados, repositórios públicos ou equipes nas quais cada pessoa pode usar um agente diferente.
+
+Também é possível usar os dois. Nesse caso, o principal cuidado é evitar divergência. Se o `CLAUDE.md` disser uma coisa e o `AGENTS.md` disser outra, o agente pode ficar confuso. O melhor é escolher um arquivo como fonte principal e fazer o outro apontar para ele.
+
+Uma estratégia simples é manter o `AGENTS.md` como instrução geral do projeto e criar um `CLAUDE.md` curto, específico para o Claude Code:
+
+```markdown
+# CLAUDE.md
+
+Siga as instruções gerais em `AGENTS.md`.
+
+Além disso, ao trabalhar neste projeto com Claude Code:
+
+- antes de alterações estruturais, apresente um plano;
+- use o terminal integrado do Positron quando possível;
+- depois de editar arquivos `.qmd`, sugira rodar `quarto render`;
+- não execute comandos destrutivos sem autorização explícita.
+```
+
+A estratégia inversa também é possível: manter o `CLAUDE.md` como arquivo principal e criar um `AGENTS.md` genérico. O importante é que os dois não virem versões paralelas e contraditórias do mesmo manual.
+
+## O que não colocar nesses arquivos
+
+Arquivos de instruções persistentes não devem virar depósito de tudo. Eles devem conter regras duráveis, não tarefas temporárias.
+
+Não faz sentido colocar no `CLAUDE.md` ou no `AGENTS.md` uma instrução como “reescreva hoje a seção sobre MCP” ou “corrija o parágrafo que mandei agora”. Isso pertence ao prompt da conversa. Também não é uma boa ideia colocar listas longas de tarefas, ideias soltas, lembretes passageiros ou decisões ainda não confirmadas.
+
+Também não se deve colocar segredos. Senhas, tokens, chaves de API, dados pessoais, credenciais OAuth e informações sensíveis não pertencem a esses arquivos. Eles costumam ser versionados junto com o projeto; portanto, tudo o que for escrito ali pode acabar compartilhado.
+
+Outro erro comum é criar instruções vagas ou contraditórias. “Escreva bem” é pouco útil. “Use linguagem didática, clara e formal, explicando termos técnicos na primeira ocorrência” é melhor. “Seja breve” e “explique tudo em detalhes” podem entrar em conflito se não houver contexto. Quanto mais específicas forem as instruções, melhor.
+
+## Limites desses arquivos
+
+O `CLAUDE.md` e o `AGENTS.md` ajudam, mas não resolvem tudo.
+
+O agente pode deixar de seguir uma instrução vaga. Pode ficar confuso diante de regras conflitantes. Pode priorizar o pedido mais recente do usuário quando ele contradiz uma orientação antiga. Pode também carregar apenas parte das instruções, dependendo da ferramenta, do tamanho do arquivo e da posição do arquivo na estrutura de pastas.
+
+Por isso, instruções críticas devem ser curtas, explícitas e repetidas no prompt quando forem centrais para uma tarefa delicada. Se a tarefa envolve apagar arquivos, publicar algo, mexer em credenciais, enviar dados ou alterar muitas partes do projeto, é melhor reforçar a regra na conversa.
+
+Também é importante revisar esses arquivos de tempos em tempos. Projetos mudam. Pastas são reorganizadas. Comandos deixam de funcionar. Regras antigas perdem sentido. Um arquivo desatualizado pode atrapalhar mais do que ajudar.
+
+## Boas práticas
+
+Um bom arquivo de instruções deve ser curto, concreto e vivo.
+
+Deve ser curto porque o agente não precisa de um tratado para começar a trabalhar. Deve ser concreto porque instruções específicas funcionam melhor do que preferências vagas. E deve ser vivo porque precisa acompanhar o projeto.
+
+Algumas boas práticas são:
+
+- escrever regras permanentes, não tarefas temporárias;
+- usar títulos simples;
+- preferir listas curtas;
+- registrar comandos reais;
+- explicar a estrutura de pastas;
+- incluir regras bibliográficas, quando o projeto for acadêmico;
+- incluir regras de segurança;
+- evitar contradições;
+- remover instruções antigas;
+- não colocar segredos;
+- revisar o arquivo quando o projeto mudar.
+
+Uma regra prática é observar a própria repetição. Se você deu a mesma instrução ao agente três vezes em conversas diferentes, talvez ela pertença ao arquivo de instruções do projeto.
+
+## Conclusão
+
+`CLAUDE.md` e `AGENTS.md` resolvem o mesmo problema prático: eles evitam que o usuário precise repetir, em toda conversa, as regras permanentes do projeto. Ambos são arquivos em Markdown que funcionam como orientação persistente para agentes.
+
+A diferença principal está no ecossistema. `CLAUDE.md` é mais associado ao Claude Code. `AGENTS.md` é mais genérico e portável entre agentes. Em muitos projetos, um deles basta. Em outros, faz sentido usar os dois, desde que não contenham instruções conflitantes.
+
+O melhor arquivo de instruções não é o mais longo. É o que diz, com clareza, o que o agente precisa saber para trabalhar bem naquele projeto. Ele não substitui o julgamento do usuário, nem elimina a necessidade de revisão. Mas dá ao agente um mapa melhor do terreno.

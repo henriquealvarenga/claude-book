@@ -21,7 +21,7 @@ projeto-sono-universitarios/
 └── manuscrito/            o texto do artigo
 ```
 
-Os nomes das pastas importam menos que a separação; um grupo que prefira `dados/originais` e `dados/limpos` não perde nada. O que não muda é a regra que sustenta o arranjo: dos dados brutos se lê; neles não se escreve. Se uma decisão de limpeza se revelar errada, refaz-se tudo a partir do bruto, que continua como chegou. A separação é prática estabelecida da computação científica, recomendada em guias clássicos da área [@noble2009organizing; @wilson2017good]. Projetos maiores pedem mais pastas — o texto dividido em capítulos, as figuras geradas por código separadas das desenhadas à mão, os arquivos do controle de versão —, e o Cap. -@sec-reproducible traz exemplos de árvores mais completas.
+Os nomes das pastas importam menos que a separação; um grupo que prefira `dados/originais` e `dados/limpos` não perde nada. O que não muda é a regra que sustenta o arranjo: dos dados brutos se lê; neles não se escreve. Se uma decisão de limpeza se revelar errada, refaz-se tudo a partir do bruto, que continua como chegou. A separação é prática estabelecida da computação científica, recomendada em guias clássicos da área [@noble2009organizing; @wilson2017good]. Projetos maiores pedem mais pastas — o texto dividido em capítulos, as figuras geradas por código separadas das desenhadas à mão, os arquivos do controle de versão —, e o Cap. -@sec-research traz exemplos de árvores mais completas.
 
 Nada disso se monta à mão. Numa pasta já cheia, o pedido descreve o estado final e traça os limites: *"organize esta pasta para um projeto de análise: crie dados-brutos, dados-processados, codigo, resultados e manuscrito e mova cada arquivo para o lugar certo; não renomeie nem altere os arquivos de dados; na dúvida, pergunte"*. A convenção que vale dali em diante — figuras novas em `resultados/`, scripts em `codigo/` — pode ficar registrada no `CLAUDE.md` da pasta (Cap. -@sec-claude-md), e as tarefas seguintes passam a segui-la sem que ninguém a repita.
 
@@ -112,5 +112,5 @@ A conferência cabe em três gestos. Contar: se o questionário teve 214 respost
 ::: {.callout-note}
 ## Para aprofundar
 
-A análise inteira ficou em arquivos: os dados limpos em `dados-processados/`, os scripts em `codigo/`, as figuras em `resultados/`. Uma consequência vale registrar: apagados os resultados, tudo se refaz rodando os scripts de novo, do bruto à figura. Essa propriedade — a análise que qualquer pessoa, inclusive o autor de daqui a um ano, consegue refazer — é o assunto do Cap. -@sec-reproducible.
+A análise inteira ficou em arquivos: os dados limpos em `dados-processados/`, os scripts em `codigo/`, as figuras em `resultados/`. Uma consequência vale registrar: apagados os resultados, tudo se refaz rodando os scripts de novo, do bruto à figura. Essa propriedade — a análise que qualquer pessoa, inclusive o autor de daqui a um ano, consegue refazer — é o assunto do Cap. -@sec-research.
 :::

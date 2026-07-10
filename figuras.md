@@ -18,9 +18,9 @@
 | `markdown-fonte-vs-renderizado.svg` | 7 | Markdown: a fonte e o resultado. | Painel de código à esquerda, resultado à direita. |
 | `codigo-executavel-quarto.svg` | 7 | Uma célula de código executável: o Quarto roda o código e insere o resultado. | Célula de código à esquerda; resultado calculado à direita. |
 | `fluxo-de-citacao.svg` | 17 | Da busca à referência verificada. | Cinco etapas terminando em "verificar". |
-| `bibtex-csl-quarto.svg` | 17, 28 | Como a bibliografia é gerada: .bib + .csl + Quarto. | Dois arquivos alimentam o Quarto, que gera o documento. |
+| `bibtex-csl-quarto.svg` | 17, 29 | Como a bibliografia é gerada: .bib + .csl + Quarto. | Dois arquivos alimentam o Quarto, que gera o documento. |
 | `modos-de-permissao.svg` | 8, 25 | Modos de permissão, do mais controlado ao mais autônomo. | Cinco modos em escala de cor. |
-| `estrutura-projeto-quarto.svg` | 28 | A estrutura de um projeto Quarto. | Árvore de pastas e arquivos do projeto. |
+| `estrutura-projeto-quarto.svg` | 29 | A estrutura de um projeto Quarto. | Árvore de pastas e arquivos do projeto. |
 
 **Resolvido sem figura:** a árvore mínima do projeto de dados (cap. 16) entrou
 como bloco de texto monoespaçado no próprio capítulo; o SVG
@@ -37,13 +37,16 @@ fica como opção se o autor preferir figura.
 | `cowork-modos-de-permissao.png` | 8, 25 | O seletor de modos de permissão. |
 | `cowork-seletor-de-modelos.png` | 3 | O seletor de modelos. |
 | `cowork-controle-de-esforco.png` | 3 | O controle de esforço. |
-| `cowork-uso-do-plano.png` | 8, 30 | O painel de uso do plano. |
-| `cowork-painel-de-estatisticas.png` | 30 | As estatísticas de uso. |
+| `cowork-uso-do-plano.png` | 8, 31 | O painel de uso do plano. |
+| `cowork-painel-de-estatisticas.png` | 31 | As estatísticas de uso. |
 | `cowork-recentes-indicador-de-atividade.png` | 12, 19 | O indicador de atividade (pontinho azul) na lista Recentes. |
 | `claude-configuracoes-geral-perfil-instrucoes.png` | 9 | Configurações: perfil e instruções personalizadas. |
 | `comandos-de-barra.png` | 14 | A lista de comandos de barra, aberta ao digitar `/`, agrupada por finalidade (geral e Data). |
 | `conectores.png` | 15 | O menu de conectores: serviços ligados (Gmail, Google Calendar, Drive, PUBMED…) com interruptor, e os atalhos de adicionar/gerenciar. |
 | `cowork-comandos-data-analyze.png` | 16 | O comando `analyze` do plugin Data, com sua descrição, na lista filtrada ao digitar `/data`. |
+| `permissao-explicita.png` | 23 | O Claude recusa criar um repositório público sem autorização explícita (o sistema de permissões em ação). |
+| `claude-code-ide-terminal.png` | 27 | O Claude Code rodando no terminal integrado do editor (tela de boas-vindas com versão, modelo e pasta). |
+| `claude-code-ide-extensao.png` | 27 | O Claude Code como aba/extensão do editor, com o campo de composição próprio. |
 
 ## Capturas a fazer (nomes sugeridos)
 
@@ -55,7 +58,7 @@ fica como opção se o autor preferir figura.
 
 **Agente em ação:** `cowork-tarefa-em-andamento-todos.png` (cap. 13 — a tarefa de renomeação em execução, etapas concluídas e ação corrente; realocada de 4/12: o Cap. 4 usa o diagrama do loop e o Cap. 12 pronto não a usa); `cowork-pedido-de-permissao.png` (cap. 13 — o pedido de permissão durante a renomeação; realocada de 8, que usa o diagrama e o seletor); `cowork-analise-dados-tarefa.png` (cap. 16 — tarefa de análise de dados em execução sobre uma planilha; substitui a antiga `cowork-skill-gerando-documento.png`, do foco descartado do capítulo). As duas primeiras saem da mesma sessão: rodar a tarefa real do Cap. 13 no Cowork.
 
-**Parte IV (Code):** `code-aba-sessao-terminal.png` (cap. 21 — a aba Code); `code-positron-terminal.png`, `code-cursor.png`, `code-antigravity.png` (cap. 27).
+**Parte IV (Code):** `code-aba-sessao-terminal.png` (cap. 21 — a aba Code); `code-terminal-boas-vindas.png` (cap. 23 — a tela de boas-vindas do `claude` num terminal limpo, fora de um editor); `code-positron-terminal.png`, `code-cursor.png`, `code-antigravity.png` (cap. 27).
 
 **Outras:** `claude-planos-assinatura.png` (cap. 8); `cowork-onboarding-papel.png` (cap. 8); `chat-conversa-bom-prompt.png`, `chat-resumo-pdf.png`, `chat-projetos.png` (caps. 10–11).
 

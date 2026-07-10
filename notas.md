@@ -38,7 +38,7 @@
 - **Favicon:** degrau de três blocos terracota sobre grafite, em
   `images/capa-favicon/`.
 
-## 2. Estrutura (32 capítulos, 5 partes + apêndices)
+## 2. Estrutura (33 capítulos, 5 partes + apêndices)
 
 > Reestruturada em jul/2026: partes nomeadas pela **atividade** (produto entre
 > parênteses); dois capítulos novos (5 O harness; 30 Injeção de prompt). Ver §1
@@ -57,15 +57,14 @@ e pastas · 14 Skills · 15 Conectores e Plugins · 16 Análise de dados (era
 e citações (BibTeX) · 18 Artefatos · 19 Programado e Despacho · 20 Estudos de
 caso por área.
 
-**Parte IV — Programar (Claude Code)** (8): 21 Code (apresentação do produto) ·
+**Parte IV — Programar (Claude Code)** (9): 21 Code (apresentação do produto) ·
 22 Terminal · 23 Instalação e o primeiro projeto · 24 CLAUDE.md e configuração ·
-25 Comandos, skills e permissões · 26 Conectando ferramentas (MCP) e dados ·
-27 Claude Code no seu editor (Positron, Cursor, Antigravity) · 28 Pesquisa
-reproduzível.
+25 Comandos, skills e permissões · 26 MCP e conectores · 27 Claude Code no IDE ·
+28 Dados e análise · 29 Pesquisa reproduzível.
 
-**Parte V — Prática responsável** (4): 29 Boas práticas, limites e verificação ·
-30 Ética, integridade acadêmica, privacidade e custos · **31 Injeção de prompt /
-a tríade letal** *(penúltimo)* · 32 O futuro do trabalho intelectual com
+**Parte V — Prática** (4): 30 Boas práticas, limites e verificação ·
+31 Ética, integridade acadêmica, privacidade e custos · **32 Injeção de prompt /
+a tríade letal** *(penúltimo)* · 33 O futuro do trabalho intelectual com
 agentes.
 
 **Apêndices:** A Instalação por SO · B Referência rápida de comandos ·
@@ -192,15 +191,15 @@ externas. Anatomia: servidor (lado da ferramenta), cliente (Claude), ferramentas
 e dados. "Conectores" no Cowork são MCPs. Segurança: conectar = conceder acesso.
 Aplicado no Cowork (Cap. 15) e no Code (Cap. 26).
 
-### BibTeX e citação → Caps. 17 e 27
+### BibTeX e citação → Caps. 17 e 29
 Anatomia do `.bib` (chave de citação, tipos `@article`/`@book`/…). Fluxo:
 encontrar → metadados → gerar `.bib` → formatar (`.csl` ABNT/Vancouver via
 Quarto) → **verificar**. Cuidado central: **alucinação de citações** (checklist:
 o DOI resolve? o periódico existe? o ano confere?). Zotero/Mendeley como origem
 das `.bib`: RESOLVIDO — mencionados (ver §6).
 
-### Git e GitHub → Cap. 28 (+ toque leve no Cap. 23)
-**Decisão:** concentrar git/GitHub no **Cap. 28** (controle de versão + GitHub
+### Git e GitHub → Cap. 29 (+ toque leve no Cap. 23)
+**Decisão:** concentrar git/GitHub no **Cap. 29** (controle de versão + GitHub
 Pages para publicar — o livro é Quarto e pode ir ao GitHub Pages). **Toque leve
 no Cap. 23**: git **recomendado**, não obrigatório, na instalação do Code (rede
 de segurança — commits para desfazer edições do agente; instalador nativo não
@@ -208,9 +207,9 @@ exige git, mas no Windows o Git for Windows ajuda o Bash). Enquadramento
 **git-para-supervisão**: o Claude Code roda git por você; o leitor entende para
 supervisionar, não decora comandos. Referenciar o **Manual de Git e GitHub** do
 autor [@alvarenga_github_manual] no Apêndice D e num boxe "Para aprofundar" no
-Cap. 28 — não reescrever git do zero.
+Cap. 29 — não reescrever git do zero.
 
-### Estrutura de projeto completa (árvore Quarto) → Cap. 28
+### Estrutura de projeto completa (árvore Quarto) → Cap. 29
 **Material aprovado pelo autor (04/07/2026)** para "O fluxo: do dado bruto ao
 relatório final" e "Estudo de caso: como este livro foi feito": árvore de um
 projeto-livro Quarto completo — `_quarto.yml`, `index.qmd`, pré-textuais,
@@ -222,8 +221,8 @@ código) × `images/static` (manuais), `references/` + CSL, `_extensions/`,
 pastas em PT-BR, batendo com o repositório real deste livro (`capitulos/`,
 `apendices/` — o estudo de caso deve mostrar a árvore verdadeira, não uma
 genérica em inglês); (b) `csl_styles/` fica dentro de `references/`, como no
-repositório real. O Cap. 16 já remete ao 28 por "exemplos de árvores mais
-completas" — o 28 precisa pagar essa promessa.
+repositório real. O Cap. 16 já remete ao 29 por "exemplos de árvores mais
+completas" — o 29 precisa pagar essa promessa.
 
 ### Bases de referência → Cap. 17; estudos de caso Cap. 20
 - **PubMed/médicas:** conector dedicado (MCP) — metadados estruturados.
@@ -253,7 +252,7 @@ instruções personalizadas + Projetos. O Cowork tem ainda uma *auto-memória*
 (dentro do eixo contexto persistente: as instruções personalizadas têm uma
 versão em arquivo, o `CLAUDE.md`, para Cowork e Code), com remissão ao Cap. 24,
 que mantém o tratamento completo (configuração, `settings.json`, hierarquia).
-Exemplo vivo: o `CLAUDE.md` deste livro (Cap. 28). **Fonte para o Cap. 24:**
+Exemplo vivo: o `CLAUDE.md` deste livro (Cap. 29). **Fonte para o Cap. 24:**
 guia oficial de boas práticas de `CLAUDE.md` [@anthropic_claude_md_2025]
 (documentar arquitetura/fluxos, comando `/init`, manter conciso, conectar
 ferramentas).
@@ -264,8 +263,9 @@ ferramentas).
   ainda** (só pedido aberto). Tem "Posit Assistant" com Claude via chave (BYOK).
 - **Cursor:** editor com IA, base VS Code; roda Claude Code no terminal.
 - **Antigravity** (Google): IDE "agent-first"; suporta **modelos Claude**
-  (Sonnet/Opus 4.6) com chave Anthropic; harness próprio (≠ Claude Code);
-  Antigravity 2.0 trouxe Agent Teams e scheduled tasks. **[verificar]**
+  (Opus 4.8, Sonnet 4.6) com chave Anthropic; harness próprio (≠ Claude Code);
+  virou app standalone (não mais fork do VS Code); Agent Teams e tarefas
+  agendadas. **[verificar]**
 
 ### Modos de permissão → Caps. 8 e 24
 Solicitar permissões · Aceitar edições · Modo de planejamento · Modo automático
@@ -291,7 +291,7 @@ do arco Chat→Cowork→Code, e sim um produto especializado por domínio.
   "sem que você precise programar" dentro da área. Por isso o tratamento é um
   **apêndice substantivo** + presença **em ação no Cap. 20** (Medicina/saúde e
   Ciências da vida), não um rodapé; também referenciado nos Caps. **3**
-  (ecossistema) e **26** (pesquisa reproduzível). Retrofit **depois do Cap. 11**.
+  (ecossistema) e **29** (pesquisa reproduzível). Retrofit **depois do Cap. 11**.
   *(Em aberto: se o autor quiser, dá para promover a um capítulo curto e
   opcional, ou a uma seção forte no Cap. 20 — ver conversa.)*
 - **Fatos citáveis (do anúncio):** artefatos reprodutíveis ("cada artefato vem
@@ -384,6 +384,157 @@ redigidos** nesta sessão (a revisar pelo autor).
 Bibliografia com ~57 entradas (30 importadas do curso, **NÃO VERIFICADAS**; o
 resto verificado nesta etapa). Diagramas em `images/diagramas/`. PDF desativado
 (reativar: descomentar bloco no `_quarto.yml` + `quarto install tinytex`).
+
+**Cap. 6 × Cap. 26 — remissão "servidor próprio" (08/07/2026):** o Cap. 26
+(`26-mcp-e-dados.qmd:9`) dizia "o caminho que o Cap. 6 chamou de servidor
+próprio", mas o Cap. 6 nunca usava o termo nem traçava a distinção **conector
+pronto no catálogo × servidor sob medida** — remissão falsa. Corrigido no lado
+do Cap. 6 (não mover para o 26), coerente com a tese "conceito mora uma vez na
+Parte I; capítulo de produto remete e aplica": a seção "Catálogo e ecossistema"
+(`06-mcp.qmd:29`) ganhou duas frases que nomeiam o **servidor próprio** (escrito
+sob medida quando não há conector pronto) e apontam o "como" para o Cap. 26
+(`Cap. -@sec-mcp-data`). Altitude conceitual no 6; o worked example (OAuth, Node,
+`claude mcp add`) segue inteiro no 26. Frasagem respeita o "sem programar": o
+usuário não programa, o Claude escreve o servidor. Nota: o Cap. 6 passou a ter
+duas remissões a `sec-mcp-data` (linhas 29 e 33) — pontos distintos (registrar
+servidor qualquer × escrever um sob medida), mantidas.
+
+**Cap. 26 — exemplo do servidor Google Forms atualizado com fatos verificados
+(08/07/2026):** o servidor MCP real do exemplo (em `~/Developer/Outros/Google_MCP`,
+repo `claude-book/mcp-server-google-forms`) passou por reorganização + revisão
+`/code-review high` numa **sessão paralela do Claude Code** (v0.3.1). Fonte da
+verdade do código: `docs/revisao-de-codigo.md` do repo (tabela de status +
+histórico). Três correções factuais no `26-mcp-e-dados.qmd` (com `writing-style`):
+(a) removida a falsa "chave **duradoura**" (linha 13) — o *refresh token* só é
+durável em produção; (b) lista de ferramentas atualizada para as **oito** reais
+(entraram publicar/`set_publish` e ver estrutura/`get_form`); (c) reescrito o
+parágrafo dos "limites": app OAuth nasce em **modo de teste**, onde o token
+**expira em 7 dias**; a correção é **publicar em produção** (sem verificação do
+Google, atravessando uma vez a tela de "app não verificado"), onde o token não
+expira. Regra dos formulários **não publicados desde 30/06/2026**: agora
+**verificada** (código + doc oficial + teste ao vivo pela sessão paralela) — TODO
+removido; ligada à ferramenta de publicação. **Em aberto no Cap. 26:** a edição do
+autor no §9 tirou o cross-ref `(Cap. -@sec-mcp)` de "servidor próprio" e deixou
+"google forms" em minúscula — decisão do autor; as seções 24–30 seguem por
+redigir. **Não** mexer no repo MCP (regra de convívio: mudança no código atualiza
+`docs/revisao-de-codigo.md` no mesmo commit).
+
+**Caps. 26 e 27 REDIGIDOS (09/07/2026), com `writing-style` — aguardam revisão
+do autor.** Fatos verificados (agente `claude-code-guide` na doc oficial + buscas
+na web); cross-refs conferidos contra os IDs reais de `capitulos/`.
+
+- **Cap. 26 (`26-mcp-e-dados.qmd`):** escritas a intro e cinco seções em volta do
+  exemplo do Forms (que já estava pronto): "MCP no Code" (escopos **local /
+  project / user** do `claude mcp add`; `.mcp.json` × `~/.claude.json`; contraste
+  com os Conectores gráficos do Cowork), "Dados no Code" (retitulada de "Trabalhar
+  com dados: planilhas, CSV e bases" — dois-pontos proibido; o Code como analista
+  com o ambiente inteiro; escala × Cowork; reprodutibilidade → Cap. 29), "Análise
+  e visualização" (pergunta→resultado; método é de quem assina; `/dataviz`),
+  "Conectores úteis para pesquisa" (PUBMED/Drive/Postgres; catálogo cresce;
+  conferir a origem) e "Segurança ao conectar no Code" (conectar = conceder
+  acesso; servidor de terceiros = rodar código alheio; **tríade letal** → Cap. 31;
+  o que o agente lê vai para o modelo → anonimizar, Cap. 30).
+- **Cap. 27 (`27-code-no-ide.qmd`):** redigido inteiro. Títulos com dois-pontos
+  encurtados: "Positron/Cursor/Antigravity" e "Comparação: …" → "Terminal-first e
+  agent-first". Espinha (mostrada, não declarada — regra do CLAUDE.md): **mesma
+  máquina, superfícies diferentes**. Fatos: extensões **oficiais** de VS Code e
+  JetBrains = mesmo harness/CLI por baixo; **Positron** = Claude Code no terminal
+  integrado, sem extensão oficial no catálogo (só feature request) + o *Positron
+  Assistant* próprio (Claude via chave); **Cursor** = extensão/terminal + agente
+  próprio, histórico compartilhado (`claude --resume`); **Antigravity** =
+  *agent-first*, harness próprio, aceita Claude via chave de API.
+- **Notas corrigidas na verificação (§3, IDEs):** Antigravity agora pluga **Opus
+  4.8/Sonnet 4.6** (não "4.6") e virou **app standalone**, não mais fork do VS
+  Code. Atualizar o §3 se for reusar.
+- **TODOs deixados no Cap. 27** (voláteis): status da extensão do Positron;
+  detalhes do Antigravity. **Figuras a fazer** (já em `figuras.md`):
+  `code-positron-terminal.png`, `code-cursor.png`, `code-antigravity.png`.
+
+**Reestruturação da Parte IV + renome da Parte V (09/07/2026).** Decisão do autor
+após conversa: o Cap. 26 tratava MCP **e** dados, e as seções de dados partiam o
+arco do MCP ao meio. Separado:
+- **26 MCP e conectores** (`26-mcp-e-conectores.qmd`, ID **`sec-mcp-code`**, era
+  `sec-mcp-data`): só MCP/conectores (intro, MCP no Code, servidor próprio,
+  conectores úteis, segurança). Exemplo do Forms intacto.
+- **28 Dados e análise** *(novo)* (`28-dados-e-analise.qmd`, **`sec-code-data`**):
+  recebeu "Dados no Code" e "Análise e visualização" (do 26) + "Documentos
+  executáveis (Quarto)" (do antigo 28). **Seção Quarto REDIGIDA (09/07/2026,
+  writing-style):** 3 parágrafos — dos arquivos soltos das seções 1–2 ao
+  documento único; a célula executável remetida ao Cap. 7 (não reexplicada);
+  este livro como exemplo; ponte à reprodutibilidade (Cap. 29). Refs conferidas
+  (`sec-markdown`, `sec-research`). **Em aberto:** a seção "Dados no Code" ecoa o
+  título do capítulo — decisão do autor sobre retítulo (comentário no `.qmd`).
+- **29 Pesquisa reproduzível** (era 28; `29-pesquisa.qmd`, mantém
+  `sec-research`): perdeu a seção "Quarto" (foi p/ o 28). **Git e `.bib`/`.csl`
+  ficam como seções** (→ Manual de Git do autor e Cap. 17), NÃO capítulos —
+  decidido contra os caps. separados de git/bibtex que se cogitou.
+- **Parte V renumerada +1** (29→30 … 32→33), **pasta `p5-pratica-responsavel` →
+  `p5-pratica`**, título da parte encurtado para **"Prática"**. **32 → 33 caps.**
+- Varredura: `sec-mcp-data` → `sec-mcp-code` (2 refs no Cap. 6). `_quarto.yml`,
+  `figuras.md` (28→29, 30→31) e `CLAUDE.md` (pasta p5) atualizados. Remissões são
+  `-@sec-` nativas → renumerar não quebrou nada; conferido (todos os caminhos
+  existem, zero remissão órfã). **Etapa 2:** prosa da seção Quarto do 28
+  **REDIGIDA (09/07/2026)** — ver bullet do Cap. 28 acima. **A fazer:** redigir a
+  prosa do 29 (esqueleto: reprodutibilidade, fluxo, git, bib/csl, estudo de caso)
+  e a decisão de retítulo da seção "Dados no Code".
+
+**Cap. 23 (Instalação) REDIGIDO (09/07/2026), com `writing-style` — aguarda
+revisão do autor.** Fatos verificados na doc oficial (agente `claude-code-guide`:
+`quickstart`, `setup`, `authentication`, `commands`, `permissions`). **Duas
+rodadas:** (1) versão enxuta, que delegava o passo a passo por SO ao Apêndice A;
+(2) **decisão do autor: o leitor deve conseguir instalar lendo só o capítulo** →
+reescrito autossuficiente, fundindo a densidade prática de um rascunho paralelo do
+GPT com o estilo do livro. Do feedback do GPT foram acatados: preservar a
+**supervisão humana** (cortada a frase "quem opera o terminal passa a ser o
+Claude"); requisitos explícitos + "não precisa de placa de vídeo" (o modelo roda
+nos servidores); **tirar "Opus 4.8" do corpo** (envelhece → "o modelo em uso");
+**hedge no plano** (assinatura inclui; Console/API cobram à parte); dar destaque a
+`/init`, Shift+Tab, `/diff`, `--continue`/`--resume`. **Rejeitado:** o over-hedge
+"em geral, mantém histórico local" (é documentado → afirmação direta); e a prosa
+do rascunho do GPT (que reincidia nos vícios: abertura-embrulho, "você", títulos
+com "?", "Conclusão" com resumo/aforismo, ~18 seções). **Oito seções:** Requisitos
+· Instalação (macOS/Windows/Linux em `###`, + Homebrew/WinGet/WSL/apt em uma linha
+cada, Git for Windows → Bash, callout "Na prática" com `--version`/`doctor`) · A
+primeira sessão (login OAuth + `/login` + tela de boas-vindas + loop do Cap. 4 +
+comandos de barra → Cap. 25) · A primeira tarefa (`/init` → Cap. 24; pedidos de
+leitura primeiro; callout "comece por tarefas reversíveis") · Aprovar e revisar
+(menu de permissão; Shift+Tab = escala do Cap. 8; `/diff`; git desfaz; regras
+finas → Cap. 25) · Encerrar e retomar · Quando algo não funciona (3 tropeços +
+remissão ao Apêndice A). Remissões conferidas no render (zero órfã). **Fronteira
+Cap. × Apêndice A:** o capítulo cobre o caminho normal completo; o Apêndice A fica
+com a cauda longa (telas passo a passo, casos raros de troubleshooting) — Apêndice
+A ainda é stub, a redigir. **Figura usada:** `permissao-explicita.png`
+(`@fig-permissao-explicita`); se o autor preferir, cabe no Cap. 25. **Imagens
+novas** `claude-code-ide-terminal.png` e `claude-code-ide-extensao.png` são do
+**Cap. 27** (mapeadas em `figuras.md`). **TODO de figura:**
+`code-terminal-boas-vindas.png` (tela do `claude` num terminal limpo, fora de
+editor).
+
+**Cap. 23 — passe de revisão + reenquadramento da abertura (09/07/2026).** Depois
+da redação, o autor pediu ajustes finos (aplicados um a um, sem reescrever):
+supervisão preservada (cortada "quem opera o terminal passa a ser o Claude");
+hedge no plano (assinatura inclui; Console/API/corporativo podem cobrar por uso);
+"Linux" → "distribuições Linux compatíveis"; `apt`/`dnf`/`apk` com "conforme a
+distribuição e a documentação vigente"; cautela no `/init` ("revise o conteúdo
+antes de aceitá-lo como instrução permanente"); `fig-alt` encurtado; "A conversa
+fica guardada" → "Em geral, o histórico da sessão fica disponível" (autor pediu o
+hedge, mesmo sendo documentado — o "em geral" contraria a skill, fica o registro);
+padronização Claude Code (ferramenta) / Claude (agente) / Code (só quando o
+referente é claro). **Abertura reescrita (decisão do autor: o leitor deve saber
+que há várias vias):** o §1 agora abre pelas **três formas de usar/instalar** —
+app de desktop (traz o Code embutido, sem instalação à parte), extensão do VS Code
+(idem, pelo marketplace) e o **terminal** (instalar `claude`, a via deste
+capítulo). **Fatos verificados** (agente `claude-code-guide`, doc oficial
+`desktop-quickstart`/`vs-code`/`jetbrains`): app de desktop e extensão do **VS
+Code embutem o CLI** (dispensam a instalação no terminal); **JetBrains exige** o
+CLI avulso; navegador (`claude.ai/code`) = nuvem; app de desktop Local = na
+máquina. **DECISÃO EDITORIAL (autor, 09/07/2026): NÃO mencionar o JetBrains em
+lugar nenhum do livro.** Por isso a abertura do Cap. 23 saiu de "plugins como o do
+JetBrains" para só "o terminal integrado de um editor". **Afeta o Cap. 27**
+(`27-code-no-ide.qmd`): a nota §8 dizia "extensões oficiais de VS Code e JetBrains
+= mesmo harness/CLI por baixo" — ao revisar o 27, **remover o JetBrains** e manter
+só VS Code (que embute o CLI) e o terminal integrado (Positron/Cursor). O `.bib` e
+`figuras.md` não citam JetBrains; nada a limpar além do Cap. 27.
 
 **Cross-references e git (04/07/2026):** as remissões manuais a capítulos
 viraram cross-references nativas do Quarto. Todos os 31 caps. e 6 apêndices têm
@@ -614,7 +765,7 @@ Adaptar (não copiar), generalizando exemplos médicos para todas as áreas.
 - Cap. 17 ← `M3-analise/B1-markdown/03-citacao.qmd`
 - Caps. 21–22 ← `M2-fundamentos-tecnicos/B1-terminal/*` (9 páginas) — 21 Code (motivação/panorama) + 22 Terminal (o conceito)
 - Cap. 27 ← `M2-fundamentos-tecnicos/B2-ambientes/02-positron.qmd` (+ rstudio, vscode)
-- Cap. 28 ← `M3-analise/B1-markdown/02-quarto.qmd` + `M4-publicacao/B1-git/*`
+- Cap. 29 ← `M3-analise/B1-markdown/02-quarto.qmd` + `M4-publicacao/B1-git/*`
 - Cap. 29 ← `M1-ia-pesquisa/B4-limites/01-quando-ia-falha.qmd` + `02-validacao-responsabilidade.qmd`
 - Cap. 30 ← `M1-ia-pesquisa/B4-limites/03-etica-regulacao.qmd` + `B1-conceitos/05-citar-ia.qmd` + `06-lgpd.qmd`
 
@@ -756,7 +907,7 @@ para `sec-tasks`).
    (Cap. 18).
 7. **Conferir a análise** — análogo estatístico do checklist do Cap. 17 (o N
    bate? somas conferem?); pedir explicação do método; "acelera, não assina".
-   Callout Para aprofundar → Cap. 28 (reprodutibilidade).
+   Callout Para aprofundar → Cap. 29 (reprodutibilidade).
 
 **Pendências do Cap. 16:** (a) ~~verificar e adicionar ao `.bib` Noble 2009 e
 Wilson et al. 2017~~ **FEITO em 04/07/2026** — DOIs conferidos na PLOS,

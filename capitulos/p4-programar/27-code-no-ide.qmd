@@ -1,15 +1,84 @@
 # Claude Code no IDE {#sec-code-ide}
 
-<!-- TODO: redigir. -->
+O Claude Code nasceu no terminal (Cap. -@sec-terminal). Essa origem é importante: antes de ser uma janela bonita dentro de um editor, ele é uma ferramenta de linha de comando, capaz de conversar com o usuário, examinar arquivos, propor alterações, executar comandos e ajudar a conduzir tarefas dentro de uma pasta de projeto.
 
-## O Claude Code é nativo de terminal
+Mas quem escreve muito — código, um livro em Quarto, uma tese, uma análise estatística — costuma preferir trabalhar em um editor de código ou em um **IDE** (*ambiente integrado de desenvolvimento*). Um IDE é um programa que reúne, em uma mesma interface, o texto do projeto, abas, realce de sintaxe, terminal integrado, visualização de arquivos, controle de versões e, cada vez mais, recursos de inteligência artificial.
 
-## Positron: o IDE de ciência de dados (e o Quarto)
+Por isso, embora o Claude Code seja nativo do terminal, ele também pode ser usado dentro de um IDE. Isso permite combinar duas formas de trabalho: de um lado, a força do agente no terminal; de outro, a organização visual do editor, com arquivos abertos, painéis laterais e comparação de alterações.
 
-## Cursor: o editor com IA
+## Duas formas de usar o Claude Code no IDE
 
-## Antigravity: a abordagem *agent-first*
+Há duas formas principais de usar o Claude Code dentro de um IDE.
 
-## Comparação: *terminal-first* × *agent-first*
+A primeira é pelo **terminal integrado** do próprio IDE. Nesse caso, o usuário abre o terminal dentro do Positron, VS Code, Antigravity, Cursor ou Windsurf e utiliza o Claude Code como uma ferramenta de linha de comando. A conversa com a inteligência artificial acontece no terminal, por meio de comandos de texto, mas sempre dentro do ambiente em que o projeto já está aberto (@fig-terminal).
+
+A segunda forma é usar o Claude Code como uma **extensão** do IDE, instalada pelo marketplace do próprio programa, quando essa integração estiver disponível. Nesse modelo, o Claude Code aparece mais incorporado à interface visual do editor. Em vez de depender apenas de uma conversa no terminal, o usuário pode ganhar painéis, botões, visualização de diferenças no código e formas mais gráficas de acompanhar as alterações propostas (@fig-extensao).
+
+A diferença prática é simples. Pelo terminal, o usuário conversa com o Claude Code como se estivesse usando um comando dentro do computador. Pela extensão, a interação fica mais integrada ao IDE. Em ambos os casos, a ideia central é a mesma: permitir que a inteligência artificial compreenda os arquivos do projeto e ajude a explicar, modificar, testar ou organizar o trabalho.
+
+![O Claude Code no terminal integrado do Positron, como ferramenta de linha de comando.](/images/claude-code-ide-terminal.png){#fig-terminal fig-alt="Janela do Positron: à esquerda, a barra lateral de arquivos (Explorer, com _Claude_Project, Outline e Timeline); ao centro, a aba Terminal ativa, entre Console e Problems. No terminal roda o Claude Code, com o mascote em pixel art, a linha 'Claude Code v2.1.205', a versão do modelo, o caminho do projeto, um aviso e, no rodapé, o campo de comando com o texto de exemplo 'Try create a util logging.py that…'."}
+
+Na primeira imagem, o Claude Code ocupa a aba **Terminal** do painel inferior, ao lado de Console e Problems. A interação é toda em texto: a linha que mostra a versão e o modelo e, no rodapé, o campo de comando onde o pedido é digitado. Nenhum botão, nenhuma caixa gráfica — o agente aparece como qualquer programa de linha de comando.
+
+![O Claude Code como painel dedicado dentro do Positron, integrado à interface do editor.](/images/claude-code-ide-extensao.png){#fig-extensao fig-alt="A mesma janela do Positron, agora com o Claude Code aberto como painel próprio: uma aba 'Claude Code' no editor, o logotipo e o mascote em pixel art e uma caixa de composição gráfica com botões de adicionar, comandos de barra, modo automático e enviar. Acima da caixa, um aviso oferece voltar à experiência de terminal pelas configurações; abaixo, o painel de terminal continua disponível."}
+
+Na segunda, o Claude Code tem uma aba própria no editor, no alto, marcada pelo logotipo em asterisco — onde normalmente se abre um arquivo. O campo de comando dá lugar a uma caixa de composição gráfica, com botões de adicionar (**+**), comandos de barra (**/**), microfone e envio. Um aviso oferece voltar à experiência de terminal pelas configurações, e o painel de terminal, embaixo, aparece recolhido.
+
+## Terminal-first e agent-first
+
+Os ambientes atuais de programação com IA podem ser entendidos a partir de duas tendências: a abordagem **terminal-first** e a abordagem **agent-first**.
+
+No modelo **terminal-first**, representado pelo Claude Code, o agente é, antes de tudo, uma ferramenta de terminal. O IDE funciona como uma superfície de apoio: ele organiza os arquivos, mostra o texto, oferece abas e exibe o terminal integrado. O comando `claude` continua sendo o centro da interação. A vantagem desse modelo é a portabilidade. O usuário pode trabalhar de modo parecido em diferentes ambientes, porque o agente acompanha a pasta do projeto e os comandos executados ali.
+
+No modelo **agent-first**, o editor é construído em torno da presença do agente. Nesse caso, a inteligência artificial não aparece apenas como uma ferramenta chamada pelo terminal, mas como parte central do próprio ambiente. O IDE já nasce preparado para delegar tarefas, acompanhar planos, revisar alterações, executar etapas e organizar múltiplas ações do agente.
+
+Pode ser o mesmo modelo de linguagem em ambos os casos. O que muda é o modo como o ambiente envolve esse modelo: no terminal-first, o agente fica mais próximo da linha de comando; no agent-first, o editor inteiro se organiza ao redor do agente.
 
 ## A escolha do ambiente
+
+A escolha do ambiente é importante, mas talvez menos decisiva do que parece no começo. O mais importante é entender o fluxo de trabalho. Quem já está confortável no terminal pode usar o Claude Code diretamente ali. Quem prefere ver o texto, as abas e as diferenças de código lado a lado pode ganhar muito usando um IDE com terminal integrado ou extensão.
+
+Para o público deste livro, que escreve, analisa dados e produz documentos mais do que desenvolve grandes sistemas de software, o par mais natural costuma ser o **Positron com o Claude Code no terminal integrado**. O Positron oferece um ambiente voltado para R, Python, Quarto e análise de dados; o Claude Code, por sua vez, fica ao lado, pronto para percorrer a pasta do projeto, modificar arquivos, explicar erros e ajudar na organização do trabalho.
+
+O VS Code é uma alternativa mais geral e muito flexível. Cursor e Antigravity pertencem a uma geração mais voltada para programação assistida por agentes. Eles podem ser muito úteis para quem já vive dentro de um editor de programação ou para quem deseja experimentar um ambiente inteiro construído em torno da colaboração com IA.
+
+## Alguns IDEs importantes
+
+### Positron
+
+O **Positron** ocupa um lugar especial neste livro. Ele é um IDE criado pela Posit, a mesma organização responsável pelo RStudio, com foco em ciência de dados, análise estatística e programação em R e Python. Por isso, é uma escolha particularmente adequada para quem começa a programar a partir de problemas reais de dados: tabelas, gráficos, modelos estatísticos, notebooks, scripts e documentos analíticos.
+
+Em vez de ser apenas um editor de código genérico, o Positron foi pensado para aproximar exploração de dados, escrita de código e produção de análises em um mesmo ambiente. Para quem trabalha com Quarto, essa integração é especialmente útil: o mesmo programa pode servir para escrever o texto, executar trechos de código, visualizar resultados e organizar os arquivos do projeto.
+
+Neste livro, o Positron será tratado como o ambiente principal. Isso não significa que ele seja obrigatório, nem que seja sempre superior aos demais. Significa apenas que ele combina bem com o tipo de trabalho que nos interessa aqui: escrever, analisar, documentar e publicar.
+
+
+### VS Code
+
+O **VS Code**, ou Visual Studio Code, é um dos editores de código mais populares da atualidade. Sua principal vantagem é a flexibilidade. Ele pode ser usado para muitas linguagens e muitos tipos de projeto: Python, R, JavaScript, documentos em Markdown, projetos web, notebooks, Git, bancos de dados e muito mais.
+
+Essa flexibilidade vem, em grande parte, de seu sistema de extensões. Pelo marketplace do VS Code, o usuário pode instalar recursos adicionais conforme a necessidade. Isso torna o VS Code uma espécie de plataforma adaptável: ele começa como um editor relativamente simples, mas pode se transformar em um ambiente bastante completo.
+
+Para quem deseja um editor geral, bem documentado e amplamente adotado, o VS Code é uma excelente opção. No contexto deste livro, ele aparece como uma alternativa importante ao Positron, especialmente para usuários que já o utilizam em outros projetos.
+
+### Antigravity
+
+O **Antigravity**, do Google, representa uma geração mais recente de ambientes de desenvolvimento orientados por agentes de inteligência artificial. A ideia central não é apenas completar linhas de código ou sugerir pequenas correções, mas permitir que agentes atuem em tarefas mais amplas: planejar, editar arquivos, executar comandos, navegar por partes do projeto e produzir resultados verificáveis.
+
+Por isso, o Antigravity se aproxima mais de uma plataforma de desenvolvimento assistida por agentes do que de um editor tradicional com uma função de autocompletar. O agente não aparece apenas como um assistente lateral; ele participa da organização do trabalho.
+
+Esse tipo de ambiente é promissor, mas também muda a experiência do usuário. Em vez de apenas “usar IA dentro de um editor”, o usuário passa a trabalhar em um editor desenhado desde o início para a colaboração com agentes. Para alguns, isso será natural. Para outros, especialmente iniciantes, pode acrescentar uma camada a mais de complexidade.
+
+### Cursor
+
+O **Cursor** também pertence a essa nova geração de editores voltados para programação com inteligência artificial. Ele foi construído em torno da ideia de que o assistente deve compreender o projeto como um todo, e não apenas o trecho de código que está visível na tela.
+
+Com isso, o usuário pode pedir explicações, refatorações, criação de funções, correção de erros e alterações em múltiplos arquivos. Em vez de funcionar apenas como um editor com sugestões automáticas, o Cursor se apresenta como um ambiente em que a IA participa mais ativamente do processo de desenvolvimento.
+
+Para quem já programa com frequência, esse tipo de ferramenta pode acelerar bastante o trabalho. Para quem está começando, porém, é importante manter uma atitude cuidadosa: aceitar menos no automático, revisar mais, entender as mudanças propostas e lembrar que o agente ajuda, mas não substitui o julgamento do usuário.
+
+## Conclusão
+
+Em termos didáticos, esses ambientes podem ser vistos como pontos diferentes de um mesmo caminho. O Positron é especialmente interessante para quem trabalha com dados, R, Python e Quarto. O VS Code é uma opção geral, flexível e muito difundida. O Antigravity e o Cursor apontam para uma forma mais recente de programação, na qual o IDE passa a ser também um espaço de colaboração com agentes de inteligência artificial.
+
+A escolha entre eles depende menos de qual é “o melhor” em termos absolutos e mais do tipo de trabalho que o usuário pretende realizar. Para este livro, a recomendação principal será começar pelo Positron, usando o Claude Code no terminal integrado. A partir daí, o leitor poderá experimentar outros ambientes conforme suas necessidades, preferências e grau de familiaridade com programação.

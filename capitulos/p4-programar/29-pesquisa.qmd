@@ -1,12 +1,10 @@
-# Pesquisa reproduzível {#sec-reproducible}
+# Pesquisa reproduzível {#sec-research}
 
 <!-- TODO: redigir. Remissão ao Cap. 17. -->
 
 ## O que é reprodutibilidade e por que importa
 
 ## O fluxo: do dado bruto ao relatório final
-
-## Quarto: documentos que combinam texto, código e dados
 
 ## BibTeX + CSL + Quarto na prática
 

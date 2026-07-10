@@ -1,15 +1,108 @@
 # Instalação {#sec-install}
 
-<!-- TODO: redigir. Remissão ao Apêndice A. -->
+O Claude Code pode ser usado de mais de uma forma, e a instalação depende de como ele é acessado. O aplicativo de desktop já o traz embutido, pronto sem instalação à parte; a extensão do VS Code, instalada pelo marketplace do editor, também (Cap. -@sec-code-ide). A terceira via é instalar o `claude` no terminal (Cap. -@sec-terminal). Essa via é a mais direta para trabalhar dentro de um projeto na própria máquina, e a base sobre a qual funciona o terminal integrado de um editor. Em qualquer uma delas o trabalho é o mesmo: instruções em linguagem comum, ações aprovadas e mudanças revisadas; decorar comandos técnicos não é preciso, mas a responsabilidade pelo resultado é de quem usa.
 
-## Requisitos e instalação
+O Claude Code roda perto dos arquivos do projeto. O modelo continua nos servidores da Anthropic (Cap. -@sec-harness); na máquina do usuário ficam o comando `claude`, a sessão no terminal e a interação com a pasta aberta: leitura de arquivos, propostas de alteração, execução de comandos e registro do que foi feito.
 
-## O primeiro contato: iniciar uma sessão
+## Requisitos
 
-## O loop interativo no terminal
+Um computador dos últimos anos basta. O Claude Code roda no macOS (13 ou mais novo), no Windows (10 ou 11) e em distribuições Linux compatíveis, com 4 GB de memória e conexão à internet. Como o modelo roda nos servidores da Anthropic, não na máquina (Cap. -@sec-harness), não é preciso placa de vídeo dedicada nem um computador de alto desempenho: o que a máquina executa é o terminal, os comandos locais e os arquivos do projeto.
 
-## Abrir um projeto e dar a primeira tarefa
+Usar o Claude Code exige a mesma conta do Cap. -@sec-setup. Em planos Claude compatíveis — como Pro, Max, Team ou Enterprise —, o uso costuma estar incluído na assinatura. Em configurações via Claude Console, API ou ambientes corporativos, as condições podem ser diferentes e podem envolver cobrança por uso.
 
-## Aprovar ações e revisar mudanças
+## Instalação
 
-## Encerrar, retomar e o histórico de sessões
+Durante anos, pôr uma ferramenta de linha de comando para funcionar exigia uma cadeia de pré-requisitos: instalar primeiro uma linguagem de programação, depois um gerenciador de pacotes, e só então o programa; qualquer elo fora do lugar travava o resto. O instalador nativo dispensa essa cadeia. Ele baixa um programa pronto, com tudo de que precisa, e se encarrega das atualizações seguintes, sem exigir a instalação manual de Node.js, `npm` ou outros pacotes. Tutoriais antigos instalam o Claude Code pelo `npm`; para começar, o instalador nativo é mais simples e evita conflitos de ambiente.
+
+No **macOS**, abra o Terminal e execute:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+O comando baixa e instala o Claude Code. Feche e reabra o terminal, se preciso, para que `claude` fique disponível. Quem já usa o gerenciador de pacotes Homebrew pode instalar com `brew install --cask claude-code`.
+
+No **Windows**, o comando muda conforme o terminal (Cap. -@sec-terminal). No PowerShell:
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+No Prompt de Comando (o `cmd`):
+
+```cmd
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+Se aparecer um aviso de que `&&` não é um separador válido, o terminal é o PowerShell, e não o `cmd`; se `irm` não for reconhecido, é o contrário. Quem usa o WinGet pode instalar com `winget install Anthropic.ClaudeCode`. E quem trabalha no WSL, o subsistema Linux do Windows, instala pelo comando do Linux, dentro dele. Um detalhe do Windows: com o Git for Windows instalado, o Claude Code usa o Bash como shell; sem ele, usa o PowerShell.
+
+No **Linux**, o comando é o mesmo do macOS:
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+Em ambientes mais técnicos, também pode haver instalação por gerenciadores de pacotes como `apt`, `dnf` ou `apk`, conforme a distribuição e a documentação vigente; para começar, o instalador nativo basta.
+
+O terminal integrado de um editor como o Positron ou o VS Code (Cap. -@sec-code-ide) serve igual: é um terminal dentro do editor, e o comando de instalação é o mesmo do sistema. Depois de instalar, pode ser preciso reabrir o editor para que ele reconheça o `claude`.
+
+Vale instalar o git junto. O instalador do Claude Code não o exige, mas o controle de versão vira uma rede de segurança quando o agente passa a editar arquivos (Cap. -@sec-research).
+
+::: {.callout-tip}
+## Na prática
+
+Para confirmar que a instalação deu certo, `claude --version` mostra a versão instalada; `claude doctor` diagnostica o ambiente e aponta o que estiver fora do lugar.
+:::
+
+## A primeira sessão
+
+Instalado o programa, o comando que o inicia é `claude`. Na primeira vez, ele abre o navegador para autenticar a conta do Claude — a mesma do Cap. -@sec-setup. Se o navegador não abrir sozinho, o terminal mostra um link para colar nele. Autorizado o acesso, as credenciais ficam guardadas na máquina, e as próximas sessões começam direto; para trocar de conta depois, o comando `/login`, já dentro de uma sessão, refaz a autenticação.
+
+Em seguida aparece a tela de boas-vindas: o nome e a versão do programa, o modelo em uso, o plano da conta e a pasta onde a sessão está aberta. Abaixo, uma linha em branco espera a primeira instrução.
+
+<!-- TODO: figura code-terminal-boas-vindas.png — a tela de boas-vindas do `claude` num terminal limpo, fora de um editor. -->
+
+A sessão funciona por turnos. O usuário escreve um pedido em português, pressiona Enter, e o Claude trabalha: lê os arquivos, roda comandos, edita o que precisa e responde com o que fez. É o ciclo de raciocinar, agir e observar (Cap. -@sec-how-agents-work), agora dentro do terminal em vez de uma janela de conversa.
+
+Nem tudo é linguagem natural. Digitar uma barra (`/`) abre a lista de comandos internos do Claude Code, os comandos de barra (*slash commands*), e `/help` mostra os que existem. Eles não se confundem com os comandos do terminal: só valem com a sessão aberta, e servem para revisar mudanças, trocar o modelo ou limpar o contexto, entre outros (Cap. -@sec-commands-permissions).
+
+## A primeira tarefa
+
+O Claude Code trabalha sobre a pasta em que foi aberto. Para começar num projeto, navegue até a pasta dele e rode `claude` ali:
+
+```bash
+cd caminho/para/o/projeto
+claude
+```
+
+O agente passa a enxergar os arquivos daquela pasta e de suas subpastas — o equivalente, no terminal, à pasta conectada do Cowork (Cap. -@sec-tasks), agora com o projeto inteiro diante dele.
+
+Uma boa primeira tarefa é `/init`. O comando faz o Claude ler a pasta e escrever um `CLAUDE.md`, o arquivo de instruções que orienta o agente naquele projeto (Cap. -@sec-claude-md). Serve também de primeiro contato seguro com o modo de trabalho do Claude Code: o agente percorre os arquivos, resume o que encontrou e propõe as instruções iniciais, cada passo visível na tela. Como o `/init` pode criar ou alterar um arquivo, revise o conteúdo sugerido antes de aceitá-lo como instrução permanente do projeto.
+
+Depois, um pedido em linguagem comum põe o ciclo para rodar. Convém que os primeiros não alterem nada — *"explique o que é este projeto e como ele está organizado"*, *"liste os arquivos e as pastas principais"*. Um pedido assim confirma que a instalação funciona e mostra como o agente enxerga a pasta, sem risco. Ganhando confiança, o usuário passa às edições pequenas: *"corrija os erros de digitação deste parágrafo, sem mudar o sentido"*, *"proponha um plano para reorganizar esta seção, sem editar nada ainda"*.
+
+::: {.callout-warning}
+## Comece por tarefas reversíveis
+
+Nas primeiras sessões, fique na leitura, na explicação e em edições pequenas. Deixe para depois apagar arquivos, reorganizar pastas, instalar muitos pacotes ou publicar — ações difíceis de desfazer. O objetivo inicial é ver como o agente trabalha antes de conceder mais.
+:::
+
+## Aprovar e revisar
+
+Quando o agente vai fazer algo que altera o computador — editar um arquivo, rodar um comando, apagar algo —, ele para e pergunta. No terminal aparece um menu curto: aprovar uma vez, aprovar e não voltar a perguntar para aquele tipo de ação, ou recusar. No modo padrão, nada disso acontece sem a autorização. A tecla **Shift+Tab** alterna os modos de permissão, a mesma escala do Cap. -@sec-setup, do que pede autorização a cada passo ao que age sozinho; a linha de status, ao pé da tela, mostra o modo atual, e nas primeiras vezes o mais prudente é ficar no que pede permissão.
+
+Esse freio é real e às vezes surpreende. Num projeto deste livro, ao fim de uma conversa em que o usuário havia feito perguntas e ajustado uma página, o Claude se recusou a criar um repositório público sem um "sim" com todas as letras (@fig-permissao-explicita).
+
+![Num projeto real, o Claude interrompe a ação e pede autorização explícita antes de criar um repositório público.](/images/permissao-explicita.png){#fig-permissao-explicita width=90% fig-alt="Mensagem do Claude no terminal pedindo autorização explícita antes de criar um repositório público."}
+
+Antes de aprovar uma edição, convém ver o que muda. O Claude mostra a alteração de cada arquivo linha a linha, com o que entrou e o que saiu — o *diff* que o Cap. -@sec-code apresentou —, e o comando `/diff` reabre essa comparação a qualquer momento. Revisar o *diff* antes de seguir é das práticas mais úteis no trabalho com agentes.
+
+É aqui que o git compensa: com o projeto sob controle de versão, voltar à versão anterior desfaz uma edição indesejada, sem depender da memória de quem revisa. As regras finas de permissão — liberar um comando, barrar um arquivo, confiar em um domínio — ficam no Cap. -@sec-commands-permissions.
+
+## Encerrar e retomar
+
+Para encerrar a sessão, `/exit` ou as teclas Ctrl+D fecham o Claude e devolvem o terminal. Em geral, o histórico da sessão fica disponível na máquina. Para retomar, `claude --continue` reabre a conversa mais recente daquela pasta, com o contexto de onde parou, e `claude --resume` lista as sessões anteriores para escolher qual continuar. Um trabalho longo pode assim ser partido em várias sessões sem recomeçar a cada vez.
+
+## Quando algo não funciona
+
+Se o terminal responde que `claude` não foi encontrado, feche e reabra o terminal — ou o editor, quando for o terminal integrado — para que ele reconheça o novo programa; persistindo, `claude doctor` costuma apontar a causa. Se o login não abre o navegador, o terminal traz um link para colar nele. No Windows, o tropeço mais comum é usar o comando de um terminal no outro: conferir se é o PowerShell ou o `cmd` resolve a maioria dos casos (Cap. -@sec-terminal). Os casos menos comuns, com as telas de cada etapa por sistema operacional, estão no Apêndice -@sec-install-os.

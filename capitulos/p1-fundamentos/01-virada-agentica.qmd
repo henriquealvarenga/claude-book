@@ -45,7 +45,7 @@ Segunda: **a qualidade do pedido pesa mais**. No chatbot, um pedido ruim gera um
 
 Terceira: **documentar o uso fica mais necessário**. A interação deixa de ser uma troca única e vira, às vezes, dezenas de ações numa sessão. Registrar o que foi feito é parte do método (Cap. -@sec-ethics).
 
-Quarta: **cuidado com a reprodutibilidade**. Com o mesmo pedido, o agente pode resolver de um jeito hoje e de outro amanhã — outro nome de variável, outra ordem de passos. Então o que precisa ser reproduzível não é a conversa, e sim o que ela gerou: o código e os arquivos. Salvos e versionados, qualquer um roda de novo e chega aos mesmos números (Cap. -@sec-reproducible).
+Quarta: **cuidado com a reprodutibilidade**. Com o mesmo pedido, o agente pode resolver de um jeito hoje e de outro amanhã — outro nome de variável, outra ordem de passos. Então o que precisa ser reproduzível não é a conversa, e sim o que ela gerou: o código e os arquivos. Salvos e versionados, qualquer um roda de novo e chega aos mesmos números (Cap. -@sec-research).
 
 ::: {.callout-note}
 ## Por que a mesma pergunta dá respostas diferentes

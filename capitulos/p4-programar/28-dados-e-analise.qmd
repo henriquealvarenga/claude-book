@@ -1,0 +1,21 @@
+# Dados e análise {#sec-code-data}
+
+<!-- Migrado do antigo Cap. 26 (seções "Dados no Code" e "Análise e visualização") + Quarto (do antigo Cap. 28). Seção Quarto redigida (writing-style, 09/07/2026). Em aberto para o autor: a seção "Dados no Code" ecoa o título do capítulo ("Dados e análise") — avaliar retítulo (p. ex. "O ambiente completo" / "A escala do Code"). -->
+
+Conectadas as ferramentas de fora (Cap. -@sec-mcp-code), o trabalho da pesquisa recai sobre os dados: limpar, cruzar, testar, gerar figuras e reunir tudo num documento. O Code faz isso com o ambiente completo da máquina, e grava cada passo como arquivo no projeto.
+
+## Dados no Code
+
+No Cowork o agente já analisa planilhas (Cap. -@sec-data-analysis); no Code a diferença é a capacidade de instalar bibliotecas e pacotes que forem necessários para a análise. No Code, o agente analisa dados com o computador inteiro à disposição. Tem o terminal completo (Cap. -@sec-terminal): instala a biblioteca que faltar, roda R, Python ou SQL, e trabalha com o arquivo onde ele está no disco.
+
+## Análise e visualização
+
+Para os gráficos, o Code traz uma orientação de design embutida, o comando `/dataviz` (Cap. -@sec-commands-permissions), que ajuda a escolher o tipo de gráfico, as cores e os rótulos certos para o dado, em vez de aceitar o padrão da biblioteca. Quando o trabalho pede um gráfico interativo, ele vira uma página que abre no navegador.
+
+## Documentos executáveis (Quarto)
+
+A análise das seções anteriores termina espalhada: o script num arquivo, a figura noutro, a tabela num terceiro. Quem escreve o relatório junta tudo à mão num editor de texto e digita os números no lugar. O documento Quarto (Cap. -@sec-markdown) dispensa esse passo. Texto e código ficam no mesmo arquivo; a célula executável roda quando o documento é gerado e encaixa o resultado — o número, a tabela, o gráfico — na página. A média que aparece na frase é a que o código calculou, não uma cópia transcrita.
+
+O ganho aparece quando o dado muda. Chegam três casos atrasados, corrige-se um erro na planilha, um parecerista pede para excluir os valores extremos: basta gerar o documento de novo, e a média no texto, a tabela e a figura se refazem juntas. Num relatório montado à mão, cada um desses números teria de ser reencontrado e reescrito, e o que passasse despercebido ficaria errado. No Code, o agente escreve o `.qmd` — a prosa, as células de código, a análise embutida — e o gera pelo terminal em Word, PDF ou página (Cap. -@sec-markdown).
+
+Este livro foi escrito assim, um arquivo por capítulo, gerado pelo Quarto. Um documento que se refaz a partir do dado é a base da pesquisa reproduzível — análise e relatório deixam de ser dois arquivos mantidos coerentes à mão e passam a ser um só, reconstruído da fonte (Cap. -@sec-research).

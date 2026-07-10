@@ -54,15 +54,16 @@ book:
         - capitulos/p4-programar/23-instalacao.qmd
         - capitulos/p4-programar/24-claude-md.qmd
         - capitulos/p4-programar/25-comandos-skills.qmd
-        - capitulos/p4-programar/26-mcp-e-dados.qmd
+        - capitulos/p4-programar/26-mcp-e-conectores.qmd
         - capitulos/p4-programar/27-code-no-ide.qmd
-        - capitulos/p4-programar/28-reproduzivel.qmd
-    - part: "Parte V — Prática responsável"
+        - capitulos/p4-programar/28-dados-e-analise.qmd
+        - capitulos/p4-programar/29-pesquisa.qmd
+    - part: "Parte V — Prática"
       chapters:
-        - capitulos/p5-pratica-responsavel/29-boas-praticas.qmd
-        - capitulos/p5-pratica-responsavel/30-etica-privacidade-custos.qmd
-        - capitulos/p5-pratica-responsavel/31-injecao-de-prompt.qmd
-        - capitulos/p5-pratica-responsavel/32-futuro.qmd
+        - capitulos/p5-pratica/30-boas-praticas.qmd
+        - capitulos/p5-pratica/31-etica-privacidade-custos.qmd
+        - capitulos/p5-pratica/32-injecao-de-prompt.qmd
+        - capitulos/p5-pratica/33-futuro.qmd
   appendices:
     - apendices/apendice-a-instalacao.qmd
     - apendices/apendice-b-referencia-comandos.qmd

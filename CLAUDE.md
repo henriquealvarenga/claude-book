@@ -141,7 +141,7 @@ Cada parte sobe um degrau nessa escala.
 ## Estrutura de pastas
 - `capitulos/` — os capítulos (`.qmd`), em subpastas por parte
   (`p1-fundamentos/`, `p2-conversar/`, `p3-colaborar/`, `p4-programar/`,
-  `p5-pratica-responsavel/`); o prefixo `NN-` mantém a ordem global. Figuras
+  `p5-pratica/`); o prefixo `NN-` mantém a ordem global. Figuras
   referenciadas com caminho a partir da raiz: `/images/...` (não `../images/...`).
 - `apendices/` — apêndices
 - `images/` — capturas de tela e diagramas

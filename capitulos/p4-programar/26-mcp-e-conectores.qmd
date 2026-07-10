@@ -1,0 +1,85 @@
+# MCP e conectores {#sec-mcp-code}
+
+No Claude Code, o agente pode se ligar a ferramentas externas por meio do MCP (Cap. -@sec-mcp). Como o Code também opera sobre o terminal completo (Cap. -@sec-terminal), essa ligação ganha um alcance maior: o agente pode consultar serviços externos, manipular arquivos locais, executar comandos e combinar tudo isso numa mesma tarefa.
+
+Para quem pesquisa, escreve ou analisa dados, isso abre possibilidades importantes. O agente pode acessar bases de artigos, documentos em nuvem, planilhas, bancos de dados, e-mail, agenda e serviços especializados. E, quando não existe um conector pronto, o próprio Claude Code pode ajudar a criar um servidor MCP sob medida: um pequeno programa que faz a ponte entre o agente e uma ferramenta externa.
+
+## MCP no Code
+
+O padrão MCP é o mesmo no Code e no Cowork: em ambos os casos, servidores externos oferecem ferramentas e dados ao agente (Cap. -@sec-mcp). O que muda é a forma de conectar e controlar esses servidores.
+
+No Cowork, o usuário normalmente liga um conector por um menu gráfico (Cap. -@sec-connectors). No Code, a conexão é registrada pelo terminal. O comando básico é `claude mcp add`, seguido do nome do servidor e da forma de iniciá-lo. Feito esse registro, o agente passa a enxergar aquelas ferramentas nas conversas seguintes.
+
+Ao registrar um servidor MCP, o usuário também decide em quais projetos ele deve aparecer. Há três alcances principais.
+
+O alcance **local** vale apenas para o projeto em que o comando foi executado. É útil para testes, experimentos e conexões que só fazem sentido naquela pasta específica.
+
+O alcance **project** também vale para aquele projeto, mas sua configuração fica registrada em um arquivo `.mcp.json` na raiz da pasta. Como esse arquivo pode entrar no controle de versão, a configuração acompanha o projeto quando ele é compartilhado. Assim, quem clonar o projeto pode herdar os mesmos servidores MCP, desde que também tenha as credenciais e permissões necessárias.
+
+O alcance **user** vale para todos os projetos do usuário naquela máquina. Para uma ferramenta pessoal, como um conector de busca de artigos, um acesso a banco de dados local ou o servidor de formulários do exemplo adiante, esse alcance evita repetir o registro a cada projeto novo.
+
+Boa parte do que se conecta por MCP já existe pronta em catálogos públicos ou em repositórios mantidos por empresas e comunidades (Cap. -@sec-mcp). Nesses casos, registrar o servidor é quase todo o trabalho. Mas o MCP também é importante por outro motivo: quando não há um conector pronto, é possível criar um.
+
+## Criando um servidor próprio de MCP
+
+Nem toda ferramenta tem um conector pronto. O exemplo a seguir não precisa ser reproduzido por todo leitor; ele serve para mostrar a lógica geral. Quando não há um conector de prateleira, o Claude Code pode ajudar a construir um servidor MCP sob medida.
+
+Imagine que o usuário queira conectar o Claude Code ao Google Forms para criar e editar formulários por linguagem natural. Em vez de abrir o navegador, clicar em menus e montar cada pergunta manualmente, ele poderia pedir: “crie um questionário de avaliação com cinco perguntas, marque as respostas corretas e gere o link para os alunos”. Para isso funcionar, porém, é preciso haver uma ponte entre o agente e a API do Google Forms.
+
+Essa ponte é o servidor MCP. Ele é um pequeno programa que fica entre o Claude Code e o serviço externo. De um lado, o agente envia pedidos estruturados: criar formulário, acrescentar pergunta, ativar modo quiz, ler respostas. De outro, o servidor traduz esses pedidos para chamadas da API do Google e devolve os resultados ao agente.
+
+Conectar o Code ao Google Forms tem duas etapas. A primeira é a credencial do Google, que só o usuário obtém: ela depende da conta, da autorização e dos cliques no navegador. A segunda é o servidor MCP propriamente dito, que o agente pode ajudar a escrever, instalar e registrar.
+
+No lado do Google, o trabalho é de cadastro. O usuário cria um “projeto” no Google Cloud — uma caixa de organização dentro do site, sem relação direta com uma pasta no computador —, ativa a API do Forms, configura a tela de consentimento e gera uma credencial OAuth do tipo “aplicativo para computador”. OAuth é o protocolo que permite a um programa agir em nome de uma conta, dentro de permissões definidas.
+
+O Google entrega um arquivo com identificador e segredo. O servidor usa esse arquivo uma única vez para abrir a janela em que o usuário concede a permissão. Dessa autorização nasce um *refresh token*, uma chave que o servidor guarda para conseguir falar com o Google daí em diante, sem pedir uma nova autorização a cada uso.
+
+No lado do Code, o trabalho é mais curto. O agente pode escrever o servidor — por exemplo, um arquivo em Node.js — com ferramentas específicas: criar um formulário, publicar o formulário, ver sua estrutura, acrescentar perguntas, ativar modo quiz com nota, apagar perguntas, reordenar perguntas e ler respostas. Depois, o servidor é registrado com `claude mcp add`, e o Code é reiniciado para carregá-lo.
+
+A partir daí, o pedido passa a ser feito em linguagem natural. O usuário não precisa lembrar o nome dos métodos da API nem montar manualmente o corpo das requisições. Ele pede o resultado; o agente chama as ferramentas disponíveis; o servidor conversa com o Google Forms; e o Claude Code devolve o link ou mostra o que foi criado.
+
+Dois pontos desse exemplo merecem atenção. O primeiro é uma armadilha comum no OAuth do Google. Quando o aplicativo está em modo de teste, o *refresh token* pode expirar em sete dias. Nesse caso, o servidor funcionaria durante uma semana e depois pararia de responder. A correção é publicar o aplicativo em produção. Nesse modo, o token deixa de ter a expiração automática do modo de teste, embora ainda possa ser revogado pelo usuário ou invalidado em algumas situações.
+
+O segundo ponto vem de mudanças na própria API. A partir de 30/06/2026, formulários criados pela API passam a nascer em estado não publicado. Isso significa que o link de edição pode existir, mas o formulário ainda não estará aberto para receber respostas. Para que os alunos ou participantes consigam responder, o servidor precisa executar também a etapa de publicação.
+
+::: {.callout-warning}
+## Credenciais são segredos
+
+O arquivo de credenciais e o *refresh token* dão acesso à conta dentro das permissões concedidas. Eles devem ficar no computador do usuário, não em um repositório. Devem ser mantidos fora do controle de versão — por exemplo, com uma linha no `.gitignore` — e nunca devem ser compartilhados.
+
+Conectar uma ferramenta é conceder acesso a ela.
+:::
+
+## Conectores úteis para pesquisa
+
+Os conectores que servem no Cowork também podem servir no Code, porque o padrão por baixo é o mesmo MCP (Cap. -@sec-mcp). A diferença é que, no Code, esses conectores podem ser combinados com arquivos locais, comandos de terminal, scripts e controle de versão.
+
+Para o trabalho acadêmico, os conectores mais úteis costumam ser aqueles que reduzem trabalho mecânico e ajudam a evitar erros. Um conector para PubMed, por exemplo, pode trazer metadados estruturados de artigos — título, autores, ano, periódico, DOI — e ajudar a montar uma bibliografia sem depender de cópia manual e sem inventar referências (Cap. -@sec-references).
+
+Conectores de armazenamento também são importantes. Um conector para Google Drive pode permitir que o agente encontre documentos, leia planilhas, organize arquivos e recupere materiais que não estão salvos na pasta local do projeto. Isso é especialmente útil quando o trabalho acadêmico está espalhado entre computador, nuvem, e-mail e arquivos compartilhados.
+
+Outro grupo relevante é o dos bancos de dados. Um conector para PostgreSQL, por exemplo, permite que o agente consulte diretamente uma base estruturada, sem exigir que o usuário exporte tudo manualmente para CSV. Em projetos maiores, isso aproxima a análise de dados do lugar onde os dados realmente estão.
+
+Há ainda conectores para repositórios de código, registros de ensaios clínicos, serviços de busca científica, sistemas internos e APIs específicas. Como o MCP é um padrão aberto, esse catálogo tende a crescer. Mas essa abertura também exige cautela: nem todo servidor MCP terá a mesma qualidade, manutenção ou segurança. Antes de conectar um servidor, vale conferir sua origem, sua documentação e as permissões que ele solicita.
+
+## Segurança ao conectar no Code
+
+Conectar uma ferramenta é conceder acesso a ela. Essa regra já vale no Cowork (Cap. -@sec-mcp), mas pesa ainda mais no Code. Aqui, o agente não está apenas dentro de uma janela de conversa; ele pode operar sobre o terminal completo. Pode instalar programas, executar comandos, modificar arquivos, chamar scripts e operar o Git. Mais alcance significa mais poder, mas também mais risco.
+
+Um servidor MCP é um programa que roda na máquina do usuário. Registrar um servidor MCP de terceiros significa rodar, na própria máquina, um programa escrito por outra pessoa. Se esse servidor também recebe credenciais, ele passa a operar dentro do limite das permissões concedidas. Por isso, a cautela deve ser parecida com a de instalar qualquer software: conhecer a origem, preferir servidores mantidos por fontes confiáveis, ler a documentação e entender o que está sendo autorizado.
+
+As credenciais que o servidor guarda, como o *refresh token* do exemplo do Google Forms, devem ficar fora do controle de versão. Elas não pertencem ao repositório do projeto, não devem ser enviadas ao GitHub e não devem ser compartilhadas com colaboradores. O código do servidor pode ser versionado; os segredos, não.
+
+Há ainda um risco próprio de agentes ligados a dados externos. Se o agente lê conteúdo não confiável — um e-mail, uma página da web, um PDF baixado, uma planilha recebida de terceiros —, esse conteúdo pode trazer instruções escondidas que tentam desviá-lo. Essas instruções podem pedir ao agente para apagar arquivos, copiar dados privados, enviar informações por um serviço conectado ou ignorar regras anteriores. Esse problema é conhecido como *prompt injection*.
+
+O risco aumenta quando três condições aparecem juntas: acesso a dados privados, contato com conteúdo não confiável e caminho de saída para fora, como e-mail, rede, API ou serviço conectado. Essa combinação é chamada, em segurança de agentes, de *tríade letal* e será tratada com mais detalhe no Cap. -@sec-prompt-injection.
+
+Por fim, em geral, o conteúdo que o agente usa para raciocinar precisa ser enviado ao serviço de IA que executa o modelo. Isso pode incluir trechos de arquivos, resultados de ferramentas e dados retornados por conectores. Uma planilha com informação identificável, dados clínicos, material sigiloso ou conteúdo sensível exige o mesmo cuidado aqui e em qualquer outro uso de IA: anonimizar antes, limitar o que é enviado ou simplesmente não conectar esse material ao agente (Cap. -@sec-ethics).
+
+## Conclusão
+
+O MCP transforma o Claude Code em mais do que um assistente dentro da pasta do projeto. Ele permite que o agente converse com ferramentas externas: bases de artigos, serviços de nuvem, bancos de dados, formulários, APIs e sistemas criados pelo próprio usuário.
+
+Essa abertura é poderosa. Para pesquisa, escrita e análise de dados, ela reduz tarefas repetitivas, aproxima o agente das fontes de informação e permite construir fluxos de trabalho personalizados. Mas a mesma abertura exige disciplina: saber quais servidores estão conectados, que permissões receberam, onde estão guardadas as credenciais e que tipo de dado está sendo enviado ao modelo.
+
+No Code, MCP deve ser entendido como uma ponte. De um lado está o agente, capaz de planejar, escrever e executar. Do outro estão os serviços externos, com seus dados e permissões. Uma boa ponte aumenta o alcance do trabalho; uma ponte mal controlada aumenta o risco. O objetivo não é conectar tudo, mas conectar bem.
